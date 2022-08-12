@@ -29,3 +29,4 @@ To be added
 
 # Theory guide
 
+- We should add a section on the theory of solid mechanics
