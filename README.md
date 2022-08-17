@@ -1,31 +1,23 @@
-![solids4foam](s4f_logo_name.pdf)
+![solids4foam logo](solids4foamLogoName.pdf)
 
 <!-- ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop) -->
 <!-- ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge) -->
+---
 
-solids4foam allows solid mechanics and fluid-solid interaction simulations to be performed natively within OpenFOAM.
+```warning
+This website is under construction.
+```
 
+### What is solids4foam?
 
-# Quick start
-
-## Supported versions of OpenFOAM
-
-To be added
-
-## Dependencies
-
-To be added
+solids4foam is a toolbox for performing solid mechanics and fluid-solid interactions in OpenFOAM.
 
 
-# Tutorials
+### Where do I start?
 
-## My first solid mechanics case
+Please see the [installation guide](installation/README.md) and the **tutorial guide (TO BE ADDED)**.
 
-To be added
 
-## My first fluid-solid interaction case
+### Disclaimer
 
-To be added
-
-# Theory guide
-
+OPENFOAM® is a registered trademark of ESI Group. solids4foam is not approved or endorsed by ESI Group, the producer of the OpenFOAM software and owner of the OPENFOAM® and OpenCFD® trademarks.
