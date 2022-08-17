@@ -1,6 +1,6 @@
-![solids4foam logo](solids4foamLogoName.pdf)
+![solids4foam logo](solids4foamLogoName.png)
 
-<!-- ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop) -->
+![CI](https://github.com/solids4foam/solids4foam/workflows/CI/badge.svg?branch=nextRelease)
 <!-- ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge) -->
 ---
 
