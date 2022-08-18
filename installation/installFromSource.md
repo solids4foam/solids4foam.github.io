@@ -17,9 +17,10 @@ solids4foam required a working version of OpenFOAM or foam-extend. Currently, th
 | solids4foam-v1.0 | OpenFOAM-v1812 |
 | solids4foam-v1.0 | OpenFOAM-v1912 |
 | solids4foam-v1.0 | OpenFOAM-7 |
+| ------- | -------- |
 | solids4foam-v2.0 | foam-extend-4.1 |
 | solids4foam-v2.0 | OpenFOAM-v2012 |
-| solids4foam-v1.0 | OpenFOAM-9 |
+| solids4foam-v2.0 | OpenFOAM-9 |
 
 ---
 
@@ -67,10 +68,10 @@ $> sudo apt-get install gfortran
 ```
 Or, on macOS with
 ```
-$>brew install gcc
+$> brew install gcc
 ```
 ```warning
-If GCC compilers were used to compile OpenFOAM or foam-extend, then a compatible version of gfortran should be installed. For example, if GCC7 is used then gfortran-7 should be used.
+If GCC compilers were used to compile OpenFOAM or foam-extend, then a compatible version of gfortran should be installed. For example, gfortran-7 should be used with gcc-7.
 ```
 
 If the gfortran binary is not available in the `$PATH` then solids4foam will disable functionalities that require gfortran.
