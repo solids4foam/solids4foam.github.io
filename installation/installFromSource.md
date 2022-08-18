@@ -70,6 +70,7 @@ Or, on macOS with
 ```
 $> brew install gcc
 ```
+
 ```warning
 If GCC compilers were used to compile OpenFOAM or foam-extend, then a compatible version of gfortran should be installed. For example, gfortran-7 should be used with gcc-7.
 ```

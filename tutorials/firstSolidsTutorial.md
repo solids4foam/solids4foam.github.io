@@ -10,7 +10,7 @@ This is note2
 ```
 
 ```tip
-This is a tip
+This is a great tip
 ```
 
 
