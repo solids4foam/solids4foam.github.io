@@ -15,7 +15,7 @@ solids4foam is a toolbox for performing solid mechanics and fluid-solid interact
 
 ### Where do I start?
 
-Please see the [installation guide](installation/README.md) and the **tutorial guide (TO BE ADDED)**.
+Please see the [installation guide](installation/README.md) followed by the **tutorial guide (TO BE ADDED)**.
 
 
 ### Disclaimer
