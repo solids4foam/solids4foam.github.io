@@ -10,7 +10,7 @@ This website is under construction.
 
 ### What is solids4foam?
 
-solids4foam is a toolbox for performing solid mechanics and fluid-solid interactions in OpenFOAM.
+solids4foam is a toolbox for performing solid mechanics and fluid-solid interaction simulations in OpenFOAM.
 
 
 ### Where do I start?
