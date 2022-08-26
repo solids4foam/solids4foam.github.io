@@ -1,7 +1,6 @@
 ![solids4foam logo](solids4foamLogoName.png)
 
-![CI](https://github.com/solids4foam/solids4foam/workflows/CI/badge.svg?branch=nextRelease)
-<!-- ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge) -->
+![CI](https://github.com/solids4foam/solids4foam/workflows/Build%20and%20test/badge.svg?branch=nextRelease)
 ---
 
 ```warning
