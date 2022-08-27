@@ -12,6 +12,6 @@ jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: md-linkcheck
-      uses: ./
+      - uses: actions/checkout@v3
+      - name: md-linkcheck
+        uses: ./
