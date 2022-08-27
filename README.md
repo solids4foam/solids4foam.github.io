@@ -1,6 +1,7 @@
 ![solids4foam logo](solids4foamLogoName.png)
 
-![CI](https://github.com/solids4foam/solids4foam/workflows/Build%20and%20test/badge.svg?branch=nextRelease)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Build_and_test](https://github.com/solids4foam/solids4foam/workflows/Build%20and%20test/badge.svg?branch=nextRelease)
 ---
 
 ```warning
