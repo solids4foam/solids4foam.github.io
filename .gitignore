@@ -1,0 +1,77 @@
+# git-ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+
+notes.txt
+
+# editor and misc backup files - anywhere
+*~
+.*~
+*.bak
+*.bak[0-9][0-9]
+*.orig
+*.orig[0-9][0-9]
+\#*\#
+
+# file-browser settings - anywhere
+.directory
+
+# CVS recovered versions - anywhere
+.#*
+
+# objects and archives - anywhere
+*.[oa]
+*.la
+*.so
+*.jar
+*.dylib
+
+# derived files
+lex.yy.c
+
+# Corefiles
+core
+
+# dependency files - anywhere
+*.dep
+
+# lnInclude (symlink) folders - anywhere
+lnInclude
+
+# A hidden file created by the Mac OS X Finder.
+.DS_Store
+
+# build folders - anywhere
+linux*Gcc*/
+linux*Icc*/
+darwin*Gcc*/
+darwin*Intel*/
+darwin*Arm*/
+darwin*Clang*/
+linuxming*/
+SiCortex*Gcc*/
+solaris*Gcc*/
+SunOS*Gcc*/
+
+# generated files in the main directory (e.g. ReleaseNotes-?.?.html)
+/*.html
+
+# patch residue
+*.orig
+*.rej
+
+# python-compile
+*.pyc
+
+# other stuff
+.build
+.hgignore
+.timeStamp
+
+# source packages - anywhere
+*.tar.bz2
+*.tar.gz
+*.tar
+*.tgz
+*.gtgz
+
+# end-of-file
