@@ -14,7 +14,7 @@ This is the classic “flow over a cylinder in a channel” test case, as analys
 
 We assume an incompressible Newtonian isothermal laminar fluid, where the Navier-Stokes governing equations take the form:
 
-![](images/flu_theo_1.png)
+![](images/flu_theo_1.PNG)
 
 We will use the PIMPLE pressure-velocity coupling algorithm:
 ```pseudocode
@@ -83,7 +83,7 @@ Remmber that a tutorial case can be cleaned and reset using the included `Allrun
 ## Analysing the results
 
 In the ParaView, a [von Kármán vortex street](https://en.wikipedia.org/wiki/Kármán_vortex_street) is clearly visible by viewing the pressure field `p`:
-![](images/flu_run_1.png)
+![](images/flu_run_1.PNG)
 
 
 ---
