@@ -109,7 +109,7 @@ Remmber that a tutorial case can be cleaned and reset using the included `Allrun
 
 In the ParaView, both the solid and fluid regions are loaded by default. The *Extract Block* filter in ParaView can be used to extract the solid region, and a second instance of the *Extract Block* filter for the fluid region. In that way, a the fluid region can be coloured by a fluid field (e.g. `p` or `U`) and the solid region by a solid field (e.g. `D` or `sigmaEq`). As an alternative to using the *Extract Block* filter, two instances of the case can be opened (File -> Open -> case.foam), where one opens the “fluid/internalMesh” and the other opens the “solid/internalMesh”.
 
-![](images/fs_run_1.png)
+![](images/fs_run_1.PNG)
 
 
 

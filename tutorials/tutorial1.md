@@ -72,7 +72,7 @@ A tutorial case can be cleaned and reset using the included `Allrun` script, i.e
 ## Analysing the results
 
 When viewing the results in ParaView, it can be insightful to warp the geometry by a scaled displacement field. This can be achieved using the *Warp By Vector* filter, where the `D` displacement field is selected as the *Vector* and a *Scale Factor* of 1 shows the true deformation. In this case, using a *Scale Factor* of 100 allows the deformation to be seen. 
-![](images/sol_runcase_1.png)
+![](images/sol_runcase_1.PNG)
 ![](images/sol_runcase_2.PNG)
 
 
