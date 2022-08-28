@@ -37,6 +37,7 @@ Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have a
 | PETSc | Block-coupled vertex-centred solid models linear solvers |
 | gfortran | Abaqus UMAT mechanical law interface |
 | cfmesh | Some tutorials use cfmesh for creating the meshes |
+| gnuplot | Some tutorials use gnuplot to generate graphs after running the solver |
 
 ### Eigen
 
@@ -81,6 +82,17 @@ A small number of tutorials require the `cartesianMesh` utility from cfmesh. If 
 - **foam-extend**: cfmesh is included in foam-extend.
 - **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be installed from (https://develop.openfoam.com/Community/integration-cfmesh)[https://develop.openfoam.com/Community/integration-cfmesh].
 - **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org versions.
+```
+
+### gnuplot
+
+gnuplot can be installed on Ubuntu with:
+```bash
+$> sudo apt-get install gnuplot
+```
+Or, on macOS with
+```bash
+$> brew install gnuplot
 ```
 
 ---
