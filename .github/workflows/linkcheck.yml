@@ -8,6 +8,10 @@ on:
     - '/documentation/*.md'
     - '/installation/*.md'
     - '/tutorials/*.md'
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   markdown-link-check:
