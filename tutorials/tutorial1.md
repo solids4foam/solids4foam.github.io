@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# My first solid mechanics tutorial: `hotSphere`
+# My first tutorial: `hotSphere`
 
 ---
 
