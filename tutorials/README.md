@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Overview of the tutorials in solids4foam
+# Tutorials guide
 
 The solids4foam tutorials are organised into fluids, solids and fluid-solid interaction cases, where the solid tutorials are further categorised by physical phenomena:
 
