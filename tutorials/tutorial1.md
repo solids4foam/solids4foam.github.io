@@ -42,7 +42,7 @@ At 5 s, the expected temperature distribution across the wall thickness is expec
 
 ## Running the case
 
-As in all solids4foam tutorials, the tutorial case can be run using the included `Allrun` script, i.e. `$> ./Allrun`. In this case, the `Allrun` script is
+As in all solids4foam tutorials, the tutorial case can be run using the included `Allrun` script, i.e. `> ./Allrun`. In this case, the `Allrun` script is
 ```bash
 #!/bin/bash
 
@@ -64,7 +64,7 @@ solids4Foam::runApplication solids4Foam
 where the `solids4Foam::convertCaseFormat .` script makes minor changes to the case to make it compatible with your version of OpenFOAM/foam-extend. As can be seen, the mesh in the fluent format is converted to the OpenFOAM format before running the `solids4Foam` solver.
 
 ```tip
-A tutorial case can be cleaned and reset using the included `Allrun` script, i.e. `$> ./Allclean`.
+A tutorial case can be cleaned and reset using the included `Allrun` script, i.e. `> ./Allclean`.
 ```
 
 ---
@@ -78,17 +78,17 @@ When viewing the results in ParaView, it can be insightful to warp the geometry 
 
 ---
 
-# Delving deeper in the `hotSphere` tutorial
+# Delving deeper
 
 ---
 
-If you would like to learn more about the `hotSphere` case, then please continue; if not, how about you check out **my second tutorial (LINK TO BE ADDED)**.
+If you would like to learn more about the case, then please continue; if not, how about you check out **my second tutorial (LINK TO BE ADDED)**.
 
 ---
 
-## The `hotSphere` case structure
+## Case structure
 
-The `hotSphere` case structure follows the typical OpenFOAM case structure:
+The case structure follows the typical OpenFOAM case structure:
 ```
 hotSphere
 ├── 0

@@ -41,34 +41,34 @@ We suggest making a backup copy of the solids4foam tutorials in case you want to
 
 Change directory to the “run” directory (create the directory if needed):
 ```
-$> mkdir -p $FOAM_RUN && run
+> mkdir -p $FOAM_RUN && run
 ```
 
 Copy the solids4foam tutorials to the run directory; note: it is assumed here that solids4foam is installed at `$FOAM_RUN/..`:
 ```
-$> cp -r $FOAM_RUN/../solids4foam/tutorials .
+> cp -r $FOAM_RUN/../solids4foam/tutorials .
 ```
 
 All solids4foam tutorials contain `Allrun` and `Allclean` scripts. To run a given tutorial case, navigate to its directory and execute the `Allrun` script; for example, this can be done for the `hotSphere` tutorial with
 ```
-$> cd $FOAM_RUN/../solids4foam/tutorials/solids/thermoelasticity/hotSphere
-$> ./Allrun
+> cd $FOAM_RUN/../solids4foam/tutorials/solids/thermoelasticity/hotSphere
+> ./Allrun
 ```
 where we have assumed that solids4foam was downloaded to `$FOAM_RUN/..`.
 
 The tutorial results can be visualised in ParaView using one of the following commands:
 ```
-$> paraFoam
-$> paraFoam -nativeReader
-$> touch case.foam && paraview case.foam
+> paraFoam
+> paraFoam -nativeReader
+> touch case.foam && paraview case.foam
 ```
 
 ## Running the tutorials using a docker installation
 
 If you are using the solids4foam docker image, it is not convenient to directly open ParaView from within the image; so a workaround is to copy the tutorials to the shared directory in the docker container `/shared`:
 ```
-$> cd /shared
-$> cp -r $FOAM_RUN/../solids4foam/tutorials .
+> cd /shared
+> cp -r $FOAM_RUN/../solids4foam/tutorials .
 ```
 This `/shared` directory points directly to the `$HOME` directory on your physical computer (or where ever you mounted it). You can now open a second terminal (on your physical computer, NOT in the docker container) and use ParaView installed on your *physical computer* to view the cases in your `$HOME` directory.
 
@@ -76,17 +76,17 @@ Here is an example of using ParaView on your physical computer to view cases cre
 
 - In the Docker terminal
 ```
-$> cd /shared
-$> cp -r $FOAM_RUN/../solids4foam/tutorials .
-$> cd tutorials/solids/thermoelasticity/hotSphere
-$> ./Allrun
+> cd /shared
+> cp -r $FOAM_RUN/../solids4foam/tutorials .
+> cd tutorials/solids/thermoelasticity/hotSphere
+> ./Allrun
 ```
 - In the terminal on your physical computer
 ```
-$> cd ~/tutorials/solids/thermoelasticity/hotSphere
-$> touch case.foam && paraview case.foam
-$> # or paraFoam
-$> # or paraFoam -nativeReader
+> cd ~/tutorials/solids/thermoelasticity/hotSphere
+> touch case.foam && paraview case.foam
+> # or paraFoam
+> # or paraFoam -nativeReader
 ```
 
 

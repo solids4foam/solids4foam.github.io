@@ -37,7 +37,7 @@ For Re = 100, the flow is expected to be unsteady with vortices shedding from th
 
 ## Running the case
 
-The tutorial case can be run using the included `Allrun` script, i.e. `$> ./Allrun`. In this case, the `Allrun` script is
+The tutorial case can be run using the included `Allrun` script, i.e. `> ./Allrun`. In this case, the `Allrun` script is
 ```bash
 #!/bin/bash
 
@@ -75,7 +75,7 @@ fi
 where the `solids4Foam::convertCaseFormat .` script makes minor changes to the case to make it compatible with your version of OpenFOAM/foam-extend. As can be seen, the mesh in the fluent format is converted to the OpenFOAM format before running the `solids4Foam` solver. After the solver has finished, a `force.pdf` plot is generated if the `gnuplot` program is installed. 
 
 ```tip
-Remmber that a tutorial case can be cleaned and reset using the included `Allrun` script, i.e. `$> ./Allclean`.
+Remmber that a tutorial case can be cleaned and reset using the included `Allrun` script, i.e. `> ./Allclean`.
 ```
 
 ---
@@ -88,17 +88,17 @@ In the ParaView, a [von Kármán vortex street](https://en.wikipedia.org/wiki/K�
 
 ---
 
-# Delving deeper in the `cylinderInChannel` tutorial
+# Delving deeper
 
 ---
 
-If you would like to learn more about the `cylinderInChannel` case, then please continue; if not, how about you check out **my third tutorial (LINK TO BE ADDED)**.
+If you would like to learn more about the case, then please continue; if not, how about you check out **my third tutorial (LINK TO BE ADDED)**.
 
 ---
 
-## The `cylinderInChannel` case structure
+## Case structure
 
-The `cylinderInChannel` case follows the typical `pimpleFoam` (or `pimpleDyMFoam`) case structure:
+The case follows the typical `pimpleFoam` (or `pimpleDyMFoam`) case structure:
 
 ```
 cylinderInChannel
