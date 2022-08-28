@@ -42,7 +42,7 @@ At 5 s, the expected temperature distribution across the wall thickness is expec
 
 ## Running the case
 
-As in all solids4foam tutorials, the tutorial case can be run using the included `Allrun` script, i.e. `$~ ./Allrun`. In this case, the `Allrun` script is
+As in all solids4foam tutorials, the tutorial case can be run using the included `Allrun` script, i.e. `$> ./Allrun`. In this case, the `Allrun` script is
 ```bash
 #!/bin/bash
 
@@ -82,11 +82,11 @@ When viewing the results in ParaView, it can be insightful to warp the geometry 
 
 ---
 
-If you would like to learn more about the `hotSphere` case, then please continue; if not, how about you check out **my first fluids tutorial (LINK TO BE ADDED)**.
+If you would like to learn more about the `hotSphere` case, then please continue; if not, how about you check out **my second tutorial (LINK TO BE ADDED)**.
 
 ---
 
-## The hotSphere case structure
+## The `hotSphere` case structure
 
 The `hotSphere` case structure follows the typical OpenFOAM case structure:
 ```
