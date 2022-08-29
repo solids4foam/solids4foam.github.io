@@ -2,7 +2,11 @@
 sort: 4
 ---
 
-# How to cite
+# About
+
+---
+
+## How to cite
 
 If you use solids4foam for a publication, please cite
 
@@ -38,13 +42,13 @@ In addition, depending on the functionality selected, there may be additional re
 
 ---
 
-# Contributors
+## Contributors
 
 solids4foam is primarily developed by researchers at University College Dublin and the University of Zagreb with contributions from researchers across the OpenFOAM community. In particular, Philip Cardiff (Dublin) is the principal toolbox architect, with major scientific and implementation contributions from Željko Tuković (Zagreb).
 
 ---
 
-# A brief history
+## A brief history
 
 <!-- markdown-link-check-disable -->
 The finite volume solid mechanics procedures implemented in solids4foam can trace their routes to [Demirdzic, Martinovic and Ivankovic (1988)](https://tinyurl.com/demirdzic1988) and the subsequent developments of Demirdzic and co-workers. See the recent review article by [Cardiff and Demirdzic (2021)](https://link.springer.com/article/10.1007/s11831-020-09523-0#citeas) for more details.
