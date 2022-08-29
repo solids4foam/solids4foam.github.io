@@ -23,13 +23,13 @@ The corresponding bibtex entries are
 }
 
 @article{Tukovic2018,
-  author =       {{\v{Z}}. Tukovi\'{c} and A. Kara\v{c} and P. Cardiff and H. Jasak and A. Ivankovi\'{c}},
-  title =        {{OpenFOAM} finite volume solver for fluid-solid interaction},
+  author =       {\v{Z}. Tukovi\'{c} and A. Kara\v{c} and P. Cardiff and H. Jasak and A. Ivankovi\'{c}},
+  title =        {OpenFOAM finite volume solver for fluid-solid interaction},
   year =         {2018},
   volume =       {42},
   number =       {3},
   pages =        {1-31},
-  journal =      {Transactions of {FAMENA}},
+  journal =      {Transactions of FAMENA},
   doi =          {10.21278/TOF.42301}
 }
 ```
