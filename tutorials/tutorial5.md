@@ -1,1 +1,0 @@
-../imported/solids4foam/pipeCrush/README.md
