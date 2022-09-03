@@ -3,6 +3,7 @@ sort: 1
 ---
 
 # Installing solids4foam from source
+Installing solids4foam-v2.0 includes two steps, i.e., *downloading* the source code, and *compiling* it.
 
 ---
 
@@ -23,7 +24,36 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 | solids4foam-v2.0 | OpenFOAM-9 |
 
 ---
+## Downloading the solids4foam source code
 
+The solids4foam directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
+
+### Archive file
+solids4foam-v2.0 can be download as an archive file:
+- TGZ: **link to be added** - extracted with `$> unzip solids4foam.zip`
+- ZIP: **link to be added** - extracted with `$> tar xzf solids4foam.tgz`
+
+
+### Git repository
+Alternatively, solids4foam-v2.0 can be downloaded using git with
+```bash
+$> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+```
+or
+```bash
+$> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
+```
+
+If you would like the latest `development` branch, it can be downloaded with
+```bash
+$> git clone --branch development https://github.com/solids4foam/solids4foam.git
+```
+or
+```bash
+$> git clone --branch development git@github.com:solids4foam/solids4foam.git
+```
+
+---
 ## Dependencies
 
 ```tip
@@ -97,36 +127,6 @@ $> brew install gnuplot
 
 ---
 
-## Downloading the solids4foam source code
-
-The solids4foam directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
-
-### Archive file
-solids4foam-v2.0 can be download as an archive file:
-- TGZ: **link to be added** - extracted with `$> unzip solids4foam.zip`
-- ZIP: **link to be added** - extracted with `$> tar xzf solids4foam.tgz`
-
-
-### Git repository
-Alternatively, solids4foam-v2.0 can be downloaded using git with
-```bash
-$> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
-```
-or
-```bash
-$> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
-```
-
-If you would like the latest `development` branch, it can be downloaded with
-```bash
-$> git clone --branch development https://github.com/solids4foam/solids4foam.git
-```
-or
-```bash
-$> git clone --branch development git@github.com:solids4foam/solids4foam.git
-```
-
----
 
 ## Building solids4foam
 
