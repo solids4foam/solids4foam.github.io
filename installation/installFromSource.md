@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Installing solids4foam from source
+# Installing solids4foam
 Installing solids4foam-v2.0 includes two steps, i.e., *downloading* the source code, and *compiling* it.
 
 ---
