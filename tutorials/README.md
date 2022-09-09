@@ -30,7 +30,7 @@ All solids4foam cases require a `physicsProperties` dictionary in the `constant`
 type    solid;
 //type  fluidSolidInteraction;
 ```
-If a solid analysis is selected, then a `solidProperties` dictionary is required in the constant directory; similarly, the `fluidProperties` dictionary is required for a fluid analysis, and the `fsiProperties` dictionary for a fluid-solid interaction analysis. These dictionaries let us specify the details of what type of solid, fluid or fluid-solid interaction analysis is to be performed.
+If a solid analysis is selected, then a `solidProperties` dictionary is required in the constant directory; similarly, the `fluidProperties` dictionary is required for a fluid analysis, and the `fsiProperties` dictionary for a fluid-solid interaction analysis. These dictionaries let us specify what type of solid, fluid or fluid-solid interaction analysis is to be performed.
 
 
 ## Running the tutorials using a native installation
@@ -39,7 +39,7 @@ If a solid analysis is selected, then a `solidProperties` dictionary is required
 We suggest making a backup copy of the solids4foam tutorials in case you want to reset them. Alternatively, you can reset them with git.
 ```
 
-Change directory to the “run” directory (create the directory if needed):
+Change the directory to the “run” directory (create the directory if needed):
 ```
 > mkdir -p $FOAM_RUN && run
 ```

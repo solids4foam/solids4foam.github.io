@@ -27,7 +27,7 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 ## Dependencies
 
 ```tip
-These dependencies are optional. If you would like to get up and running quickly, you can skip them!
+These dependencies are optional. If you want to get up and running quickly, you can skip them!
 ```
 Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the full set of functionalities:
 
@@ -41,17 +41,23 @@ Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have a
 
 ### Eigen
 
-Before building solids4foam, the `EIGEN_DIR` environment variable can be set to the local Eigen installation location. If `EIGEN_DIR` is not set then solids4foam will download its own local copy of Eigen.
+Before building solids4foam, the `EIGEN_DIR` environment variable can be set to the local Eigen installation location. If `EIGEN_DIR` is not set, then solids4foam will download a local copy of Eigen.
+
+If you would like solids4foam **not** to use Eigen (e.g. due to version conflicts when using preCICE), set the `S4F_NO_USE_EIGEN` environment variable, e.g. add the following to your bashrc
+
+```bash
+> export S4F_NO_USE_EIGEN=1
+```
 
 ### PETSc
 
 The binaries for PETSc can be installed on Ubuntu with
 ```bash
-$> sudo apt install petsc-dev
+> sudo apt install petsc-dev
 ```
 Or, on macOS with
 ```bash
-$> brew install petsc
+> brew install petsc
 ```
 Alternatively, and more generally, PETSc can be installed following the instructions at [https://petsc.org/release/](https://petsc.org/release/).
 
@@ -61,18 +67,18 @@ Once PETSC has been installed, the `PETSC_DIR` environment variable should be se
 
 gfortran can be installed on Ubuntu with:
 ```bash
-$> sudo apt-get install gfortran
+> sudo apt-get install gfortran
 ```
 Or, on macOS with
 ```bash
-$> brew install gcc
+> brew install gcc
 ```
 
 ```warning
 If the GCC compilers were used to compile OpenFOAM or foam-extend, then a compatible version of gfortran should be installed. For example, gfortran-7 should be used with gcc-7.
 ```
 
-solids4foam will use gfortran if the `gfortran` executable is found in the `$PATH`; if it is not found then solids4foam will disable functionalities that require gfortran.
+solids4foam will use gfortran if the `gfortran` executable is found in the `$PATH`; if not, solids4foam will disable functionalities that require gfortran.
 
 ### cfmesh
 
@@ -80,7 +86,7 @@ A small number of tutorials require the `cartesianMesh` utility from cfmesh. If 
 
 ```tip
 - **foam-extend**: cfmesh is included in foam-extend.
-- **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be installed from (https://develop.openfoam.com/Community/integration-cfmesh)[https://develop.openfoam.com/Community/integration-cfmesh].
+- **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be installed from [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
 - **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org versions.
 ```
 
@@ -88,11 +94,11 @@ A small number of tutorials require the `cartesianMesh` utility from cfmesh. If 
 
 gnuplot can be installed on Ubuntu with:
 ```bash
-$> sudo apt-get install gnuplot
+> sudo apt-get install gnuplot
 ```
 Or, on macOS with
 ```bash
-$> brew install gnuplot
+> brew install gnuplot
 ```
 
 ---
@@ -102,28 +108,28 @@ $> brew install gnuplot
 The solids4foam directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
 
 ### Archive file
-solids4foam-v2.0 can be download as an archive file:
-- TGZ: **link to be added** - extracted with `$> unzip solids4foam.zip`
-- ZIP: **link to be added** - extracted with `$> tar xzf solids4foam.tgz`
+solids4foam-v2.0 can be downloaded as an archive file:
+- TGZ: **link to be added** - extracted with `> unzip solids4foam.zip`
+- ZIP: **link to be added** - extracted with `> tar xzf solids4foam.tgz`
 
 
 ### Git repository
 Alternatively, solids4foam-v2.0 can be downloaded using git with
 ```bash
-$> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
 ```
 or
 ```bash
-$> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
+> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
 ```
 
 If you would like the latest `development` branch, it can be downloaded with
 ```bash
-$> git clone --branch development https://github.com/solids4foam/solids4foam.git
+> git clone --branch development https://github.com/solids4foam/solids4foam.git
 ```
 or
 ```bash
-$> git clone --branch development git@github.com:solids4foam/solids4foam.git
+> git clone --branch development git@github.com:solids4foam/solids4foam.git
 ```
 
 ---
@@ -132,22 +138,22 @@ $> git clone --branch development git@github.com:solids4foam/solids4foam.git
 
 Before building solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the table above.
 
-To build solids4foam, enter the solids4foam directory and exectue the included Allwmake script, e.g.
+To build solids4foam, enter the solids4foam directory and execute the included Allwmake script, e.g.
 ```bash
-$> cd solids4foam
-$> ./Allwmake 2>&1 | tee log.Allwmake
+> cd solids4foam
+> ./Allwmake 2>&1 | tee log.Allwmake
 ```
 
 You can expect this build to last about 5 minutes, depending on your hardware.
 
-If solids4foam built successfully, you will be presented with the message
+If solids4foam is built successfully, you will be presented with the following message:
 ```bash
 There were no build errors: enjoy solids4foam!
 To test the installation, run:
     > cd tutorials && ./Alltest
 ```
 
-If the build encountered errors, you will receive the following message
+If the build encounters errors, you will receive the following message:
 ```bash
 ** BUILD ERROR **"
 There were build errors in the following logs:
@@ -156,31 +162,31 @@ There were build errors in the following logs:
 Please examine these logs for additional details
 ```
 
-You can examine the source of the errors in the `log.Allwmake` file within the solids4foam parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you beleive that you have encountered a bug then please create a new issue at [https://github.com/solids4foam/solids4foam/issues](https://github.com/solids4foam/solids4foam/issues).
+You can examine the source of the errors in the `log.Allwmake` file within the solids4foam parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you believe that you have encountered a bug, then please create a new issue at [https://github.com/solids4foam/solids4foam/issues](https://github.com/solids4foam/solids4foam/issues).
 
 ---
 
 ## Testing the installation
 
-As instructed after a succesful build, you can test that the tutorials using the following commands, executed from the solids4foam parent directory
+As instructed, after a successful build, you can test the tutorials using the following commands, executed from the solids4foam parent directory.
 ```bash
-$> cd tutorials && ./Alltest
+> cd tutorials && ./Alltest
 ```
 
 You can expect these tests to last a few minutes.
 
-If the tests pass, you will receive the message
+If the tests pass, you will receive the message:
 ```bash
 All tests passed: enjoy solids4foam.
 ```
 This means your solids4foam installation is working as expected.
 
-If any of the tests fail, you will receive the message
+If any of the tests fail, you will receive the message:
 ```bash
-The solids4Foam solver failed on the following cases:
+The solids4Foam solver failed in the following cases:
 <LIST OF FAILING TUTORIALS>
 ```
-or, if the errors do not come from the solids4foam calls, but elsewhere
+or if the errors do not come from the solids4foam calls but elsewhere
 ```bash
 The following commands failed:
 <LIST OF FAILING COMMANDS AND TUTORIALS>
@@ -190,4 +196,4 @@ The following commands failed:
 
 ## What next?
 
-Please see the **tutorial guide (LINK TO BE ADDED)**.
+Please see the [tutorial guide](../tutorials/README.md).
