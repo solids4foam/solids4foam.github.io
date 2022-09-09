@@ -1,0 +1,24 @@
+# Check all links in markdown files
+name: Linkcheck
+
+on:
+  push:
+    paths:
+    - '*.md'
+    - '/documentation/*.md'
+    - '/installation/*.md'
+    - '/tutorials/*.md'
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        submodules: recursive
+    - name: md-linkcheck
+      uses: ocular-d/md-linkcheck-action@master
