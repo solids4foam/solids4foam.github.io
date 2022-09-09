@@ -39,15 +39,13 @@ solids4foam builds on and generalises the [Extend Bazaar FSI toolbox](https://ti
 
 ## How to cite
 
-If you use solids4foam for a publication, please cite
+If you use solids4foam for a publication, please cite the following references:
 
 > P. Cardiff, A Karac, P. De Jaeger, H. Jasak, J. Nagy, A. Ivanković, Ž. Tuković: An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations. arXiv:1808.10736v2, 2018, available at https://arxiv.org/abs/1808.10736
-
-and
-
+>
 > Ž. Tuković, A. Karač, P. Cardiff, H. Jasak, A. Ivanković: OpenFOAM finite volume solver for fluid-solid interaction.  Transactions of Famena, 42 (3), pp. 1-31, 2018, 10.21278/TOF.42301.
 
-The corresponding bibtex entries are
+The corresponding BibTeX entries are
 
 ```
 @article{Cardiff2018,
@@ -75,6 +73,6 @@ In addition, depending on the functionality selected, there may be additional re
 
 ## Contributors
 
-solids4foam is primarily developed by researchers at University College Dublin and the University of Zagreb with contributions from researchers across the OpenFOAM community. In particular, Philip Cardiff (Dublin) is the principal toolbox architect, with major scientific and implementation contributions from Željko Tuković (Zagreb).
+solids4foam is primarily developed by researchers at University College Dublin and the University of Zagreb with contributions from researchers across the OpenFOAM community. In particular, Philip Cardiff (Dublin) is the principal toolbox architect, with significant scientific and implementation contributions from Željko Tuković (Zagreb).
 
 A full list of contributors can be found in the [contributors file](./CONTRIBUTORS).
