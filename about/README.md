@@ -75,4 +75,4 @@ In addition, depending on the functionality selected, there may be additional re
 
 solids4foam is primarily developed by researchers at University College Dublin and the University of Zagreb with contributions from researchers across the OpenFOAM community. In particular, Philip Cardiff (Dublin) is the principal toolbox architect, with significant scientific and implementation contributions from Željko Tuković (Zagreb).
 
-A full list of contributors can be found in the [contributors file](./CONTRIBUTORS).
+A full list of contributors can be found in the [contributors file](./CONTRIBUTORS.md).
