@@ -7,7 +7,7 @@ Installing solids4foam-v2.0 includes two easy steps, i.e.,
  - [*downloading* the source code](#downloading-the-solids4foam-source-code), and
  -  [*compiling*](#compiling-solids4foam) it. 
 
-Before going through these steps, make sure you have a working version of OpenFOAM. If you have not OpenFOAM installed yet, we suggest downloading one the OpenFOAM versions compatible with solids4foam, listed in the table below.
+Before going through these steps, make sure you have a working version of OpenFOAM. If you have not OpenFOAM installed yet, we suggest downloading one of the OpenFOAM versions compatible with solids4foam, listed in the table below.
 
 ## Table 1: OpenFOAM versions compatible with solids4foam 
 | solids4foam version | OpenFOAM version  |
@@ -26,8 +26,8 @@ Before going through these steps, make sure you have a working version of OpenFO
 ## Downloading the source code
 
 There are two ways to download the source code, ie,
-- [Archive file](#archive-file);
-- [Git repository](#git-repository).
+- downloading the [Archive file](#archive-file);
+- downloading from [Git repository](#git-repository).
 ### Archive file
 solids4foam-v2.0 can be downloaded as an archive file. Two different archives are provided below;
 you need to download one of them only. 
@@ -38,7 +38,7 @@ It can be downloaded to any reasonable location on your computer; we suggest pla
 in `$FOAM_RUN`. In order to know where this directory is in your computer, open a terminal and
 enter 
 ```bash
-pwd $FOAM_RUN
+echo $FOAM_RUN
 ```
 After download, depending on whether `TGZ` or `ZIP` archive is downloaded, it can be extracted
 using the commends below in terminal, respectively:
@@ -58,12 +58,20 @@ To use a SSH key, the above command changes to
 ```bash
 $> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
 ```
-If you would like the latest `development` branch, see [`development` branch](#development-branch)
+If you would like the latest `development` branch, see [`development` branch](#development-branch).
 ## Compiling solids4foam
 
-Before compiling solids4foam, a compatible version of OpenFOAM should be sourced: see [Table](#table-1-openfoam-versions-compatible-with-solids4foam).
+Before compiling solids4foam, a compatible version of OpenFOAM should be sourced, e.g., if you use 
+OpenFOAM 9, and it is installed on `/opt` directory, you need to enter the following command in your
+terminal
+```bash
+. /opt/openfoam9/etc/bashrc
+```
+To see the versions of OpenFOAM compatible with solids4foam, see [Table 1](#table-1-openfoam-versions-compatible-with-solids4foam).
+Also, to have access to the full set of functionalities of solids4foam, you may need to install
+some dependencies first (See [Dependencies](#dependencies)).
 
-To compile solids4foam, enter the solids4foam directory and exectue the included Allwmake script, e.g.
+To compile solids4foam, enter the solids4foam directory and exectue the included Allwmake script, e.g.,
 ```bash
  cd solids4foam
  ./Allwmake 2>&1 | tee log.Allwmake
@@ -110,12 +118,14 @@ If you received errors, refer to [Compilation errors](#compilation-errors).
 ## What next?
 
 Please see the **tutorial guide (LINK TO BE ADDED)**.
+
+---
 ## `development` branch
 If you would like the latest `development` branch, it can be downloaded with
 ```bash
 $> git clone --branch development https://github.com/solids4foam/solids4foam.git
 ```
-or
+or a SSH key,
 ```bash
 $> git clone --branch development git@github.com:solids4foam/solids4foam.git
 ```
