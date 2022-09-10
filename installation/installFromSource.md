@@ -7,8 +7,9 @@ Installing solids4foam-v2.0 includes two easy steps, i.e.,
  - [*downloading* the source code](#downloading-the-solids4foam-source-code), and
  -  [*compiling*](#compiling-solids4foam) it. 
 
-Before going through these steps, make sure you have a working version of OpenFOAM. If you have not OpenFOAM installed yet, we suggest downloading one the OpenFOAM versions compatible with solidsfoam, listed in the table below.
+Before going through these steps, make sure you have a working version of OpenFOAM. If you have not OpenFOAM installed yet, we suggest downloading one the OpenFOAM versions compatible with solids4foam, listed in the table below.
 
+## Table 1: OpenFOAM versions compatible with solids4foam 
 | solids4foam version | OpenFOAM version  |
 | ------- | -------- |
 | solids4foam-v1.0 | foam-extend-4.0 |
@@ -57,43 +58,31 @@ To use a SSH key, the above command changes to
 ```bash
 $> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
 ```
+If you would like the latest `development` branch, see [`development` branch](#development-branch)
 ## Compiling solids4foam
 
-Before compiling solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the table above.
+Before compiling solids4foam, a compatible version of OpenFOAM should be sourced: see [Table](#table-1-openfoam-versions-compatible-with-solids4foam).
 
-To build solids4foam, enter the solids4foam directory and exectue the included Allwmake script, e.g.
+To compile solids4foam, enter the solids4foam directory and exectue the included Allwmake script, e.g.
 ```bash
-$> cd solids4foam
-$> ./Allwmake 2>&1 | tee log.Allwmake
+ cd solids4foam
+ ./Allwmake 2>&1 | tee log.Allwmake
 ```
 
-You can expect this build to last about 5 minutes, depending on your hardware.
+You can expect the compilation process to last about 5 minutes, depending on your hardware.
 
-If solids4foam built successfully, you will be presented with the message
+If solids4foam is compiled successfully, you will be presented with the message
 ```bash
 There were no build errors: enjoy solids4foam!
 To test the installation, run:
-    > cd tutorials && ./Alltest
+     cd tutorials && ./Alltest
 ```
-
-If the build encountered errors, you will receive the following message
-```bash
-** BUILD ERROR **"
-There were build errors in the following logs:
-<LIST OF COMPILATION ERRORS>
-
-Please examine these logs for additional details
-```
-
-You can examine the source of the errors in the `log.Allwmake` file within the solids4foam parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you beleive that you have encountered a bug then please create a new issue at [https://github.com/solids4foam/solids4foam/issues](https://github.com/solids4foam/solids4foam/issues).
-
----
-
+If you received errors, refer to [Compilation errors](#compilation-errors).
 ## Testing the installation
 
-As instructed after a succesful build, you can test that the tutorials using the following commands, executed from the solids4foam parent directory
+You can test the tutorials using the following commands, executed from the solids4foam directory
 ```bash
-$> cd tutorials && ./Alltest
+cd tutorials && ./Alltest
 ```
 
 You can expect these tests to last a few minutes.
@@ -114,13 +103,14 @@ or, if the errors do not come from the solids4foam calls, but elsewhere
 The following commands failed:
 <LIST OF FAILING COMMANDS AND TUTORIALS>
 ```
+If you received errors, refer to [Compilation errors](#compilation-errors).
 
 ---
 
 ## What next?
 
 Please see the **tutorial guide (LINK TO BE ADDED)**.
-### `development` branch
+## `development` branch
 If you would like the latest `development` branch, it can be downloaded with
 ```bash
 $> git clone --branch development https://github.com/solids4foam/solids4foam.git
@@ -131,12 +121,27 @@ $> git clone --branch development git@github.com:solids4foam/solids4foam.git
 ```
 
 ---
+## Compilation errors
+
+If the compilation encountered errors, you will receive the following message
+```bash
+** BUILD ERROR **"
+There were build errors in the following logs:
+<LIST OF COMPILATION ERRORS>
+
+Please examine these logs for additional details
+```
+
+You can examine the source of the errors in the `log.Allwmake` file within the solids4foam parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you beleive that you have encountered a bug then please create a new issue at [https://github.com/solids4foam/solids4foam/issues](https://github.com/solids4foam/solids4foam/issues).
+
+---
+
 ## Dependencies
 
 ```tip
 These dependencies are optional. If you would like to get up and running quickly, you can skip them!
 ```
-Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the full set of functionalities:
+Beyond a working version of OpenFOAM, solids4foam does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the full set of functionalities:
 
 | Dependency  | Required for  |
 | ------- | -------- |
