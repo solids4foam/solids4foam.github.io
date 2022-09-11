@@ -10,6 +10,7 @@ Installing solids4foam-v2.0 includes two easy steps, i.e.,
 Before going through these steps, make sure you have a working version of OpenFOAM. If you have not OpenFOAM installed yet, we suggest downloading one of the OpenFOAM versions compatible with solids4foam, listed in the table below.
 
 ## Table 1: OpenFOAM versions compatible with solids4foam 
+
 | solids4foam version | OpenFOAM version  |
 | ------- | -------- |
 | solids4foam-v1.0 | foam-extend-4.0 |
