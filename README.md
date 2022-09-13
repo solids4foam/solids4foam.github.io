@@ -6,19 +6,19 @@
 ---
 
 ```warning
-This website is under construction.
+solids4foam is currently being migrated from [Bitbucket](https://bitbucket.org/philip_cardiff/solids4foam-release) to [Github](https://github.com/solids4foam/solids4foam).
 ```
 
 ### What is solids4foam?
 
-solids4foam is a toolbox for performing solid mechanics and fluid-solid interaction simulations in OpenFOAM.
+solids4foam is a toolbox for performing solid mechanics and fluid-solid interaction simulations in OpenFOAM® and foam-extend.
 
 
 ### Where do I start?
 
-Please see the [installation guide](installation/README.md) followed by the [tutorials guide](tutorials/README.md).
+Please see the [installation guide](installation/README.md), followed by the [tutorial guide](tutorials/README.md).
 
 
-### Disclaimer
+### Acknowledgement
 
-OPENFOAM® is a registered trademark of ESI Group. solids4foam is not approved or endorsed by ESI Group, the producer of the OpenFOAM software and owner of the OPENFOAM® and OpenCFD® trademarks.
+OPENFOAM® is a registered trademark of OpenCFD Limited, producer and distributor of the OpenFOAM software via [www.openfoam.com](www.openfoam.com).
