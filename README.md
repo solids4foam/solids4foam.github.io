@@ -21,4 +21,4 @@ Please see the [installation guide](installation/README.md), followed by the [tu
 
 ### Acknowledgement
 
-OPENFOAM® is a registered trademark of OpenCFD Limited, producer and distributor of the OpenFOAM software via [www.openfoam.com](www.openfoam.com).
+OPENFOAM® is a registered trademark of OpenCFD Limited, producer and distributor of the OpenFOAM software via [www.openfoam.com](https://www.openfoam.com).
