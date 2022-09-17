@@ -22,6 +22,18 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 | solids4foam-v2.0 | OpenFOAM-v2012 |
 | solids4foam-v2.0 | OpenFOAM-9 |
 
+### Note on using foam-extend-4.1
+If you are using foam-extend-4.1, the solids4foam `Allwmake` script will ask you to fix two files in the foam-extend-4.1 installation:
+  * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The solids4foam solver will work correctly, however, you may like to make this fix if you plan to catch the return valve from the solver.
+  * `pointBoundaryMesh.C`: without this fix, cases which involve mesh topological changes will given a segmentation fault. For example, when using `crackerFvMesh`.
+
+To make these fixes, follow the instructions from the `Allwmake` script when [building solids4foam](#building-solids4foam).
+
+If you do not want to (or cannot) make these changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before running the Allwmake script when [building solids4foam](#building-solids4foam), e.g.
+```
+> export S4F_NO_FILE_FIXES=1 && ./Allwmake
+```
+
 ---
 
 ## Dependencies
