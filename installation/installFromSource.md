@@ -22,6 +22,18 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 | solids4foam-v2.0 | OpenFOAM-v2012 |
 | solids4foam-v2.0 | OpenFOAM-9 |
 
+### Note on using foam-extend-4.1
+If you are using foam-extend-4.1, the solids4foam `Allwmake` script will ask you to fix two files in the foam-extend-4.1 installation:
+  * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The solids4foam solver will work correctly; however, you may like to make this fix if you plan to catch the return valve from the solver.
+  * `pointBoundaryMesh.C`: without this fix, cases involving mesh topological changes will have a segmentation fault. For example, when using `crackerFvMesh`.
+
+To make these fixes, follow the instructions from the `Allwmake` script when [building solids4foam](#building-solids4foam).
+
+If you do not want to (or cannot) make these changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before running the Allwmake script when [building solids4foam](#building-solids4foam), e.g.
+```
+> export S4F_NO_FILE_FIXES=1 && ./Allwmake
+```
+
 ---
 
 ## Dependencies
@@ -29,7 +41,7 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 ```tip
 These dependencies are optional. If you want to get up and running quickly, you can skip them!
 ```
-Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the full set of functionalities:
+Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the complete set of functionalities:
 
 | Dependency  | Required for  |
 | ------- | -------- |
@@ -87,7 +99,7 @@ A small number of tutorials require the `cartesianMesh` utility from cfmesh. If 
 ```tip
 - **foam-extend**: cfmesh is included in foam-extend.
 - **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be installed from [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
-- **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org versions.
+- **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org.
 ```
 
 ### gnuplot
@@ -109,34 +121,21 @@ The solids4foam directory can be downloaded to any reasonable location on your c
 
 ### Archive file
 solids4foam-v2.0 can be downloaded as an archive file:
-- TGZ: **link to be added** - extracted with `> unzip solids4foam.zip`
-- ZIP: **link to be added** - extracted with `> tar xzf solids4foam.tgz`
+- [solids4foam-v2.0-alpha.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0-alpha.zip): extracted with `> unzip v2.0-alpha.tar.gz`
+- [solids4foam-v2.0-alpha.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0-alpha.tar.gz): extracted with `> tar xzf unzip v2.0-alpha.tar.gz`
 
 
 ### Git repository
-Alternatively, solids4foam-v2.0 can be downloaded using git with
+Alternatively, `solids4foam-v2.0-alpha` can be downloaded using git with
 ```bash
-> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
-```
-or
-```bash
-> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
-```
-
-If you would like the latest `development` branch, it can be downloaded with
-```bash
-> git clone --branch development https://github.com/solids4foam/solids4foam.git
-```
-or
-```bash
-> git clone --branch development git@github.com:solids4foam/solids4foam.git
+> git clone --branch v2.0-alpha git@github.com:solids4foam/solids4foam.git
 ```
 
 ---
 
 ## Building solids4foam
 
-Before building solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the table above.
+Before building solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the [table above](#supported-versions-of-openfoam).
 
 To build solids4foam, enter the solids4foam directory and execute the included Allwmake script, e.g.
 ```bash
