@@ -19,6 +19,11 @@ solids4foam is a toolbox for performing solid mechanics and fluid-solid interact
 Please see the [installation guide](installation/README.md), followed by the [tutorial guide](tutorials/README.md).
 
 
+### Disclaimer
+
+This offering is not approved or endorsed by OpenCFD Limited, producer and distributor of the OpenFOAM software via [www.openfoam.com](https://www.openfoam.com), and owner of the OPENFOAM® and OpenCFD® trade marks.
+
+
 ### Acknowledgement
 
 OPENFOAM® is a registered trademark of OpenCFD Limited, producer and distributor of the OpenFOAM software via [www.openfoam.com](https://www.openfoam.com).
