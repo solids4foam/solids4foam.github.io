@@ -2,7 +2,20 @@
 sort: 1
 ---
 
-# Installing solids4foam from source
+# Installing solids4foam from Source
+
+---
+
+## Quickstart
+
+Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0-alpha:
+```bash
+> git clone --branch v2.0-alpha git@github.com:solids4foam/solids4foam.git
+> cd solids4foam && ./Allwmake && ./Alltest
+```
+
+For a detailed installation guide, see below.
+
 
 ---
 
@@ -12,20 +25,20 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 
 | solids4foam version | OpenFOAM version  |
 | ------- | -------- |
-| solids4foam-v1.0 | foam-extend-4.0 |
-| solids4foam-v1.0 | foam-extend-4.1 |
-| solids4foam-v1.0 | OpenFOAM-v1812 |
-| solids4foam-v1.0 | OpenFOAM-v1912 |
-| solids4foam-v1.0 | OpenFOAM-7 |
+| solids4foam-v1.* | foam-extend-4.0 |
+|  | foam-extend-4.1 |
+|  | OpenFOAM-v1812 |
+|  | OpenFOAM-v1912 |
+|  | OpenFOAM-7 |
 | ------- | -------- |
-| solids4foam-v2.0 | foam-extend-4.1 |
-| solids4foam-v2.0 | OpenFOAM-v2012 |
-| solids4foam-v2.0 | OpenFOAM-9 |
+| solids4foam-v2.* | foam-extend-4.1 |
+|  | OpenFOAM-v2012 |
+|  | OpenFOAM-9 |
 
 ### Note on using foam-extend-4.1
 If you are using foam-extend-4.1, the solids4foam `Allwmake` script will ask you to fix two files in the foam-extend-4.1 installation:
-  * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The solids4foam solver will work correctly; however, you may like to make this fix if you plan to catch the return valve from the solver.
-  * `pointBoundaryMesh.C`: without this fix, cases involving mesh topological changes will have a segmentation fault. For example, when using `crackerFvMesh`.
+  * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The solids4foam solver will work correctly; however, you may like to fix this if you plan to catch the return valve from the solver.
+  * `pointBoundaryMesh.C`: without this fix, cases involving topological mesh changes will have a segmentation fault. For example, when using `crackerFvMesh`.
 
 To make these fixes, follow the instructions from the `Allwmake` script when [building solids4foam](#building-solids4foam).
 
@@ -39,17 +52,17 @@ If you do not want to (or cannot) make these changes, please set the environment
 ## Dependencies
 
 ```tip
-These dependencies are optional. If you want to get up and running quickly, you can skip them!
+These dependencies are optional. You can skip them if you want to get up and running quickly.
 ```
 Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the complete set of functionalities:
 
-| Dependency  | Required for  |
+| Dependency  | Functionality Provided |
 | ------- | -------- |
 | Eigen | Block-coupled cell-centred and vertex-centred solid models linear solvers |
 | PETSc | Block-coupled vertex-centred solid models linear solvers |
 | gfortran | Abaqus UMAT mechanical law interface |
 | cfmesh | Some tutorials use cfmesh for creating the meshes |
-| gnuplot | Some tutorials use gnuplot to generate graphs after running the solver |
+| gnuplot | Some tutorials use Gnuplot to generate graphs after running the solver |
 
 ### Eigen
 
@@ -135,15 +148,14 @@ Alternatively, `solids4foam-v2.0-alpha` can be downloaded using git with
 
 ## Building solids4foam
 
-Before building solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the [table above](#supported-versions-of-openfoam).
+Before building solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the [table above](#supported-versions-of-openfoam). To build solids4foam, enter the solids4foam directory and execute the included Allwmake script, e.g.
 
-To build solids4foam, enter the solids4foam directory and execute the included Allwmake script, e.g.
 ```bash
 > cd solids4foam
 > ./Allwmake 2>&1 | tee log.Allwmake
 ```
 
-You can expect this build to last about 5 minutes, depending on your hardware.
+Depending on your hardware, you can expect this build to last about 5 minutes.
 
 If solids4foam is built successfully, you will be presented with the following message:
 ```bash
@@ -161,7 +173,7 @@ There were build errors in the following logs:
 Please examine these logs for additional details
 ```
 
-You can examine the source of the errors in the `log.Allwmake` file within the solids4foam parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you believe that you have encountered a bug, then please create a new issue at [https://github.com/solids4foam/solids4foam/issues](https://github.com/solids4foam/solids4foam/issues).
+You can examine the source of the errors in the `log.Allwmake` file within the solids4foam parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you believe you have encountered a bug, please create a new issue at [https://github.com/solids4foam/solids4foam/issues](https://github.com/solids4foam/solids4foam/issues).
 
 ---
 
