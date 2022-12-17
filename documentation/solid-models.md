@@ -86,7 +86,7 @@ $$
     \boldsymbol{\Gamma} = J \boldsymbol{F}^{-T} \cdot \boldsymbol{\Gamma}_o
 $$
 
-Where $$\boldsymbol{F} = \textbf{I} + (\boldsymbol{\nabla} \boldsymbol{d})^T$$ is the *deformation gradient*, which represents a map between material in the deformed and initial configurations; $$\textbf{I} is the second-order identity tensor, $$\boldsymbol{d}$$ is the displacement vector and $$J = \text{det}[\boldsymbol{F}] = \frac{\Omega}{\Omega_o}$$ is known as the Jacobian.
+Where $$\boldsymbol{F} = \textbf{I} + (\boldsymbol{\nabla} \boldsymbol{d})^T$$ is the *deformation gradient*, which represents a map between material in the deformed and initial configurations; $$\textbf{I}$$ is the second-order identity tensor, $$\boldsymbol{d}$$ is the displacement vector and $$J = \text{det}[\boldsymbol{F}] = \frac{\Omega}{\Omega_o}$$ is known as the Jacobian.
 
 Using Nanson's relation and the definition of $$J$$, the conservation of linear momentum can be expressed in the total Lagrangian form:
 
