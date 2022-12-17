@@ -23,9 +23,11 @@ In solids4foam, solid models are classes which solve the governing equations in 
 ## Formulating the Governing Equations
 
 In solids4foam, most solid models take the conservation of linear momentum as the governing equation:
-```math
+
+$$
     \frac{\partial (\rho \boldsymbol{v})}{\partial t} =  \boldsymbol{\nabla} \cdot \boldsymbol{\sigma} + \rho \boldsymbol{b}
-```
+$$
+
 Where $$\rho$$ is the density, $$\boldsymbol{v}$$ is the velocity vector, $$\boldsymbol{\nabla}$$ is the del operator, $$\boldsymbol{\sigma}$$ is the Cauchy stress tensor, and $$\boldsymbol{b}$$ is a body force vector (e.g., gravity).
 
 ```note
@@ -34,9 +36,11 @@ Vectors and tensors are represented here in bold font, while scalars are not.
 A Lagrangian approach is assumed, which means that the advection/convection term disappears. One way to think of this is to consider a moving-mesh Eulerian approach (e.g. Arbitrary Eulerian-Lagrangian) where the mesh is moved at the same velocity as the underlying material; in that way, no mass enters or leaves each cell, and mass continuity is automatically satisfied. 
 
 We can equivalently express the governing equation in strong integral form:
-```math
+
+$$
     \int_\Omega \frac{\partial (\rho \boldsymbol{v})}{\partial t} \; \text{d}\Omega =  \oint_\Gamma \boldsymbol{n} \cdot \boldsymbol{\sigma} \; \text{d}\Gamma + \int_\Omega \rho \boldsymbol{b} \; \text{d}\Omega
-```
+$$
+
 Where $$\Omega$$ and $$\Gamma$$ are the volume and area of the region over which we are integrating.
 
 A key decision to be made when formulating a solution approach is to consider whether the deformations are expected to be *large* or not. To answer this question, consider what happens to a solid material when a force is applied: Figure 1 shows an example solid at time $$t_o$$, represented by the ubiquitous continuum mechanics potato; forces are then applied to this solid and it is deformed at time $$t$$. In general, a differential piece of material will change its volume from d$$\Omega_o$$ to d$$\Omega$$; similarly, a differential piece of the surface will change its area magnitude from d$$\Gamma_o$$ to d$$\Gamma$$ and its unit normal from $$\boldsymbol{n}_o$$ to $$\boldsymbol{n}$$. From this, it is clear that the volumes and areas in the integral form of the momentum equation are a function of the deformation field; consequently, even if the stress field is a linear function of the velocity (or displacement) field, the momentum equation will still be a nonlinear function of velocity (or displacement), as $$\Omega$$ and $$\Gamma$$ are a function of $$\boldsymbol{v}$$.
@@ -51,10 +55,12 @@ In many practical cases, these changes in volume, area and orientation are negli
 ### Linear Geometry Approach
 
 If the change in volume, area and orientation of cells in the mesh is small, then the linear geometry assumption is valid. In that case, the linear momentum conservation can be expressed as
-```math
+
+$$
     \int_{\Omega_o} \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} \; \text{d}\Omega_o =
     \oint_{\Gamma_o} \boldsymbol{n}_o \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_o + \int_{\Omega_o} \rho_o \boldsymbol{b} \; \text{d}\Omega_o
-```
+$$
+
 Where subscript $$o$$ indicates a quantity in the initial configuration; or, concretely, the equation is integrated over the initial mesh, which is known, and there is no need to update the mesh.
 
 We can also derive the linear geometry formulation from an Eulerian perspective: consider momentum conservation given in Eulerian form (including the advection term); for small velocities (Reynolds numbers), the advection term can be neglected, and we arrive at the linear geometry form of the equation (similar to Stokes/creeping flow). In this way, we can see that Lagrangian and Eulerian methods coincide for linear geometry.
@@ -75,21 +81,27 @@ In the limit of small deformations, nonlinear geometry approaches will give the 
 #### Total Lagrangian Formulation
 
 The key concept behind the total Lagrangian formulation is to express the unknown mesh volumes $$\Omega$$ and areas $$\boldsymbol{\Gamma}$$ in terms of the known initial mesh volumes $$\Omega_o$$ and areas $$\boldsymbol{\Gamma}_o$$. This is achieved through Nanson's relation:
-```math
+
+$$
     \boldsymbol{\Gamma} = J \boldsymbol{F}^{-T} \cdot \boldsymbol{\Gamma}_o
-```
+$$
+
 Where $$\boldsymbol{F} = \textbf{I} + (\boldsymbol{\nabla} \boldsymbol{d})^T$$ is the *deformation gradient*, which represents a map between material in the deformed and initial configurations; $$\textbf{I} is the second-order identity tensor, $$\boldsymbol{d}$$ is the displacement vector and $$J = \text{det}[\boldsymbol{F}] = \frac{\Omega}{\Omega_o}$$ is known as the Jacobian.
 
 Using Nanson's relation and the definition of $$J$$, the conservation of linear momentum can be expressed in the total Lagrangian form:
-```math
+
+$$
     \int_{\Omega_o} \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} \; \text{d}\Omega_o =
     \oint_{\Gamma_o} \left(J \boldsymbol{F}^{-T} \cdot \boldsymbol{n}_o \right) \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_o + \int_{\Omega_o} \rho_o \boldsymbol{b} \; \text{d}\Omega_o
-```
+$$
+
 or equivalently in differential form as
-```math
+
+$$
     \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} =
     \boldsymbol{\nabla}_o \cdot \left(J \boldsymbol{F}^{-1} \cdot \boldsymbol{\sigma} \right) \; + \rho_o \boldsymbol{b}
-```
+$$
+
 where $$\boldsymbol{\nabla}_o$$ makes it clear that the differential operator is performed on the initial configuration, i.e., on the initial mesh.
 
 As $$\boldsymbol{F}$$, $$J$$ and $$\boldsymbol{\sigma}$$ are a function of the displacement field, the equation remains nonlinear in displacement; hence it must be iteratively solved, where $$\boldsymbol{F}$$ and $$J$$ are updated during the outer iterations. A convenience of the total Lagrangian approach is that the mesh is not moved; that is, the deformed configuration is calculated by integrating the governing equation over the initial mesh with appropriate mappings. If needed (e.g., for post-processing), the deformed mesh can be calculated by moving the initial mesh by the displacement field.
@@ -98,9 +110,11 @@ As $$\boldsymbol{F}$$, $$J$$ and $$\boldsymbol{\sigma}$$ are a function of the d
 #### Updated Lagrangian Formulation
 
 In the form given above, Nanson's relation expresses a mapping between the deformed and initial configurations; however, the expression can equivalently be given between any two configurations. Another common approach is to give Nanson's relation in terms of the deformed configuration and the configuration at the end of the last time step (the so called *updated* configuration) (Figure 2):
-```math
+
+$$
     \boldsymbol{\Gamma} = j \boldsymbol{f}^{-T} \cdot \boldsymbol{\Gamma}_u
-```
+$$
+
 Where $$\boldsymbol{f} = \textbf{I} + (\boldsymbol{\nabla} \Delta \boldsymbol{d})^T$$ is the *relative deformation gradient*, which represents a map between material in the deformed configuration and the configuration at the end of the previous time step; $$\Delta \boldsymbol{d} - \boldsymbol{d}_{\text{old}}$$ is the displacement increment vector, and $$j = \text{det}[\boldsymbol{f}] = \frac{\Omega}{\Omega_u}$$ is the relative Jacobian. The initial and updated configurations coincide in the first step of an analysis.
 
 ![](images/referenceUpdatedAndDeformedConfigurations.png)
@@ -108,15 +122,19 @@ Where $$\boldsymbol{f} = \textbf{I} + (\boldsymbol{\nabla} \Delta \boldsymbol{d}
 **Figure 2: Deformation of a solid from the initial configuration at time $$t_o$$, to the updated configuration at time $$t - \Delta t$$, and finally to the deformed configuration at time $$t$$.**
 
 The conservation of linear momentum can then be expressed in the updated Lagrangian form:
-```math
+
+$$
     \int_{\Omega_u} \frac{\partial (\rho_u \boldsymbol{v})}{\partial t} \; \text{d}\Omega_u =
     \oint_{\Gamma_u} \left(j \boldsymbol{f}^{-T} \cdot \boldsymbol{n}_u \right) \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_u + \int_{\Omega_u} \rho_u \boldsymbol{b} \; \text{d}\Omega_u
-```
+$$
+
 or equivalently in differential form as
-```math
+
+$$
     \frac{\partial (\rho_u \boldsymbol{v})}{\partial t} =
     \boldsymbol{\nabla}_u \cdot \left(j \boldsymbol{f}^{-1} \cdot \boldsymbol{\sigma} \right) \; + \rho_u \boldsymbol{b}
-```
+$$
+
 where $$\boldsymbol{\nabla}_u$$ makes it clear that the differential operator is performed on the updated configuration, i.e., on the deformed mesh from the last time step.
 
 Like the total Lagrangian approach, the updated Lagrangian approach requires an iterative solution where $$\boldsymbol{f}$$ and $$j$$ are updated during the outer iterations. However, unlike the total Lagrangian approach, the updated Lagrangian approach requires the mesh to be moved at the end of each time step, such that it is in the updated configuration for the subsequent step.
