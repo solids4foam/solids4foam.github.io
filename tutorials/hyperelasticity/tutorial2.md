@@ -1,1 +1,0 @@
-../../imported/solids4foam/tutorials/solids/hyperelasticity/cylindricalPressureVessel/README.md
