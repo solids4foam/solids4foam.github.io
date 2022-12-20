@@ -189,11 +189,11 @@ Here, we list the solid models currently available in soldis4foam, and brieflu s
 
   - `weakThermalLinGeomSolid`: sequentially solves for the temperature $$T$$ (`T`) and total displacement $$\boldsymbol{d}$$ (`D`) in a segregated manner with no outer displacement-temperature correctors.
   - `thermalLinGeomSolid`: solves for the temperature $$T$$ (`T`) and total displacement $$\boldsymbol{d}$$ (`D`), where outer iterations ensure convergence of the temperature-displacement coupling in a segregated manner.
-  - `poroLinGeomSolid`: solves for the pore-pressure $$p$$ (`p`) and total displacement $$\boldsymbol{d}$$ (`D`), where outer iterations ensure convergence of the pressure-displacement coupling in a segregated manner, based on [https://doi.org/10.1002/nag.2361](https://doi.org/10.1002/nag.2361).
+  - `poroLinGeomSolid`: solves for the pore-pressure $$p$$ (`p`) and total displacement $$\boldsymbol{d}$$ (`D`), where outer iterations ensure convergence of the pressure-displacement coupling in a segregated manner, based on [https://onlinelibrary.wiley.com/doi/10.1002/nag.2361](https://onlinelibrary.wiley.com/doi/10.1002/nag.2361).
 
   - `coupledLinGeomPressureDisplacementSolid`: similar to `linGeomPressureDisplacementSolid`, except the pressure-displacement equations are solved semi-coupled; *currently only available with foam-extend*.
   - `coupledUnsLinGeomLinearElasticSolid`: a block-coupled version of `unsLinGeomSolid`, based on [https://doi.org/10.1016/j.compstruc.2016.07.004](https://doi.org/10.1016/j.compstruc.2016.07.004); *currently only available with foam-extend*.
-  - `vertexCentredLinGeomSolid`: a block-coupled vertex-centred finite volume approach which solves for the total displacement at the mesh vertices/points (`pointD`), described in [https://doi.org/10.13140/RG.2.2.22896.33283](https://doi.org/10.13140/RG.2.2.22896.33283); this solver currently works best with triangular and tetrahedral grids.
+  - `vertexCentredLinGeomSolid`: a block-coupled vertex-centred finite volume approach which solves for the total displacement at the mesh vertices/points (`pointD`), described in [https://doi.org/10.13140/RG.2.2.22896.33283](https://www.researchgate.net/publication/362288571_Implementing_a_block-coupled_implicit_vertex-centred_finite_volume_approach_for_solid_mechanics_in_OpenFOAM); this solver currently works best with triangular and tetrahedral grids.
 
   - `explicitLinGeomTotalDispSolid`: an explicit version of `linGeomTotalDispSolid`.
   - `explicitUnsLinGeomTotalDispSolid`: an explicit version of `unsLinGeomSolid`.
