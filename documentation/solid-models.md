@@ -109,7 +109,7 @@ As $$\boldsymbol{F}$$, $$J$$ and $$\boldsymbol{\sigma}$$ are a function of the d
 
 #### Updated Lagrangian Formulation
 
-In the form given above, Nanson's relation expresses a mapping between the deformed and initial configurations; however, the expression can equivalently be given between any two configurations. Another common approach is to give Nanson's relation in terms of the deformed configuration and the configuration at the end of the last time step (the so called *updated* configuration) (Figure 2):
+In the form given above, Nanson's relation expresses a mapping between the deformed and initial configurations; however, the expression can equivalently be given between any two configurations. Another common approach is to give Nanson's relation in terms of the deformed configuration and the configuration at the end of the last time step (the so-called *updated* configuration) (Figure 2):
 
 $$
     \boldsymbol{\Gamma} = j \boldsymbol{f}^{-T} \cdot \boldsymbol{\Gamma}_u
@@ -144,7 +144,7 @@ Like the total Lagrangian approach, the updated Lagrangian approach requires an 
 
 ## Solution Algorithms and Discretisations
 
-The linear and nonlinear geometry formulations can be solved *explicitly* or *implicitly*. In explicit approaches, the $$\boldsymbol{\nabla} \cdot \boldsymbol{\sigma}$$ term is calculated using the known displacement field at the previous time step. As a consequence, explicit approaches do not require the formation and solution of a linear system, but their time step size is limited by the [Courant–Friedrichs–Lewy condition](https://en.wikipedia.org/wiki/Courant–Friedrichs–Lewy_condition}. In contrast, implicit approaches calculate the $$\boldsymbol{\nabla} \cdot \boldsymbol{\sigma}$$ term using the unknown displacement or a combination of the unknown displacement field and the known old-time displacement field. As a result, implicit methods are unconditionally stable with no restrictions on the time step size, apart for controlling temporal accuracy.
+The linear and nonlinear geometry formulations can be solved *explicitly* or *implicitly*. In explicit approaches, the $$\boldsymbol{\nabla} \cdot \boldsymbol{\sigma}$$ term is calculated using the known displacement field at the previous time step. As a consequence, explicit approaches do not require the formation and solution of a linear system, but their time step size is limited by the [Courant–Friedrichs–Lewy condition](https://en.wikipedia.org/wiki/Courant–Friedrichs–Lewy_condition). In contrast, implicit approaches calculate the $$\boldsymbol{\nabla} \cdot \boldsymbol{\sigma}$$ term using the unknown displacement or a combination of the unknown displacement field and the known old-time displacement field. As a result, implicit methods are unconditionally stable with no restrictions on the time step size, apart for controlling temporal accuracy.
 
 The relative merits of explicit and implicit approaches can be summarised as:
 
