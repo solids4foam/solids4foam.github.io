@@ -8,9 +8,9 @@ sort: 1
 
 ## Quickstart
 
-Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0-alpha:
+Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0:
 ```bash
-> git clone --branch v2.0-alpha git@github.com:solids4foam/solids4foam.git
+> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
 > cd solids4foam && ./Allwmake && ./Alltest
 ```
 
@@ -19,11 +19,15 @@ For a detailed installation guide, see below.
 
 ---
 
-## Supported versions of OpenFOAM
+## Detailed Installation Guide
+
+---
+
+### Supported Versions of OpenFOAM/foam
 
 solids4foam requires a working version of OpenFOAM or foam-extend. Currently, the following OpenFOAM versions are supported:
 
-| solids4foam version | OpenFOAM version  |
+| solids4foam version | OpenFOAM/foam version |
 | ------- | -------- |
 | solids4foam-v1.* | foam-extend-4.0 |
 |  | foam-extend-4.1 |
@@ -35,7 +39,7 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 |  | OpenFOAM-v2012 |
 |  | OpenFOAM-9 |
 
-### Note on using foam-extend-4.1
+#### Note on using foam-extend-4.1
 If you are using foam-extend-4.1, the solids4foam `Allwmake` script will ask you to fix two files in the foam-extend-4.1 installation:
   * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The solids4foam solver will work correctly; however, you may like to fix this if you plan to catch the return valve from the solver.
   * `pointBoundaryMesh.C`: without this fix, cases involving topological mesh changes will have a segmentation fault. For example, when using `crackerFvMesh`.
@@ -49,7 +53,7 @@ If you do not want to (or cannot) make these changes, please set the environment
 
 ---
 
-## Dependencies
+### Dependencies
 
 ```tip
 These dependencies are optional. You can skip them if you want to get up and running quickly.
@@ -64,7 +68,7 @@ Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have a
 | cfmesh | Some tutorials use cfmesh for creating the meshes |
 | gnuplot | Some tutorials use Gnuplot to generate graphs after running the solver |
 
-### Eigen
+#### Eigen
 
 Before building solids4foam, the `EIGEN_DIR` environment variable can be set to the local Eigen installation location. If `EIGEN_DIR` is not set, then solids4foam will download a local copy of Eigen.
 
@@ -74,7 +78,7 @@ If you would like solids4foam **not** to use Eigen (e.g. due to version conflict
 > export S4F_NO_USE_EIGEN=1
 ```
 
-### PETSc
+#### PETSc
 
 The binaries for PETSc can be installed on Ubuntu with
 ```bash
@@ -86,9 +90,19 @@ Or, on macOS with
 ```
 Alternatively, and more generally, PETSc can be installed following the instructions at [https://petsc.org/release/](https://petsc.org/release/).
 
-Once PETSC has been installed, the `PETSC_DIR` environment variable should be set to the installation location; this allows solids4foam to use it. If the `PETSC_DIR` environment variable is not set, then solids4foam will not use PETSc and functionalities that require PETSc will be disabled.
+Once PETSC has been installed, the `PETSC_DIR` environment variable should be set to the installation location; this allows solids4foam to use it. If the `PETSC_DIR` environment variable is not set, then solids4foam will not use PETSc and functionalities that require PETSc will be disabled. For example, on Ubuntu you can do this with:
+```bash
+ecport PETSC_DIR=/lib/petsc
+```
+Or, if using homebrew, on macOS (you may need to update the version number)
+```bash
+export PETSC_DIR=/opt/homebrew/Cellar/petsc/3.17.2
+```
+```tip
+Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable for new terminal sessions automatically.
+```
 
-### gfortran
+#### gfortran
 
 gfortran can be installed on Ubuntu with:
 ```bash
@@ -105,7 +119,7 @@ If the GCC compilers were used to compile OpenFOAM or foam-extend, then a compat
 
 solids4foam will use gfortran if the `gfortran` executable is found in the `$PATH`; if not, solids4foam will disable functionalities that require gfortran.
 
-### cfmesh
+#### cfmesh
 
 A small number of tutorials require the `cartesianMesh` utility from cfmesh. If the `cartesianMesh` executable is not found within the `$PATH` then the `Allrun` script within these tutorials will exit.
 
@@ -115,7 +129,7 @@ A small number of tutorials require the `cartesianMesh` utility from cfmesh. If 
 - **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org.
 ```
 
-### gnuplot
+#### gnuplot
 
 gnuplot can be installed on Ubuntu with:
 ```bash
@@ -128,25 +142,25 @@ Or, on macOS with
 
 ---
 
-## Downloading the solids4foam source code
+### Downloading the solids4foam Source Code
 
 The solids4foam directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
 
-### Archive file
+#### Archive file
 solids4foam-v2.0 can be downloaded as an archive file:
-- [solids4foam-v2.0-alpha.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0-alpha.zip): extracted with `> unzip v2.0-alpha.tar.gz`
-- [solids4foam-v2.0-alpha.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0-alpha.tar.gz): extracted with `> tar xzf unzip v2.0-alpha.tar.gz`
+- [solids4foam-v2.0.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.zip): extracted with `> unzip v2.0.tar.gz`
+- [solids4foam-v2.0.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.tar.gz): extracted with `> tar xzf unzip v2.0.tar.gz`
 
 
-### Git repository
-Alternatively, `solids4foam-v2.0-alpha` can be downloaded using git with
+#### Git repository
+Alternatively, `solids4foam-v2.0` can be downloaded using git with
 ```bash
-> git clone --branch v2.0-alpha git@github.com:solids4foam/solids4foam.git
+> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
 ```
 
 ---
 
-## Building solids4foam
+### Building solids4foam
 
 Before building solids4foam, a compatible version of OpenFOAM or foam-extend should be sourced: see the [table above](#supported-versions-of-openfoam). To build solids4foam, enter the solids4foam directory and execute the included Allwmake script, e.g.
 
@@ -177,7 +191,7 @@ You can examine the source of the errors in the `log.Allwmake` file within the s
 
 ---
 
-## Testing the installation
+### Testing the Installation
 
 As instructed, after a successful build, you can test the tutorials using the following commands, executed from the solids4foam parent directory.
 ```bash
@@ -205,6 +219,6 @@ The following commands failed:
 
 ---
 
-## What next?
+## What Next?
 
 Please see the [tutorial guide](../tutorials/README.md).
