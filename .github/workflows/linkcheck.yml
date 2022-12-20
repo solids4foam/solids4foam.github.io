@@ -20,5 +20,7 @@ jobs:
     - uses: actions/checkout@master
       with:
         submodules: recursive
-    - name: md-linkcheck
-      uses: ocular-d/md-linkcheck-action@master
+    - name: Check links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-verbose-mode: 'yes'
