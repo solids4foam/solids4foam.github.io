@@ -3,11 +3,6 @@ name: Linkcheck
 
 on:
   push:
-    paths:
-    - '*.md'
-    - '/documentation/*.md'
-    - '/installation/*.md'
-    - '/tutorials/*.md'
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
