@@ -5,10 +5,6 @@
 
 ---
 
-```warning
-solids4foam is currently being migrated from [Bitbucket](https://bitbucket.org/philip_cardiff/solids4foam-release) to [Github](https://github.com/solids4foam/solids4foam).
-```
-
 ### What is solids4foam?
 
 solids4foam is a toolbox for performing solid mechanics and fluid-solid interaction simulations in OpenFOAM® and foam-extend.
