@@ -2,9 +2,9 @@
 sort: 2
 ---
 
-# Tutorials guide
+# Tutorials Guide
 
-The solids4foam tutorials are organised into fluids, solids and fluid-solid interaction cases, where the solid tutorials are further categorised by physical phenomena:
+The solids4foam tutorials are organised into fluids, solids and fluid-solid interaction cases, where physical phenomena further categorise the solid tutorials:
 ```bash
 tutorials
 ├── …
@@ -24,7 +24,7 @@ tutorials
 ```
 
 All solids4foam cases require a `physicsProperties` dictionary in the `constant` directory, where either a `solid`, `fluid` or `fluidSolidInteraction` analysis is specified, e.g.
-```
+```c++
 //type  fluid;
 type    solid;
 //type  fluidSolidInteraction;
@@ -32,7 +32,7 @@ type    solid;
 If a solid analysis is selected, then a `solidProperties` dictionary is required in the constant directory; similarly, the `fluidProperties` dictionary is required for a fluid analysis, and the `fsiProperties` dictionary for a fluid-solid interaction analysis. These dictionaries let us specify what type of solid, fluid or fluid-solid interaction analysis is to be performed.
 
 
-## Running the tutorials using a native installation
+## Running the Tutorials Using a Native Installation
 
 ```tip
 We suggest making a backup copy of the solids4foam tutorials in case you want to reset them. Alternatively, you can reset them with git.
@@ -62,9 +62,9 @@ The tutorial results can be visualised in ParaView using one of the following co
 > touch case.foam && paraview case.foam
 ```
 
-## Running the tutorials using a docker installation
+## Running the Tutorials using a Docker Installation
 
-If you are using the solids4foam docker image, it is not convenient to directly open ParaView from within the image; so a workaround is to copy the tutorials to the shared directory in the docker container `/shared`:
+If you are using the solids4foam docker image, it is not convenient to directly open ParaView from within the image, so a workaround is to copy the tutorials to the shared directory in the docker container `/shared`:
 ```bash
 > cd /shared
 > cp -r $FOAM_RUN/../solids4foam/tutorials .
@@ -91,6 +91,6 @@ Here is an example of using ParaView on your physical computer to view cases cre
 
 ---
 
-# Tutorial guides
+# Tutorial Guides
 
 {% include list.liquid all=true %}
