@@ -41,7 +41,7 @@ solids4foam builds on and generalises the [Extend Bazaar FSI toolbox](https://ti
 
 If you use solids4foam for a publication, please cite the following references:
 
-> P. Cardiff, A Karac, P. De Jaeger, H. Jasak, J. Nagy, A. Ivanković, Ž. Tuković: An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations. arXiv:1808.10736v2, 2018, available at https://arxiv.org/abs/1808.10736
+> P. Cardiff, A Karac, P. De Jaeger, H. Jasak, J. Nagy, A. Ivanković, Ž. Tuković: An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations. 2018, 10.48550/arXiv.1808.10736, available at https://arxiv.org/abs/1808.10736.
 >
 > Ž. Tuković, A. Karač, P. Cardiff, H. Jasak, A. Ivanković: OpenFOAM finite volume solver for fluid-solid interaction.  Transactions of Famena, 42 (3), pp. 1-31, 2018, 10.21278/TOF.42301.
 
@@ -52,7 +52,8 @@ The corresponding BibTeX entries are
   author =       {P. Cardiff and A. Karac and P. De Jaeger and H. Jasak and J. Nagy and A. Ivankovi\'{c} and \v{Z}. Tukovi\'{c}},
   title =        {An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations},
   year =         {2018},
-  note =         {arXiv:1808.10736v2, \url{https://arxiv.org/abs/1808.10736}}
+  doi =          {10.48550/arXiv.1808.10736},
+  note =         {\url{https://arxiv.org/abs/1808.10736}}
 }
 
 @article{Tukovic2018,
