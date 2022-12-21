@@ -71,7 +71,7 @@ Once you have logged into the container, you can navigate to the solids4foam tut
 Please see the [tutorials guide](../tutorials/README.md) to learn how to run the tutorials.
 
 ```tip
-Note: it is straightforward to install additional software in the Docker container, e.g. `> sudo apt-get install emacs`
+Note: it is straightforward to install additional software in the Docker container, e.g. `sudo apt-get install emacs`
 ```
 
 ```tip
