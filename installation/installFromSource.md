@@ -152,10 +152,16 @@ solids4foam-v2.0 can be downloaded as an archive file:
 - [solids4foam-v2.0.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.tar.gz): extracted with `> tar xzf unzip v2.0.tar.gz`
 
 
-#### Git repository
-Alternatively, `solids4foam-v2.0` can be downloaded using git with
+#### Git repository: v2.0
+`solids4foam-v2.0` can be downloaded using git with
 ```bash
 > git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
+```
+
+#### Git repository: latest development branch
+The latest development branch can be downloaded with
+```bash
+> git clone --branch development git@github.com:solids4foam/solids4foam.git
 ```
 
 ---
