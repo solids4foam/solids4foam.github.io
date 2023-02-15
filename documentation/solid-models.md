@@ -33,7 +33,7 @@ Where $$\rho$$ is the density, $$\boldsymbol{v}$$ is the velocity vector, $$\bol
 ```note
 Vectors and tensors are represented here in bold font, while scalars are not.
 ```
-A Lagrangian approach is assumed, which means that the advection/convection term disappears. One way to think of this is to consider a moving-mesh Eulerian approach (e.g. Arbitrary Eulerian-Lagrangian) where the mesh is moved at the same velocity as the underlying material; in that way, no mass enters or leaves each cell, and mass continuity is automatically satisfied. 
+A  Lagrangian approach is assumed, which means that the advection/convection term disappears. One way to think of this is to consider a moving-mesh Eulerian approach (e.g. Arbitrary Eulerian-Lagrangian) where the mesh is moved at the same velocity as the underlying material; in that way, no mass enters or leaves each cell, and mass continuity is automatically satisfied. 
 
 We can equivalently express the governing equation in strong integral form:
 
