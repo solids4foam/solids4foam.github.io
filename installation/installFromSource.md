@@ -157,7 +157,10 @@ solids4foam-v2.0 can be downloaded as an archive file:
 ```bash
 > git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
 ```
-
+`solids4foam-v2.0` can be downloaded using HTTPS protocol with
+```bash
+> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+```
 #### Git repository: latest development branch
 The latest development branch can be downloaded with
 ```bash
