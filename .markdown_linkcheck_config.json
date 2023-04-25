@@ -8,6 +8,9 @@
 	},
         {
             "pattern": "https://hrcak.srce.hr/206941"
+        },
+        {
+            "pattern": "https://onlinelibrary.wiley.com/doi/10.1002/nme.4943"
         }
     ]
 }
