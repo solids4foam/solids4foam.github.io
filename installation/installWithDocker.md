@@ -64,7 +64,11 @@ and subsequently connect to it with
 ---
 ## Using solids4foam Within the Container
 
-Once you have logged into the container, you can navigate to the solids4foam tutorials directory with
+Once you have logged into the container, you need to source the `bashrc` file first.
+```
+. OpenFOAM/etc/bashrc
+```
+Then, you can navigate to the solids4foam tutorials directory with
 ```
 > cd $WM_PROJECT_DIR/../solids4foam/tutorials
 ```
