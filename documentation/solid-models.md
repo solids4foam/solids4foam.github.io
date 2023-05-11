@@ -86,7 +86,8 @@ $$
     \boldsymbol{\Gamma} = J \boldsymbol{F}^{-T} \cdot \boldsymbol{\Gamma}_o
 $$
 
-Where $$\boldsymbol{F} = \textbf{I} + (\boldsymbol{\nabla} \boldsymbol{d})^T$$ is the *deformation gradient*, which represents a map between material in the deformed and initial configurations; $$\textbf{I}$$ is the second-order identity tensor, $$\boldsymbol{d}$$ is the displacement vector and $$J = \text{det}[\boldsymbol{F}] = \frac{\Omega}{\Omega_o}$$ is known as the Jacobian.
+Where $$\boldsymbol{F} = \textbf{I} + (\boldsymbol{\nabla}_o \boldsymbol{d})^T$$ is the *deformation gradient*, which represents a map between material in the deformed and initial configurations; $$\textbf{I}$$ is the second-order identity tensor, $$\boldsymbol{d}$$ is the displacement vector, $$J = \text{det}[\boldsymbol{F}] = \frac{\Omega}{\Omega_o}$$ is known as the Jacobian, and $$\boldsymbol{\nabla}_o$$ makes it clear that the differential operator is performed on the initial configuration, i.e., on the initial mesh.
+
 
 Using Nanson's relation and the definition of $$J$$, the conservation of linear momentum can be expressed in the total Lagrangian form:
 
@@ -102,8 +103,6 @@ $$
     \boldsymbol{\nabla}_o \cdot \left(J \boldsymbol{F}^{-1} \cdot \boldsymbol{\sigma} \right) \; + \rho_o \boldsymbol{b}
 $$
 
-where $$\boldsymbol{\nabla}_o$$ makes it clear that the differential operator is performed on the initial configuration, i.e., on the initial mesh.
-
 As $$\boldsymbol{F}$$, $$J$$ and $$\boldsymbol{\sigma}$$ are a function of the displacement field, the equation remains nonlinear in displacement; hence it must be iteratively solved, where $$\boldsymbol{F}$$ and $$J$$ are updated during the outer iterations. A convenience of the total Lagrangian approach is that the mesh is not moved; that is, the deformed configuration is calculated by integrating the governing equation over the initial mesh with appropriate mappings. If needed (e.g., for post-processing), the deformed mesh can be calculated by moving the initial mesh by the displacement field.
 
 
@@ -115,7 +114,8 @@ $$
     \boldsymbol{\Gamma} = j \boldsymbol{f}^{-T} \cdot \boldsymbol{\Gamma}_u
 $$
 
-Where $$\boldsymbol{f} = \textbf{I} + (\boldsymbol{\nabla} \Delta \boldsymbol{d})^T$$ is the *relative deformation gradient*, which represents a map between material in the deformed configuration and the configuration at the end of the previous time step; $$\Delta \boldsymbol{d} - \boldsymbol{d}_{\text{old}}$$ is the displacement increment vector, and $$j = \text{det}[\boldsymbol{f}] = \frac{\Omega}{\Omega_u}$$ is the relative Jacobian. The initial and updated configurations coincide in the first step of an analysis.
+Where $$\boldsymbol{f} = \textbf{I} + (\boldsymbol{\nabla}_u \Delta \boldsymbol{d})^T$$ is the *relative deformation gradient*, which represents a map between material in the deformed configuration and the configuration at the end of the previous time step; $$\Delta \boldsymbol{d} = \boldsymbol{d} - \boldsymbol{d}_{\text{old}}$$ is the displacement increment vector, $$j = \text{det}[\boldsymbol{f}] = \frac{\Omega}{\Omega_u}$$ is the relative Jacobian, and $$\boldsymbol{\nabla}_u$$ is the differential operator performed on the updated configuration, i.e., on the mesh after it has been moved at the end of the previous time-step.
+The initial and updated configurations coincide in the first step of an analysis.
 
 ![](images/referenceUpdatedAndDeformedConfigurations.png)
 
@@ -134,8 +134,6 @@ $$
     \frac{\partial (\rho_u \boldsymbol{v})}{\partial t} =
     \boldsymbol{\nabla}_u \cdot \left(j \boldsymbol{f}^{-1} \cdot \boldsymbol{\sigma} \right) \; + \rho_u \boldsymbol{b}
 $$
-
-where $$\boldsymbol{\nabla}_u$$ makes it clear that the differential operator is performed on the updated configuration, i.e., on the deformed mesh from the last time step.
 
 Like the total Lagrangian approach, the updated Lagrangian approach requires an iterative solution where $$\boldsymbol{f}$$ and $$j$$ are updated during the outer iterations. However, unlike the total Lagrangian approach, the updated Lagrangian approach requires the mesh to be moved at the end of each time step, such that it is in the updated configuration for the subsequent step.
 
