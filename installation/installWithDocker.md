@@ -32,7 +32,7 @@ The image is ~6.2 GB.
 
 ## Creating the solids4foam Docker Container
 
-In macOS and Linux, the solids4foam container can be created with
+In macOS and Linux, the solids4foam container can be created with (OpenFOAM-v2012 as an example here)
 ```
 > docker create --entrypoint /bin/bash -v="${HOME}":/shared \
        --name solids4foam-v2.0-openfoam-v2012 \
@@ -56,7 +56,7 @@ You can now attach to the created container with
 ```
 > docker start solids4foam-v2.0-openfoam-v2012
 ```
-and subsequently connect to it with
+and subsequently, connect to it with
 ```
 > docker attach solids4foam-v2.0-openfoam-v2012
 ```
@@ -64,7 +64,13 @@ and subsequently connect to it with
 ---
 ## Using solids4foam Within the Container
 
-Once you have logged into the container, you can navigate to the solids4foam tutorials directory with
+Once you have logged into the container, you should load OpenFOAM using the appropriate command the version you downloaded:
+```bash
+> source /usr/lib/openfoam/openfoam2012/etc/bashrc           # OpenFOAM-v2012
+> source /opt/openfoam9/etc/bashrc                           # OpenFOAM-9
+> source /home/openfoam/OpenFOAM/foam-extend-4.1/etc/bashrc  # foam-extend-4.1
+```
+You can then navigate to the solids4foam tutorials directory with
 ```
 > cd $WM_PROJECT_DIR/../solids4foam/tutorials
 ```
