@@ -12,5 +12,8 @@
         {
             "pattern": "https://onlinelibrary.wiley.com/doi/10.1002/nme.4943"
         }
+        {
+            "pattern": "http://refhub.elsevier.com/S0045-7949(16)30604-6/h0015"
+        }
     ]
 }
