@@ -24,6 +24,6 @@ mechanical properties of the material used are set in the dictionary
 
 ---
 
-# Tutorial guides
+# Tutorial Guides
 
 {% include list.liquid all=true %}
