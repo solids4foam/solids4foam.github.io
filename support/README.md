@@ -8,6 +8,11 @@ sort: 4
 
 Are you interested in receiving training from a solids4foam specialist? We offer a range of training packages. The format and content can be tailored to your specific need. Whether it's online or in-person, for beginners or advanced, we can accommodate your requirements.
 
+Take a look at one of our recent training sessions at the 18th OpenFOAM Workshop below:
+
+- [Video Presentation](https://www.youtube.com/watch?v=7tmuqK58gIA)
+- [Presentation Slides](https://accessmunster.ie/video/x8mb97m)
+
 For more information, contact: contact@solids4foam.com
 
 ## Consulting and Support
