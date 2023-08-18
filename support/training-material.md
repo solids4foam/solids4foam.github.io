@@ -2,11 +2,11 @@
 sort: 1
 ---
 
-# Training material
+# Training Material
 
 ---
 
-Take a look at our previous trainings and presentations:
+Find a selection of trainings and presentations related to solids4foam below.
 
 ## Solids4foam training
 
@@ -20,7 +20,7 @@ Take a look at our previous trainings and presentations:
 <br>
 [**Slides**](): *2021, 3rd UCL OpenFOAM Workshop, London, UK. Speaker: Philip Cardiff*
 
-## Solid mechanics and fluid-solid interactions using solids4Foam 
+## Solid mechanics and fluid-solid interactions using solids4foam 
 
 [<img src="https://img.youtube.com/vi/OxWlBdWnVGo/maxresdefault.jpg" alt="alt_text" width="60%">](https://youtu.be/OxWlBdWnVGo)
 <br>
