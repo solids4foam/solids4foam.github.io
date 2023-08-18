@@ -18,7 +18,7 @@ Find a selection of trainings and presentations related to solids4foam below.
 
 [<img src="https://img.youtube.com/vi/sNDWUABn_c4/maxresdefault.jpg" alt="alt_text" width="60%">](https://youtu.be/sNDWUABn_c4)
 <br>
-[**Slides**](): *2021, 3rd UCL OpenFOAM Workshop, London, UK. Speaker: Philip Cardiff*
+[**Slides**](https://www.researchgate.net/publication/373197086_The_finite_volume_method_for_solid_mechanics): *2021, 3rd UCL OpenFOAM Workshop, London, UK. Speaker: Philip Cardiff*
 
 ## Solid mechanics and fluid-solid interactions using solids4foam 
 
