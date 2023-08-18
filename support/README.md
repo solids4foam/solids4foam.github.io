@@ -12,6 +12,12 @@ Take a look at our public [training material](training-material). For more infor
 
 ## Consulting and Support
 
-Our consulting team provide solutions to a wide range of computational problems. These include developing, implementing and verifying models and methods for **computational solid mechanics**, **fluid-solid interactions**, and **computational fluid dynamics**. In addition to providing support, the solids4foam team is available to join collaborative research projects and funding proposals. For general enquiries, reach out at: contact@solids4foam.com
+Our consulting team provide solutions to a wide range of computational problems. These include developing, implementing and verifying models and methods for:
+
+- **Computational solid mechanics**
+- **Fluid-solid interactions** 
+- **Computational fluid dynamics** 
+
+In addition to providing support, the solids4foam team is available to join collaborative research projects and funding proposals. For general enquiries, reach out at: contact@solids4foam.com
 
 <!-- {% include list.liquid all=true %} -->
