@@ -26,7 +26,7 @@ Find a selection of trainings and presentations related to solids4foam below.
 <br>
 [**Slides**](https://www.researchgate.net/publication/362289386_solids4foam_Overview_Demonstration_Cases): *2022, 17th OpenFOAM Workshop, Cambridge, UK. Speaker: Philip Cardiff*
 
-## Solid mechanics and fluid-solid interactions using solids4Foam -v2.0
+## Solid mechanics and fluid-solid interactions using solids4foam-v2.0
 
 [<img src="https://img.youtube.com/vi/7tmuqK58gIA/maxresdefault.jpg" alt="alt_text" width="60%">](https://youtu.be/7tmuqK58gIA)
 <br>
