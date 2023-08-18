@@ -10,11 +10,11 @@ sort: 1
 
 Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0:
 ```bash
-> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
+> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
 > cd solids4foam && ./Allwmake && ./Alltest
 ```
 
-For a detailed installation guide, see below.
+For the latest nightly build, specify the `development` branch instead of `v2.0`. For a detailed installation guide, see below.
 
 
 ---
@@ -153,13 +153,13 @@ solids4foam-v2.0 can be downloaded as an archive file:
 
 
 #### Git repository: v2.0
-`solids4foam-v2.0` can be downloaded using git with
-```bash
-> git clone --branch v2.0 git@github.com:solids4foam/solids4foam.git
-```
+`solids4foam-v2.0` can be downloaded using
 
+```bash
+> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+```
 #### Git repository: latest development branch
-The latest development branch can be downloaded with
+The latest nightly build development branch can be downloaded with
 ```bash
 > git clone --branch development git@github.com:solids4foam/solids4foam.git
 ```
