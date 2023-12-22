@@ -66,9 +66,9 @@ and subsequently, connect to it with
 
 Once you have logged into the container, you should load OpenFOAM using the appropriate command the version you downloaded:
 ```bash
-> source /usr/lib/openfoam/openfoam2012/etc/bashrc           # OpenFOAM-v2012
-> source /opt/openfoam9/etc/bashrc                           # OpenFOAM-9
-> source /home/openfoam/OpenFOAM/foam-extend-4.1/etc/bashrc  # foam-extend-4.1
+> source /usr/lib/openfoam/openfoam2012/etc/bashrc             # OpenFOAM-v2012
+> source /opt/openfoam9/etc/bashrc                             # OpenFOAM-9
+> source /home/dockeruser/OpenFOAM/foam-extend-4.1/etc/bashrc  # foam-extend-4.1
 ```
 You can then navigate to the solids4foam tutorials directory with
 ```
