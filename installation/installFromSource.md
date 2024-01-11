@@ -11,10 +11,10 @@ sort: 1
 Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0:
 ```bash
 > git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
-> cd solids4foam && ./Allwmake && ./Alltest
+> cd solids4foam && ./Allwmake -j && ./Alltest
 ```
 
-For the latest nightly build, specify the `development` branch instead of `v2.0`. For a detailed installation guide, see below.
+The `-j` flag instructs `Allwmake` to use all available cores. For the latest nightly build, specify the `development` branch instead of `v2.0`. For a detailed installation guide, see below.
 
 
 ---
@@ -48,7 +48,7 @@ To make these fixes, follow the instructions from the `Allwmake` script when [bu
 
 If you do not want to (or cannot) make these changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before running the Allwmake script when [building solids4foam](#building-solids4foam), e.g.
 ```
-> export S4F_NO_FILE_FIXES=1 && ./Allwmake
+> export S4F_NO_FILE_FIXES=1 && ./Allwmake -j
 ```
 
 ---
@@ -172,7 +172,7 @@ Before building solids4foam, a compatible version of OpenFOAM or foam-extend sho
 
 ```bash
 > cd solids4foam
-> ./Allwmake 2>&1 | tee log.Allwmake
+> ./Allwmake -j 2>&1 | tee log.Allwmake
 ```
 
 Depending on your hardware, you can expect this build to last about 5 minutes.
