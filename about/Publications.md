@@ -1,3 +1,7 @@
+---
+sort: 3
+---
+
 # Publications based on `solids4foam`
 
 ---
