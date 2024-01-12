@@ -24,7 +24,7 @@ Instructions for adding a new entry are at the bottom of the document
 
 ---
 
-# List of publications
+## List of publications
 
 Publications are listed in reverse chronological order.
 
