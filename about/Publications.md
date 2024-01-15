@@ -156,8 +156,7 @@ Publications are listed in reverse chronological order.
 
 <span style="color: blue;">●</span> P. Cardiff, A. Ivanković, D. FitzPatrick, F. Robert, A. Karač, (2011), [**Contact Stress Analysis in OpenFOAM: Application to Hip Joint Bones**](http://dx.doi.org/10.13140/RG.2.1.3216.9844) *6th OpenFOAM Workshop, Penn State University, USA*
 
-<span style="color: green;">●</span> Ž. Tuković and H. Jasak, (2007) [**Updated lagrangian finite volume solver for large deformation dynamic response of elastic body**](https://www.researchgate.net/publication/263314677_Updated_Lagrangian_finite_volume_solver_for_large_de
-
+<span style="color: green;">●</span> Ž. Tuković and H. Jasak, (2007), [**Updated lagrangian finite volume solver for large deformation dynamic response of elastic body**](https://www.researchgate.net/publication/263314677_Updated_Lagrangian_finite_volume_solver_for_large_deformation_dynamic_response_of_elastic_body), *Transactions of FAMENA, vol. 31, no. 1, pp. 55–70*.
 
 ---
 
