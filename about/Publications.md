@@ -64,6 +64,8 @@ Publications are listed in reverse chronological order.
 
 <span style="color: blue;">●</span> Whelan, A., Clancy, M., Pakrashi, V., Celikin, M., & Cardiff, P., (2022). [**Finite Volume Implementation of Damage Mechanics and Fracture Models.**](https://www.researchgate.net/publication/354497124_Finite_Volume_Implementation_of_Damage_Mechanics_and_Fracture_Models) *Complas 2021, Barcelona, Spain.*
 
+<span style="color: green;">●</span> M. Girfoglio, A. Quaini, G. Rozza, (2021). [**Fluid-structure interaction simulations with a LES filtering approach in solids4Foam.**](https://doi.org/10.2478/caim-2021-0002) *Communications in Applied and Industrial Mathematics, 12(1)*.
+
 <span style="color: green;">●</span> Rodrigues, P. V., Ramoa, B., Machado, A. V., Cardiff, P., & Nóbrega, J. M. (2021). [**Assessing the Compressive and Impact Behavior of Plastic Safety Toe Caps through Computational Modelling.**](https://doi.org/10.3390/polym13244332) *Polymers, 13(24),* 4332.
 
 <span style="color: green;">●</span> A. Scolaro, C. Fiorina, I. Clifford, and A. Pautz, (2021). [**Development of a Semi-Implicit Contact Methodology for Finite Volume Stress Solvers.**](https://doi.org/10.1002/nme.6857) *International Journal for Numerical Methods in Engineering, vol. 123, no. 2,* pp. 309–338.
