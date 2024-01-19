@@ -10,8 +10,8 @@ sort: 1
 
 Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0:
 ```bash
-> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
-> cd solids4foam && ./Allwmake -j && ./Alltest
+git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
 The `-j` flag instructs `Allwmake` to use all available cores. For the latest nightly build, specify the `development` branch instead of `v2.0`. For a detailed installation guide, see below.
