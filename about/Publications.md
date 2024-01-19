@@ -168,7 +168,7 @@ Publications are listed in reverse chronological order.
 
 ---
 
-### How to add a new entry
+## How to add a new entry
 
 If you would like to contribute your publications to this list, you can follow these steps:
 
