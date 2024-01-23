@@ -30,6 +30,8 @@ Publications are listed in reverse chronological order.
 
 <span style="color: green;">●</span> Pereira R., Romero J., Norton A., & Nóbrega J.M. (2024). [**Advancing the assessment of pacifier effects with a novel computational method**](https://doi.org/10.1186/s12903-023-03848-5), *BMC Oral Health, 24 (1), art. no. 87*.
 
+<span style="color: green;">●</span> X.L. Yang, N. Guo, Z.X. Yang, (2024) [**A finite-volume implementation of the phase-field model for brittle fracture with adaptive mesh refinement**](https://doi.org/10.1016/j.compgeo.2023.105921), *Computers and Geotechnics, Volume 165, 2024, 105921, ISSN 0266-352X*.
+
 <span style="color: green;">●</span> Attili, T., Heller, V., & Triantafyllou, S. (2023). [**Scaling approaches and scale effects in wave–flexible structure interaction.**](https://doi.org/10.1016/j.jfluidstructs.2023.103987) *Journal of Fluids and Structures, 123,* 103987.
 
 <span style="color: green;">●</span> Yu Hsiao, Shih-Chun Hsiao, Philip Li-Fan Liu, (2023). [**Two-dimensional numerical simulations of solitary wave interaction with a vertical elastic plate.**](https://doi.org/10.1016/j.oceaneng.2023.115160) *Ocean Engineering.*
