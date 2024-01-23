@@ -28,6 +28,8 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+<span style="color: green;">●</span> Pereira R., Romero J., Norton A., & Nóbrega J.M. (2024). [**Advancing the assessment of pacifier effects with a novel computational method**]](https://doi.org/10.1186/s12903-023-03848-5), *BMC Oral Health, 24 (1), art. no. 87*.
+
 <span style="color: green;">●</span> Attili, T., Heller, V., & Triantafyllou, S. (2023). [**Scaling approaches and scale effects in wave–flexible structure interaction.**](https://doi.org/10.1016/j.jfluidstructs.2023.103987) *Journal of Fluids and Structures, 123,* 103987.
 
 <span style="color: green;">●</span> Yu Hsiao, Shih-Chun Hsiao, Philip Li-Fan Liu, (2023). [**Two-dimensional numerical simulations of solitary wave interaction with a vertical elastic plate.**](https://doi.org/10.1016/j.oceaneng.2023.115160) *Ocean Engineering.*
@@ -46,6 +48,10 @@ Publications are listed in reverse chronological order.
 <span style="color: blue;">●</span> P. Cardiff, (2023). [**Using preCICE to couple OpenFOAM and solids4foam for fluid-solid interactions.**](http://dx.doi.org/10.13140/RG.2.2.35404.08327) *18th OpenFOAM Workshop, University of Genoa, Italy.*
 
 <span style="color: blue;">●</span> I. Batistić, P. Cardiff, A. Ivanković and Ž. Tuković, (2023). [**Development of an implicit boundary condition for modelling of mechanical contact.**](http://dx.doi.org/10.13140/RG.2.2.18438.75848) *18th OpenFOAM Workshop, University of Genoa, Italy.*
+
+<span style="color: blue;">●</span> Attili T., Heller V., Triantafyllou S. (2022). [**Numerical Investigation of Impulse Waves Impacting Dams**](https://doi.org/10.3850/IAHR-39WC2521716X2022107), *Proceedings of the IAHR World Congress, pp. 2222 - 2229*.
+
+<span style="color: blue;">●</span> Attili T., Heller V., Triantafyllou S. (2022). [**Numerical Investigation ofWaves Interacting with Rigid and Flexible Plates**](https://doi.org/10.3850/IAHR-39WC2521716X2022912), *Proceedings of the IAHR World Congress, pp. 4438 - 4447*.
 
 <span style="color: green;">●</span> Michael Herty, Elisa Iacomini, Giuseppe Visconti, (2022). [**Recent Trends on Nonlinear Filtering for Inverse Problems.**](https://doi.org/10.48550/arXiv.2204.02253) *Commun. Appl. Ind. Math. 13 (1),* 10–20.
 
