@@ -92,7 +92,7 @@ Alternatively, and more generally, PETSc can be installed following the instruct
 
 Once PETSC has been installed, the `PETSC_DIR` environment variable should be set to the installation location; this allows solids4foam to use it. If the `PETSC_DIR` environment variable is not set, then solids4foam will not use PETSc and functionalities that require PETSc will be disabled. For example, on Ubuntu you can do this with:
 ```bash
-ecport PETSC_DIR=/lib/petsc
+export PETSC_DIR=/lib/petsc
 ```
 Or, if using homebrew, on macOS (you may need to update the version number)
 ```bash
