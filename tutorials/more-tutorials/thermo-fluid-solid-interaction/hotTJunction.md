@@ -1,0 +1,1 @@
+../../../imported/solids4foam/tutorials/thermoFluidSolidInteraction/hotTJunction/README.md
