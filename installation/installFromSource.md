@@ -8,13 +8,13 @@ sort: 1
 
 ## Quickstart
 
-Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0:
+Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.1:
 ```bash
-git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+git clone --branch v2.1 https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
-The `-j` flag instructs `Allwmake` to use all available cores. For the latest nightly build, specify the `development` branch instead of `v2.0`. For a detailed installation guide, see below.
+The `-j` flag instructs `Allwmake` to use all available cores. For the latest nightly build, specify the `development` branch instead of `v2.1`. For a detailed installation guide, see below.
 
 
 ---
@@ -35,8 +35,12 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 |  | OpenFOAM-v1912 |
 |  | OpenFOAM-7 |
 | ------- | -------- |
-| solids4foam-v2.* | foam-extend-4.1 |
+| solids4foam-v2.0 | foam-extend-4.1 |
 |  | OpenFOAM-v2012 |
+|  | OpenFOAM-9 |
+| ------- | -------- |
+| solids4foam-v2.1 | foam-extend-4.1 |
+|  | OpenFOAM-v2012 -> OpenFOAM-v2312 |
 |  | OpenFOAM-9 |
 
 ### Optional fixes for the OpenFOAM installation
@@ -145,16 +149,16 @@ Or, on macOS with
 The solids4foam directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
-solids4foam-v2.0 can be downloaded as an archive file:
-- [solids4foam-v2.0.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.zip): extracted with `> unzip v2.0.tar.gz`
-- [solids4foam-v2.0.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.tar.gz): extracted with `> tar xzf unzip v2.0.tar.gz`
+solids4foam-v2.1 can be downloaded as an archive file:
+- [solids4foam-v2.1.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.1.zip): extracted with `> unzip v2.1.tar.gz`
+- [solids4foam-v2.1.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.1.tar.gz): extracted with `> tar xzf unzip v2.1.tar.gz`
 
 
-#### Git repository: v2.0
-`solids4foam-v2.0` can be downloaded using
+#### Git repository: v2.1
+`solids4foam-v2.1` can be downloaded using
 
 ```bash
-> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+> git clone --branch v2.1 https://github.com/solids4foam/solids4foam.git
 ```
 #### Git repository: latest development branch
 The latest nightly build development branch can be downloaded with
