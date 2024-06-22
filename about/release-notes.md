@@ -2,13 +2,19 @@
 sort: 1
 ---
 
-# What's new in solids4foam-v2.1?
+# Release notes
+
+---
+
+## What's new in solids4foam-v2.1?
 
 The main changes from `v2.0` to `v2.1` are:
 
 * To be added
 
-# What's new in solids4foam-v2.0?
+---
+
+## What's new in solids4foam-v2.0?
 
 The main changes from `v1.0` and `v1.1` to `v2.0` are:
 
