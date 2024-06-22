@@ -10,7 +10,23 @@ sort: 1
 
 The main changes from `v2.0` to `v2.1` are:
 
-* To be added
+* solids4foam-v2.1 compiles with OpenFOAM-v2012 to OpenFOAM-v2312, OpenFOAM-9, and foam-extend-4.1;
+* Conjugate heat transfer and thermo-fluid-solid interaction capabilities have been added;
+* README.md files have been added to more tutorials and to the website;
+* New tutorials have been added;
+* A segment-to-segment contact procedure has been added to the `solidContact` boundary condition;
+* Many bugs have been fixed, and refactorings have been performed;
+* A new general vertex-centred solid model `vertexCentredLinearGeometry` has been created, allowing run-time selection of a block-coupled, segregated or explicit solution algorithm;
+* A new block-coupled nonlinear geometry vertex-centred solid model has been added: `vertexCentredNonLinTotalLagGeometry`;
+* The general `electroMechanicalLaw` has been added;
+* The general `poroMechLaw` has been added;
+* The `GuccioneElastic` mechanical law has been added;
+* The Robin-Neumann fluid-solid interaction coupling now works with OpenFOAM.com and OpenFOAM.org versions;
+* Centralised the wmake-options and made a provision for OpenFOAM/modules integration;
+* Refactored compiler directives for the different versions, e.g. OPENFOAMESIORFOUNDATION -> OPENFOAM_NOT_EXTEND;
+* Case dictionaries now get written with their default values to <dictName>.withDefaultValues;
+* Refactoring of GitHub actions;
+* Ported kirchhoffPlateSolid solid model and the squarePlate tutorial to OpenFOAM.com.
 
 ---
 
