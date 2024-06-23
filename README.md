@@ -1,7 +1,8 @@
 ![solids4foam logo](solids4foamLogoName.png)
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![Build_and_test](https://github.com/solids4foam/solids4foam/workflows/Build%20and%20test/badge.svg?branch=development)
+![v2.1 branch](https://github.com/solids4foam/solids4foam/workflows/Build%20and%20test/badge.svg?branch=master)
+![development branch](https://github.com/solids4foam/solids4foam/workflows/Build%20and%20test/badge.svg?branch=development)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/solids4foam/solids4foam)
 ![GitHub issues](https://img.shields.io/github/issues/solids4foam/solids4foam)
 
