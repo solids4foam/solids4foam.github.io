@@ -8,13 +8,13 @@ sort: 1
 
 ## Quickstart
 
-Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.0:
+Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test solids4foam-v2.1:
 ```bash
-git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+git clone --branch v2.1 https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
-The `-j` flag instructs `Allwmake` to use all available cores. For the latest nightly build, specify the `development` branch instead of `v2.0`. For a detailed installation guide, see below.
+The `-j` flag instructs `Allwmake` to use all available cores. For the latest nightly build, specify the `development` branch instead of `v2.1`. For a detailed installation guide, see below.
 
 
 ---
@@ -35,21 +35,23 @@ solids4foam requires a working version of OpenFOAM or foam-extend. Currently, th
 |  | OpenFOAM-v1912 |
 |  | OpenFOAM-7 |
 | ------- | -------- |
-| solids4foam-v2.* | foam-extend-4.1 |
+| solids4foam-v2.0 | foam-extend-4.1 |
 |  | OpenFOAM-v2012 |
 |  | OpenFOAM-9 |
+| ------- | -------- |
+| solids4foam-v2.1 | foam-extend-4.1 |
+|  | OpenFOAM-v2012 -> OpenFOAM-v2312 |
+|  | OpenFOAM-9 |
 
-#### Note on using foam-extend-4.1
-If you are using foam-extend-4.1, the solids4foam `Allwmake` script will ask you to fix two files in the foam-extend-4.1 installation:
-  * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The solids4foam solver will work correctly; however, you may like to fix this if you plan to catch the return valve from the solver.
-  * `pointBoundaryMesh.C`: without this fix, cases involving topological mesh changes will have a segmentation fault. For example, when using `crackerFvMesh`.
-
-To make these fixes, follow the instructions from the `Allwmake` script when [building solids4foam](#building-solids4foam).
-
-If you do not want to (or cannot) make these changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before running the Allwmake script when [building solids4foam](#building-solids4foam), e.g.
+### Optional fixes for the OpenFOAM installation
+The solids4foam `Allwmake` script will ask you to fix files in the main OpenFOAM/foam installation. If you do not want to (or cannot) make these changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before running the Allwmake script when [building solids4foam](#building-solids4foam), e.g.
 ```
 > export S4F_NO_FILE_FIXES=1 && ./Allwmake -j
 ```
+To make these fixes, follow the instructions from the `Allwmake` script when [building solids4foam](#building-solids4foam).
+
+See the page on [Optional Fixes](./optionalFixes/README.md) for further details on these optional changes. 
+
 
 ---
 
@@ -92,7 +94,7 @@ Alternatively, and more generally, PETSc can be installed following the instruct
 
 Once PETSC has been installed, the `PETSC_DIR` environment variable should be set to the installation location; this allows solids4foam to use it. If the `PETSC_DIR` environment variable is not set, then solids4foam will not use PETSc and functionalities that require PETSc will be disabled. For example, on Ubuntu you can do this with:
 ```bash
-ecport PETSC_DIR=/lib/petsc
+export PETSC_DIR=/lib/petsc
 ```
 Or, if using homebrew, on macOS (you may need to update the version number)
 ```bash
@@ -147,16 +149,16 @@ Or, on macOS with
 The solids4foam directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
-solids4foam-v2.0 can be downloaded as an archive file:
-- [solids4foam-v2.0.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.zip): extracted with `> unzip v2.0.tar.gz`
-- [solids4foam-v2.0.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.0.tar.gz): extracted with `> tar xzf unzip v2.0.tar.gz`
+solids4foam-v2.1 can be downloaded as an archive file:
+- [solids4foam-v2.1.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.1.zip): extracted with `> unzip v2.1.tar.gz`
+- [solids4foam-v2.1.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.1.tar.gz): extracted with `> tar xzf unzip v2.1.tar.gz`
 
 
-#### Git repository: v2.0
-`solids4foam-v2.0` can be downloaded using
+#### Git repository: v2.1
+`solids4foam-v2.1` can be downloaded using
 
 ```bash
-> git clone --branch v2.0 https://github.com/solids4foam/solids4foam.git
+> git clone --branch v2.1 https://github.com/solids4foam/solids4foam.git
 ```
 #### Git repository: latest development branch
 The latest nightly build development branch can be downloaded with
