@@ -28,6 +28,8 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+<span style="color: green;">●</span> Boughou S., Batistić I., Omar A., Cardiff P., Inman D. J., Boukharfane R. (2024). [**Investigation on aeroelasticity of morphing wing through dynamic response and virtual structural damping**](https://doi.org/10.1063/5.0223164), *Physics of Fluids, 36 (9): 091902.* 
+
 <span style="color: green;">●</span> Pereira R., Romero J., Norton A., & Nóbrega J.M. (2024). [**Advancing the assessment of pacifier effects with a novel computational method**](https://doi.org/10.1186/s12903-023-03848-5), *BMC Oral Health, 24 (1), art. no. 87*.
 
 <span style="color: green;">●</span> X.L. Yang, N. Guo, Z.X. Yang, (2024) [**A finite-volume implementation of the phase-field model for brittle fracture with adaptive mesh refinement**](https://doi.org/10.1016/j.compgeo.2023.105921), *Computers and Geotechnics, Volume 165, 2024, 105921, ISSN 0266-352X*.
