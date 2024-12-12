@@ -70,6 +70,8 @@ Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have a
 | cfmesh | Some tutorials use cfmesh for creating the meshes |
 | gnuplot | Some tutorials use Gnuplot to generate graphs after running the solver |
 
+Note that, for running the tests, the OpenFOAM or foam-extend tutorials are also required.
+
 #### Eigen
 
 Before building solids4foam, the `EIGEN_DIR` environment variable can be set to the local Eigen installation location. If `EIGEN_DIR` is not set, then solids4foam will download a local copy of Eigen.
