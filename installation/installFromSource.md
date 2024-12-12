@@ -71,6 +71,7 @@ Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have a
 | gnuplot | Some tutorials use Gnuplot to generate graphs after running the solver |
 
 Note that, for running the tests, the OpenFOAM or foam-extend tutorials are also required.
+If preCICE is installed, this will enable additional tests.
 
 #### Eigen
 
