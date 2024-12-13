@@ -1,0 +1,15 @@
+name: Markdown Lint
+
+on:
+  workflow_dispatch: # Enables manual trigger of the workflow
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest # Specify the environment to run the action
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 # Ensures the repository is available to the action
+
+      - name: Run MarkdownLint
+        uses: DavidAnson/markdownlint-cli2-action@v18.0.0
