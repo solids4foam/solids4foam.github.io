@@ -56,12 +56,12 @@ solids4foam
 
     The README file briefly describes the toolbox.
 
-    *solids4foam* 
-- `ThirdParty`: solids4foam optionally uses some third-party code (e.g. Eigen, PETSc): for more details, see the (installation guide)[https://solids4foam.github.io/installation/].
+    Description of solids4foam folders 
+- `ThirdParty`: solids4foam optionally uses some third-party code (e.g. Eigen, PETSc): for more details, see the [installation guide](https://solids4foam.github.io/installation/).
 - `applications`:  contains the `solids4Foam` solver and a small number of helper utilities.
 
 - `src`: contains libraries used by the `solids4Foam` solver, such as  `solids4FoamModels` which defines fluid, solid and fluidSolidInteraction algorithms.
-- `tutorial`: contains example cases for fluid, solid and fluidSolidInteraction analyses; some of these example cases are described in the (tutorials guide)[https://solids4foam.github.io/tutorials/].
+- `tutorial`: contains example cases for fluid, solid and fluidSolidInteraction analyses; some of these example cases are described in the [tutorials guide](https://solids4foam.github.io/tutorials/).
 
 ---
 
