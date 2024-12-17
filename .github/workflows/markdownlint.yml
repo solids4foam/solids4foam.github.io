@@ -20,7 +20,7 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v18.0.0
         with:
           fix: true
-          globs: |
+          globs:
             documentation/**/*.md
 	    imported/**/*.md
 	    installation/**/*.md
