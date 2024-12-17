@@ -206,7 +206,7 @@ _15th OpenFOAM Workshop, Virginia Tech, USA._
 [**Fluid-structure interaction of a large ice sheet in waves**](https://www.researchgate.net/publication/342305097_The_implication_of_elastic_deformation_in_wave-ice_interaction)
 _15th OpenFOAM Workshop, Virginia Tech, USA._
 
-<span style="color: green;">● </span>Huang, L., Ren, K., Li, M., Tuković, Ž.,
+🟢 Huang, L., Ren, K., Li, M., Tuković, Ž.,
 Cardiff, P., & Thomas, G. (2019).
 [**Fluid-structure interaction of a large ice sheet in waves**](https://doi.org/10.1016/j.oceaneng.2019.04.015)
 _Ocean Engineering, 182,_ 102-111.
@@ -234,8 +234,8 @@ Thomas, (2019)
 _International Workshop on Water Waves and Floating Bodies, Australia._
 
 🔵 J. Živić, I. Batistić, Ž. Tuković, and I. Karšaj, (2019)
-[**Modeling of Incompressible Materials Using Finite Volume Method and its
-Application in Biomechanics,**](#)
+**Modeling of Incompressible Materials Using Finite Volume Method and its
+Application in Biomechanics,**
 _Proceedings of 10nd Congress of Croatian Society of mechanics, pp. 343–349._
 
 🟢 Tuković, Ž., Jasak, H., Karač, A., Cardiff, P., Ivanković, A. (2018).
@@ -319,7 +319,7 @@ _Computer Methods in Applied Mechanics and Engineering, 268, 318-335._
 _Journal of biomechanical engineering, vol. 136, no. 1, p. 011006._
 
 🔵 Ž. Tuković, P. Cardiff, A. Karač, H. Jasak, and A. Ivanković, (2014)
-[**OpenFOAM library for fluid structure interaction**](#) _9th OpenFOAM
+**OpenFOAM library for fluid structure interaction** _9th OpenFOAM
 Workshop, University of Zagreb, Zagreb, Croatia._
 
 🔵 P. Cardiff, Ž. Tuković, A. Ivanković, A. Karač,(2014)
