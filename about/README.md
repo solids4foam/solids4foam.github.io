@@ -71,15 +71,18 @@ The corresponding BibTeX entries are
 
 ```bibtex
 @article{Cardiff2018,
-  author =       {P. Cardiff and A. Karac and P. De Jaeger and H. Jasak and J. Nagy and A. Ivankovi\'{c} and \v{Z}. Tukovi\'{c}},
-  title =        {An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations},
+  author =       {P. Cardiff and A. Karac and P. De Jaeger and H. Jasak and J.
+                 Nagy and A. Ivankovi\'{c} and \v{Z}. Tukovi\'{c}},
+  title =        {An open-source finite volume toolbox for solid mechanics and
+                 fluid-solid interaction simulations},
   year =         {2018},
   doi =          {10.48550/arXiv.1808.10736},
   note =         {\url{https://arxiv.org/abs/1808.10736}}
 }
 
 @article{Tukovic2018,
-  author =       {\v{Z}. Tukovi\'{c} and A. Kara\v{c} and P. Cardiff and H. Jasak and A. Ivankovi\'{c}},
+  author =       {\v{Z}. Tukovi\'{c} and A. Kara\v{c} and P. Cardiff and H.
+                 Jasak and A. Ivankovi\'{c}},
   title =        {OpenFOAM finite volume solver for fluid-solid interaction},
   year =         {2018},
   volume =       {42},
