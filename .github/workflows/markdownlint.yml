@@ -20,3 +20,4 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v18.0.0
         with:
           globs: '**/*.md'
+          ignore: '_sass/**'
