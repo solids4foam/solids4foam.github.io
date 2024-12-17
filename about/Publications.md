@@ -32,23 +32,28 @@ Publications are listed in reverse chronological order.
 
 🟢 Boughou S., Batistić I., Omar A., Cardiff P., Inman D. J., Boukharfane R.
 (2024).
-[**Investigation on aeroelasticity of morphing wing through dynamic response and virtual structural damping**](https://doi.org/10.1063/5.0223164),
+[**Investigation on aeroelasticity of morphing wing through dynamic response
+and virtual structural damping**](https://doi.org/10.1063/5.0223164),
 _Physics of Fluids, 36 (9): 091902._
 
 🟢 Pereira R., Romero J., Norton A., & Nóbrega J.M. (2024).
-[**Advancing the assessment of pacifier effects with a novel computational method**](https://doi.org/10.1186/s12903-023-03848-5),
+[**Advancing the assessment of pacifier effects with a novel computational
+method**](https://doi.org/10.1186/s12903-023-03848-5),
 _BMC Oral Health, 24 (1), art. no. 87_.
 
 🟢 X.L. Yang, N. Guo, Z.X. Yang, (2024)
-[**A finite-volume implementation of the phase-field model for brittle fracture with adaptive mesh refinement**](https://doi.org/10.1016/j.compgeo.2023.105921),
+[**A finite-volume implementation of the phase-field model for brittle fracture
+with adaptive mesh refinement**](https://doi.org/10.1016/j.compgeo.2023.105921),
 _Computers and Geotechnics, Volume 165, 2024, 105921, ISSN 0266-352X_.
 
 🟢 Attili, T., Heller, V., & Triantafyllou, S. (2023).
-[**Scaling approaches and scale effects in wave–flexible structure interaction.**](https://doi.org/10.1016/j.jfluidstructs.2023.103987)
+[**Scaling approaches and scale effects in wave–flexible structure
+interaction.**](https://doi.org/10.1016/j.jfluidstructs.2023.103987)
 _Journal of Fluids and Structures, 123,_ 103987.
 
 🟢 Yu Hsiao, Shih-Chun Hsiao, Philip Li-Fan Liu, (2023).
-[**Two-dimensional numerical simulations of solitary wave interaction with a vertical elastic plate.**](https://doi.org/10.1016/j.oceaneng.2023.115160)
+[**Two-dimensional numerical simulations of solitary wave interaction with a
+vertical elastic plate.**](https://doi.org/10.1016/j.oceaneng.2023.115160)
 _Ocean Engineering._
 
 🟢 Attili, T., Heller, V., & Triantafyllou, S. (2023).
@@ -56,15 +61,18 @@ _Ocean Engineering._
 _Coastal Engineering, 182,_ 104302.
 
 🟢 Salachna, J., Cioncolini, A., & Iacovides, H. (2023).
-[**Benchmark simulation of the flow-induced vibrations for nuclear applications.**](https://doi.org/10.1016/j.anucene.2022.109425)
+[**Benchmark simulation of the flow-induced vibrations for nuclear
+applications.**](https://doi.org/10.1016/j.anucene.2022.109425)
 _Annals of Nuclear Energy, 180,_ 109425.
 
 🟢 Batistić, I., Cardiff, P., & Ivanković, A., & Tuković, Ž (2023).
-[**A finite volume penalty-based implicit procedure for the treatment of the frictionless contact boundaries.**](https://doi.org/10.1002/nme.7302)
+[**A finite volume penalty-based implicit procedure for the treatment of the
+frictionless contact boundaries.**](https://doi.org/10.1002/nme.7302)
 _International Journal for Numerical Methods in Engineering, 124,_ 4171-4191.
 
 🔵 F. Mazzanti and P. Cardiff, (2023).
-[**A Vertex-Centred Block-Coupled Finite Volume Methodology for Small-Strain Elastoplasticity.**](http://dx.doi.org/10.13140/RG.2.2.32520.80646/1)
+[**A Vertex-Centred Block-Coupled Finite Volume Methodology for Small-Strain
+Elastoplasticity.**](http://dx.doi.org/10.13140/RG.2.2.32520.80646/1)
 _18th OpenFOAM Workshop, University of Genoa, Italy._
 
 🔵 P. Cardiff, (2023).
@@ -72,11 +80,13 @@ _18th OpenFOAM Workshop, University of Genoa, Italy._
 _18th OpenFOAM Workshop, University of Genoa, Italy._
 
 🔵 P. Cardiff, (2023).
-[**Using preCICE to couple OpenFOAM and solids4foam for fluid-solid interactions.**](http://dx.doi.org/10.13140/RG.2.2.35404.08327)
+[**Using preCICE to couple OpenFOAM and solids4foam for fluid-solid
+interactions.**](http://dx.doi.org/10.13140/RG.2.2.35404.08327)
 _18th OpenFOAM Workshop, University of Genoa, Italy._
 
 🔵 I. Batistić, P. Cardiff, A. Ivanković and Ž. Tuković, (2023).
-[**Development of an implicit boundary condition for modelling of mechanical contact.**](http://dx.doi.org/10.13140/RG.2.2.18438.75848)
+[**Development of an implicit boundary condition for modelling of mechanical
+contact.**](http://dx.doi.org/10.13140/RG.2.2.18438.75848)
 _18th OpenFOAM Workshop, University of Genoa, Italy._
 
 🔵 Attili T., Heller V., Triantafyllou S. (2022).
@@ -92,20 +102,24 @@ _Proceedings of the IAHR World Congress, pp. 4438 - 4447_.
 _Commun. Appl. Ind. Math. 13 (1),_ 10–20.
 
 🟢 S.A. Brown, N. Xie, M.R. Hann, D.M. Greaves, (2022).
-[**Investigation of wave-driven hydroelastic interactions using numerical and physical modelling approaches.**](https://doi.org/10.1016/j.apor.2022.103363)
+[**Investigation of wave-driven hydroelastic interactions using numerical and
+physical modelling approaches.**](https://doi.org/10.1016/j.apor.2022.103363)
 _Applied Ocean Research._
 
 🟠 I. Batistić, (2022).
-[**Segment-to-segment algorithm for finite volume mechanical contact simulations.**](https://urn.nsk.hr/urn:nbn:hr:235:395801)
+[**Segment-to-segment algorithm for finite volume mechanical contact
+simulations.**](https://urn.nsk.hr/urn:nbn:hr:235:395801)
 _PhD thesis, University of Zagreb. Faculty of Mechanical Engineering and Naval
 Architecture._
 
 🟢 Batistić, I., Cardiff, P., & Tuković, Ž. (2022).
-[**A finite volume penalty based segment-to-segment method for frictional contact problems.**](https://doi.org/10.1016/j.apm.2021.09.009)
+[**A finite volume penalty based segment-to-segment method for frictional contact
+problems.**](https://doi.org/10.1016/j.apm.2021.09.009)
 _Applied Mathematical Modelling, 101,_ 673-693.
 
 🔵 P. Cardiff, (2022).
-[**Implementing a block-coupled implicit vertex-centred finite volume approach for solid mechanics in OpenFOAM.**](http://dx.doi.org/10.13140/RG.2.2.22896.33283)
+[**Implementing a block-coupled implicit vertex-centred finite volume approach
+for solid mechanics in OpenFOAM.**](http://dx.doi.org/10.13140/RG.2.2.22896.33283)
 _17th OpenFOAM Workshop, Cambridge, UK._
 
 🔵 P. Cardiff, (2022).
@@ -121,16 +135,19 @@ _2nd CCP-WSI Hackathon, University of Exeter, UK._
 _Complas 2021, Barcelona, Spain._
 
 🟢 M. Girfoglio, A. Quaini, G. Rozza, (2021).
-[**Fluid-structure interaction simulations with a LES filtering approach in solids4Foam.**](https://doi.org/10.2478/caim-2021-0002)
+[**Fluid-structure interaction simulations with a LES filtering approach in
+solids4Foam.**](https://doi.org/10.2478/caim-2021-0002)
 _Communications in Applied and Industrial Mathematics, 12(1)_.
 
 🟢 Rodrigues, P. V., Ramoa, B., Machado, A. V., Cardiff, P., & Nóbrega, J. M.
 (2021).
-[**Assessing the Compressive and Impact Behavior of Plastic Safety Toe Caps through Computational Modelling.**](https://doi.org/10.3390/polym13244332)
+[**Assessing the Compressive and Impact Behavior of Plastic Safety Toe Caps
+through Computational Modelling.**](https://doi.org/10.3390/polym13244332)
 _Polymers, 13(24),_ 4332.
 
 🟢 A. Scolaro, C. Fiorina, I. Clifford, and A. Pautz, (2021).
-[**Development of a Semi-Implicit Contact Methodology for Finite Volume Stress Solvers.**](https://doi.org/10.1002/nme.6857)
+[**Development of a Semi-Implicit Contact Methodology for Finite Volume Stress
+Solvers.**](https://doi.org/10.1002/nme.6857)
 _International Journal for Numerical Methods in Engineering, vol. 123, no. 2,_
 pp. 309–338.
 
@@ -139,7 +156,8 @@ pp. 309–338.
 _Coastal Engineering, 169,_ 103942.
 
 🔵 I. Oliveira, J. Gasche, J. Militzer, C. Baccin, P. Cardiff, (2021).
-[**On the influence of wall thickness heterogeneity in the mechanics of intracranial aneurysms.**](http://dx.doi.org/10.26678/ABCM.COBEM2021.COB2021-0451)
+[**On the influence of wall thickness heterogeneity in the mechanics of
+intracranial aneurysms.**](http://dx.doi.org/10.26678/ABCM.COBEM2021.COB2021-0451)
 _26th ABCM International Congress of Mechanical Engineering, Florianópolis,
 Brazil._
 
@@ -160,27 +178,31 @@ _The 3rd UCL OpenFOAM Workshop, University College London._
 _The 3rd UCL OpenFOAM Workshop, University College London._
 
 🔵 I. Batistić, P. Cardiff and Ž. Tuković, (2021).
-[**Towards implicit implementation of penalty based contact boundary condition.**](http://dx.doi.org/10.13140/RG.2.2.17303.70564)
+[**Towards implicit implementation of penalty based contact boundary
+condition.**](http://dx.doi.org/10.13140/RG.2.2.17303.70564)
 _16th OpenFOAM Workshop, Dublin, Ireland._
 
 🔵 I. Oliveira, Ž. Tuković, J. Gasche, and P. Cardiff, (2021)
-[**Semicoupled numerical strategy to solve large-strain motion of incompressible hyperelastic materials,**](https://www.researchgate.net/publication/352480382_Semicoupled_numerical_strategy_to_solve_large-strain_motion_of_incompressible_hyperelastic_materials)
+[**Semicoupled numerical strategy to solve large-strain motion of
+incompressible hyperelastic materials,**](https://www.researchgate.net/publication/352480382_Semicoupled_numerical_strategy_to_solve_large-strain_motion_of_incompressible_hyperelastic_materials)
 _16th OpenFOAM Workshop, Dublin, Ireland._
 
 🔵 I. Oliveira, J. Gasche, and P. Cardiff, (2020)
-[**Implementation and numerical verification of an incompressible three-parameter Mooney-Rivlin model for large deformation of soft tissues,**](https://www.researchgate.net/publication/352480382_Semicoupled_numerical_strategy_to_solve_large-strain_motion_of_incompressible_hyperelastic_materials)
+[**Implementation and numerical verification of an incompressible
+three-parameter Mooney-Rivlin model for large deformation of soft tissues,**](https://www.researchgate.net/publication/352480382_Semicoupled_numerical_strategy_to_solve_large-strain_motion_of_incompressible_hyperelastic_materials)
 _15th OpenFOAM Workshop, Virginia Tech, USA._
 
 🔵 I. Batistić, Ž. Tuković, P. Cardiff and P. De Jaeger, (2020)
-[**A Segment-to-segment Algorithm for Finite Volume Mechanical Contact Simulations**](https://www.cpe.vt.edu/ofw15/posters/OFW15-IB-ZT-PC-poster.pdf)
+[**A Segment-to-segment Algorithm for Finite Volume Mechanical Contact
+Simulations**](https://www.cpe.vt.edu/ofw15/posters/OFW15-IB-ZT-PC-poster.pdf)
 _15th OpenFOAM Workshop, Virginia Tech, USA._
 
 🔵 P. Cardiff (2020)
-[**Training: Solid mechanics and fluid-solid interaction using the solids4foam toolbox**](https://www.researchgate.net/publication/342361291_Training_Solid_mechanics_and_fluid-solid_interaction_using_the_solids4foam_toolbox)
+[**Training: Solid mechanics and fluid-solid interaction using the solids4foam
+toolbox**](https://www.researchgate.net/publication/342361291_Training_Solid_mechanics_and_fluid-solid_interaction_using_the_solids4foam_toolbox)
 _15th OpenFOAM Workshop, Virginia Tech, USA._
 
-<span style="color: blue;">● </span>L. Huang, L. Bennetts, P. Cardiff, H. Jasak,
-Ž. Tuković, ,G. Thomas (2020).
+🔵 L. Huang, L. Bennetts, P. Cardiff, H. Jasak, Ž. Tuković, G. Thomas (2020).
 [**Fluid-structure interaction of a large ice sheet in waves**](https://www.researchgate.net/publication/342305097_The_implication_of_elastic_deformation_in_wave-ice_interaction)
 _15th OpenFOAM Workshop, Virginia Tech, USA._
 
@@ -194,7 +216,8 @@ _Ocean Engineering, 182,_ 102-111.
 _14th OpenFOAM Workshop 2019,Duisburg, Germany._
 
 🔵 P. Cardiff (2019)
-[**Analysis of finite volume solution algorithms for solid mechanics implemented in OpenFOAM**](https://www.researchgate.net/publication/334785048_Analysis_of_finite_volume_solution_algorithms_for_solid_mechanics_implemented_in_OpenFOAM)
+[**Analysis of finite volume solution algorithms for solid mechanics
+implemented in OpenFOAM**](https://www.researchgate.net/publication/334785048_Analysis_of_finite_volume_solution_algorithms_for_solid_mechanics_implemented_in_OpenFOAM)
 _14th OpenFOAM Workshop 2019,Duisburg, Germany._
 
 🔵 Huang, L. & Cardiff, P. & Tuković, Ž. & Thomas, G. (2019)
@@ -211,21 +234,26 @@ Thomas, (2019)
 _International Workshop on Water Waves and Floating Bodies, Australia._
 
 🔵 J. Živić, I. Batistić, Ž. Tuković, and I. Karšaj, (2019)
-[**Modeling of Incompressible Materials Using Finite Volume Method and its Application in Biomechanics,**](#)
+[**Modeling of Incompressible Materials Using Finite Volume Method and its
+Application in Biomechanics,**](#)
 _Proceedings of 10nd Congress of Croatian Society of mechanics, pp. 343–349._
 
 🟢 Tuković, Ž., Jasak, H., Karač, A., Cardiff, P., Ivanković, A. (2018).
-[**OpenFOAM finite volume solver for fluid-solid interaction. Transactions of Famena**. 2018, 42(3), pp. 1–31.](https://doi.org/10.21278/TOF.42301)
+[**OpenFOAM finite volume solver for fluid-solid interaction. Transactions of
+Famena**. 2018, 42(3), pp. 1–31.](https://doi.org/10.21278/TOF.42301)
 
 🟢 P. Cardiff, A. Karač, P. De Jaeger, H. Jasak, J. Nagy, A. Ivanković, and Ž.
 Tuković, (2018)
-[**An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations,**](https://doi.org/10.48550/arXiv.1808.10736)
+[**An open-source finite volume toolbox for solid mechanics and fluid-solid
+interaction simulations,**](https://doi.org/10.48550/arXiv.1808.10736)
 
 🔴 Tuković, Ž., Bukać, M., Cardiff, P., Jasak, H., and Ivanković, A. (2018).
-[**Added mass partitioned fluid-structure interaction solver based on a Robin boundary condition for pressure**.](https://doi.org/10.1007/978-3-319-60846-4_1)
+[**Added mass partitioned fluid-structure interaction solver based on a Robin
+boundary condition for pressure**.](https://doi.org/10.1007/978-3-319-60846-4_1)
 
 🟢 V. Škurić, P. D. Jaeger, and H. Jasak, (2018),
-[**Lubricated elastoplastic contact model for metal forming processes in OpenFOAM,**](https://doi.org/10.1016/j.compfluid.2018.06.011)
+[**Lubricated elastoplastic contact model for metal forming processes in
+OpenFOAM,**](https://doi.org/10.1016/j.compfluid.2018.06.011)
 
 🔵 P. Cardiff, O., Karač, A., Jaeger, P., Demirdzic I., Jasak, H., Nagy, J.,
 Ivankovic, A., Tuković, Ž. (2018)
@@ -233,32 +261,38 @@ Ivankovic, A., Tuković, Ž. (2018)
 _2nd Iberian OpenFOAM Meeting, Spain._
 
 🔵 L. Muralidharan, P. Cardiff, R. Flavin, A. Ivankovic, (2018)
-[**A study on the altered contact characteristics of the ankle joint as an effect of Arthritis, Arthrodesis and Arthroplasty**](https://www.researchgate.net/publication/326381359_A_study_on_the_altered_contact_characteristics_of_the_ankle_joint_as_an_effect_of_Arthritis_Arthrodesis_and_Arthroplasty)
+[**A study on the altered contact characteristics of the ankle joint as an
+effect of Arthritis, Arthrodesis and Arthroplasty**](https://www.researchgate.net/publication/326381359_A_study_on_the_altered_contact_characteristics_of_the_ankle_joint_as_an_effect_of_Arthritis_Arthrodesis_and_Arthroplasty)
 _World Congress of Biomechanics, Dublin._
 
 🟢 Cardiff, P., Tuković, Ž., Jasak, H., & Ivanković, A. (2017)
-[**A Lagrangian cell-centred finite volume method for metal forming simulation**](https://doi.org/10.1002/nme.5345).
+[**A Lagrangian cell-centred finite volume method for metal forming
+simulation**](https://doi.org/10.1002/nme.5345).
 _International Journal for Numerical Methods in Engineering, 109(13),
 1777-1803._
 
 🔵 P. Cardiff, O. & Karač, A. & Jaeger, P. & Jasak, H. & Nagy, J. & Ivankovic,
 A. & Tuković, Ž. (2017)
-[**Towards the Development of an Extendable Solid Mechanics and Fluid-Solid Interactions Toolbox for OpenFOAM**](https://www.researchgate.net/publication/318789132_Towards_the_Development_of_an_Extendable_Solid_Mechanics_and_Fluid-Solid_Interactions_Toolbox_for_OpenFOAM)
+[**Towards the Development of an Extendable Solid Mechanics and Fluid-Solid
+Interactions Toolbox for OpenFOAM**](https://www.researchgate.net/publication/318789132_Towards_the_Development_of_an_Extendable_Solid_Mechanics_and_Fluid-Solid_Interactions_Toolbox_for_OpenFOAM)
 _12th OpenFOAM Workshop 2019, University of Exeter, UK._
 
 🔵 P. Cardiff, O., T. Tian, Z. Tukovic, H. Jasak, A. Ivankovic, P. De Jaeger
 (2017)
-[**An Eulerian-inspired Lagrangian finite volume method for wire drawing simulations**](https://www.researchgate.net/publication/319434216_An_Eulerian-inspired_Lagrangian_finite_volume_method_for_wire_drawing_simulations)
+[**An Eulerian-inspired Lagrangian finite volume method for wire drawing
+simulations**](https://www.researchgate.net/publication/319434216_An_Eulerian-inspired_Lagrangian_finite_volume_method_for_wire_drawing_simulations)
 _IUTAM Symposium on Multi-scale Fatigue, Fracture and Damage of Materials in
 Harsh Environments, National University of Ireland, Ireland_
 
 🟢 Cardiff, P., Tuković, Ž., Jasak, H., & Ivanković, A. (2016).
-[**A block-coupled Finite Volume methodology for linear elasticity and unstructured meshes**](https://doi.org/10.1016/j.compstruc.2016.07.004).
+[**A block-coupled Finite Volume methodology for linear elasticity and
+unstructured meshes**](https://doi.org/10.1016/j.compstruc.2016.07.004).
 _Computers & Structures, 175, 100-122._
 
 🟢 Šekutkovski, B., Kostić, I., Simonović, A., Cardiff, P., & Jazarević, V.
 (2016)
-[**Three-dimensional fluid–structure interaction simulation with a hybrid RANS–LES turbulence model for applications in transonic flow domain**](https://doi.org/10.1016/j.ast.2015.11.028).
+[**Three-dimensional fluid–structure interaction simulation with a hybrid
+RANS–LES turbulence model for applications in transonic flow domain**](https://doi.org/10.1016/j.ast.2015.11.028).
 _Aerospace Science and Technology, 49, 1-16._
 
 🔵 P. Cardiff, Tuković, Ž. M. Clancy, H. Jasak, P. De Jaeger, A. Ivanković
@@ -276,7 +310,8 @@ _International Journal for Numerical and Analytical Methods in Geomechanics,
 39(13), 1410-1430._
 
 🟢 Cardiff, P., Karač, A., & Ivanković, A. (2014).
-[**A large strain finite volume method for orthotropic bodies with general material orientations**](https://doi.org/10.1016/j.cma.2013.09.008).
+[**A large strain finite volume method for orthotropic bodies with general
+material orientations**](https://doi.org/10.1016/j.cma.2013.09.008).
 _Computer Methods in Applied Mechanics and Engineering, 268, 318-335._
 
 🟢 P. Cardiff, A. Karač, D. FitzPatrick, R. Flavin, and A. Ivanković, (2014)
@@ -311,7 +346,8 @@ Engineering._
 _Computational Materials Science, 64, 283-284._
 
 🔵 P. Cardiff, A. Ivanković, A. Karač, (2012),
-[**Development of a finite volume based structural solver for large rotation of non-orthogonal meshes**](http://dx.doi.org/10.13140/2.1.3435.8725),
+[**Development of a finite volume based structural solver for large rotation of
+non-orthogonal meshes**](http://dx.doi.org/10.13140/2.1.3435.8725),
 _7th OpenFOAM Workshop, Technische Universität Darmstadt, Germany._
 
 🔵 P. Cardiff, A. Ivanković, D. FitzPatrick, F. Robert, A. Karač, (2011),
@@ -319,7 +355,8 @@ _7th OpenFOAM Workshop, Technische Universität Darmstadt, Germany._
 _6th OpenFOAM Workshop, Penn State University, USA_
 
 🟢 Ž. Tuković and H. Jasak, (2007),
-[**Updated lagrangian finite volume solver for large deformation dynamic response of elastic body**](https://www.researchgate.net/publication/263314677_Updated_Lagrangian_finite_volume_solver_for_large_deformation_dynamic_response_of_elastic_body),
+[**Updated lagrangian finite volume solver for large deformation dynamic
+response of elastic body**](https://www.researchgate.net/publication/263314677_Updated_Lagrangian_finite_volume_solver_for_large_deformation_dynamic_response_of_elastic_body),
 _Transactions of FAMENA, vol. 31, no. 1, pp. 55–70_.
 
 ---
