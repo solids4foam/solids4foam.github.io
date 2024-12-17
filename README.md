@@ -14,7 +14,6 @@
 solids4foam is a toolbox for performing solid mechanics and fluid-solid
 interaction simulations in OpenFOAM® and foam-extend.
 
-
 ### Where do I start?
 
 Please see the [installation guide](installation/README.md), followed by the
@@ -31,14 +30,12 @@ Please see the [installation guide](installation/README.md), followed by the
 - See [training and support](support/README.md) for training, support and
   consulting services.
 
-
 ### Disclaimer
 
 This offering is not approved or endorsed by OpenCFD Limited, producer and
 distributor of the OpenFOAM software via
 [www.openfoam.com](https://www.openfoam.com), and owner of the OPENFOAM® and
 OpenCFD® trade marks.
-
 
 ### Acknowledgement
 
