@@ -23,10 +23,8 @@ Please see the [installation guide](installation/README.md), followed by the
 
 - Explore the [tutorials guide](tutorials/README.md).
 - Check out the dedicated solids4foam discussion forum on  
-  [CFD Online](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-
-  structure-interaction/).
-- View and report bugs on the  
-  [GitHub issue tracker](https://github.com/solids4foam/solids4foam/issues).
+  [CFD Online](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/).
+- View and report bugs on the [GitHub issue tracker](https://github.com/solids4foam/solids4foam/issues).
 - See [training and support](support/README.md) for training, support and
   consulting services.
 
