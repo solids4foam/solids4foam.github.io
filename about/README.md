@@ -69,7 +69,7 @@ If you use solids4foam for a publication, please cite the following references:
 
 The corresponding BibTeX entries are
 
-```
+```bibtex
 @article{Cardiff2018,
   author =       {P. Cardiff and A. Karac and P. De Jaeger and H. Jasak and J. Nagy and A. Ivankovi\'{c} and \v{Z}. Tukovi\'{c}},
   title =        {An open-source finite volume toolbox for solid mechanics and fluid-solid interaction simulations},
