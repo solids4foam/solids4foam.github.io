@@ -34,7 +34,7 @@ The main changes from `v2.0` to `v2.1` are:
 - Refactored compiler directives for the different versions, e.g.
   OPENFOAMESIORFOUNDATION -> OPENFOAM_NOT_EXTEND;
 - Case dictionaries now get written with their default values to
-  <dictName>.withDefaultValues;
+  `<dictName>.withDefaultValues`;
 - Refactoring of GitHub actions;
 - Ported kirchhoffPlateSolid solid model and the squarePlate tutorial to
   OpenFOAM.com.
