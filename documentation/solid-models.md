@@ -38,7 +38,8 @@ In solids4foam, most solid models take the conservation of linear momentum as
 the governing equation:
 
 $$
-    \frac{\partial (\rho \boldsymbol{v})}{\partial t} =  \boldsymbol{\nabla} \cdot \boldsymbol{\sigma} + \rho \boldsymbol{b}
+    \frac{\partial (\rho \boldsymbol{v})}{\partial t} =
+    \boldsymbol{\nabla} \cdot \boldsymbol{\sigma} + \rho \boldsymbol{b}
 $$
 
 Where $$\rho$$ is the density, $$\boldsymbol{v}$$ is the velocity vector,
@@ -94,7 +95,7 @@ soft/flexible materials, like rubber and biological tissue, as well as in
 forming processes. Next, we will discuss the details of linear and nonlinear
 geometry approaches and their implementation in solids4foam.
 
-![](images/referenceAndDeformedConfigurations.png)
+![Diagram showing reference and deformed configurations](images/referenceAndDeformedConfigurations.png)
 
 **Figure 1: Deformation of a solid from the initial configuration at time
 $$t_o$$ to the deformed configuration at time $$t$$.**
@@ -106,8 +107,10 @@ then the linear geometry assumption is valid. In that case, the linear momentum
 conservation can be expressed as
 
 $$
-    \int_{\Omega_o} \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} \; \text{d}\Omega_o =
-    \oint_{\Gamma_o} \boldsymbol{n}_o \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_o + \int_{\Omega_o} \rho_o \boldsymbol{b} \; \text{d}\Omega_o
+    \int_{\Omega_o} \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} \;
+    \text{d}\Omega_o =
+    \oint_{\Gamma_o} \boldsymbol{n}_o \cdot \boldsymbol{\sigma} \;
+    \text{d}\Gamma_o + \int_{\Omega_o} \rho_o \boldsymbol{b} \; \text{d}\Omega_o
 $$
 
 Where subscript $$o$$ indicates a quantity in the initial configuration; or,
@@ -134,7 +137,8 @@ commonly used to achieve this:
 - The updated Lagrangian formulation.
 
 ```note
-In the limit of small deformations, nonlinear geometry approaches will give the same answer as linear geometry approaches.
+In the limit of small deformations, nonlinear geometry approaches will give the
+same answer as linear geometry approaches.
 ```
 
 #### Total Lagrangian Formulation
@@ -160,15 +164,19 @@ Using Nanson's relation and the definition of $$J$$, the conservation of linear
 momentum can be expressed in the total Lagrangian form:
 
 $$
-    \int_{\Omega_o} \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} \; \text{d}\Omega_o =
-    \oint_{\Gamma_o} \left(J \boldsymbol{F}^{-T} \cdot \boldsymbol{n}_o \right) \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_o + \int_{\Omega_o} \rho_o \boldsymbol{b} \; \text{d}\Omega_o
+    \int_{\Omega_o} \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} \;
+    \text{d}\Omega_o =
+    \oint_{\Gamma_o} \left(J \boldsymbol{F}^{-T} \cdot \boldsymbol{n}_o
+    \right) \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_o
+    + \int_{\Omega_o} \rho_o \boldsymbol{b} \; \text{d}\Omega_o
 $$
 
 or equivalently in differential form as
 
 $$
     \frac{\partial (\rho_o \boldsymbol{v})}{\partial t} =
-    \boldsymbol{\nabla}_o \cdot \left(J \boldsymbol{F}^{-1} \cdot \boldsymbol{\sigma} \right) \; + \rho_o \boldsymbol{b}
+    \boldsymbol{\nabla}_o \cdot \left(J \boldsymbol{F}^{-1} \cdot
+    \boldsymbol{\sigma} \right) \; + \rho_o \boldsymbol{b}
 $$
 
 As $$\boldsymbol{F}$$, $$J$$ and $$\boldsymbol{\sigma}$$ are a function of the
@@ -206,7 +214,7 @@ on the updated configuration, i.e., on the mesh after it has been moved at the
 end of the previous time-step. The initial and updated configurations coincide
 in the first step of an analysis.
 
-![](images/referenceUpdatedAndDeformedConfigurations.png)
+![Diagram showing eeference, updated and deformed configurations](images/referenceUpdatedAndDeformedConfigurations.png)
 
 **Figure 2: Deformation of a solid from the initial configuration at time
 $$t_o$$, to the updated configuration at time $$t - \Delta t$$, and finally to
@@ -216,15 +224,19 @@ The conservation of linear momentum can then be expressed in the updated
 Lagrangian form:
 
 $$
-    \int_{\Omega_u} \frac{\partial (\rho_u \boldsymbol{v})}{\partial t} \; \text{d}\Omega_u =
-    \oint_{\Gamma_u} \left(j \boldsymbol{f}^{-T} \cdot \boldsymbol{n}_u \right) \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_u + \int_{\Omega_u} \rho_u \boldsymbol{b} \; \text{d}\Omega_u
+    \int_{\Omega_u} \frac{\partial (\rho_u \boldsymbol{v})}{\partial t} \;
+    \text{d}\Omega_u =
+    \oint_{\Gamma_u} \left(j \boldsymbol{f}^{-T} \cdot \boldsymbol{n}_u \right)
+    \cdot \boldsymbol{\sigma} \; \text{d}\Gamma_u + \int_{\Omega_u} \rho_u
+    \boldsymbol{b} \; \text{d}\Omega_u
 $$
 
 or equivalently in differential form as
 
 $$
     \frac{\partial (\rho_u \boldsymbol{v})}{\partial t} =
-    \boldsymbol{\nabla}_u \cdot \left(j \boldsymbol{f}^{-1} \cdot \boldsymbol{\sigma} \right) \; + \rho_u \boldsymbol{b}
+    \boldsymbol{\nabla}_u \cdot \left(j \boldsymbol{f}^{-1} \cdot
+    \boldsymbol{\sigma} \right) \; + \rho_u \boldsymbol{b}
 $$
 
 Like the total Lagrangian approach, the updated Lagrangian approach requires an
@@ -309,7 +321,8 @@ the specific solution algorithms:
   approaches used in fluid solvers, e.g. `pUCoupledFoam` in foam-extend.
 
 ```note
-Most solid models in solids4foam are discretised using the cell-centred finite volume method; however, vertex-centred solid models are also available.
+Most solid models in solids4foam are discretised using the cell-centred finite
+volume method; however, vertex-centred solid models are also available.
 ```
 
 ---

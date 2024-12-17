@@ -197,7 +197,9 @@ been repackaged into a class form, e.g. `pimpleFluid` is a port of the
 `pimpleDyMFoam` standard solver.
 
 ```Note
-Standard solvers in OpenFOAM can differ significantly between OpenFOAM forks. solids4foam aims to include the fork-specific solver versions, e.g. when using OpenFOAM-v2012, `pimpleFluid` is a port of `pimpleDyMFoam` from OpenFOAM-v2012.
+Standard solvers in OpenFOAM can differ significantly between OpenFOAM forks.
+solids4foam aims to include the fork-specific solver versions, e.g. when using
+OpenFOAM-v2012, `pimpleFluid` is a port of `pimpleDyMFoam` from OpenFOAM-v2012.
 ```
 
 ### `solidModel` Class
