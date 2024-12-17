@@ -60,7 +60,9 @@ each cell, and mass continuity is automatically satisfied.
 We can equivalently express the governing equation in strong integral form:
 
 $$
-    \int_\Omega \frac{\partial (\rho \boldsymbol{v})}{\partial t} \; \text{d}\Omega =  \oint_\Gamma \boldsymbol{n} \cdot \boldsymbol{\sigma} \; \text{d}\Gamma + \int_\Omega \rho \boldsymbol{b} \; \text{d}\Omega
+    \int_\Omega \frac{\partial (\rho \boldsymbol{v})}{\partial t} \;
+    \text{d}\Omega = \oint_\Gamma \boldsymbol{n} \cdot \boldsymbol{\sigma} \;
+    \text{d}\Gamma + \int_\Omega \rho \boldsymbol{b} \; \text{d}\Omega
 $$
 
 Where $$\Omega$$ and $$\Gamma$$ are the volume and area of the region over which
