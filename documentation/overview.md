@@ -141,7 +141,7 @@ time step.
 
 ---
 
-#### `physicsModel` Class
+### `physicsModel` Class
 
 The `physicsModel` is an abstract base class with three derived classes:
 
@@ -155,7 +155,7 @@ fluid, solid, and fluid-solid interaction implementations derive from them.
 
 ---
 
-#### `solids4FoamModels` Library
+### `solids4FoamModels` Library
 
 Examining the `solids4FoamModels` library structure:
 
@@ -182,7 +182,7 @@ separate directories. In addition, the `physicsModel` is located in the
 
 ---
 
-#### `fluidModel` Class
+### `fluidModel` Class
 
 Fluid models implementations that derive from the `fluidModel` base class:
 
@@ -200,7 +200,7 @@ been repackaged into a class form, e.g. `pimpleFluid` is a port of the
 Standard solvers in OpenFOAM can differ significantly between OpenFOAM forks. solids4foam aims to include the fork-specific solver versions, e.g. when using OpenFOAM-v2012, `pimpleFluid` is a port of `pimpleDyMFoam` from OpenFOAM-v2012.
 ```
 
-#### `solidModel` Class
+### `solidModel` Class
 
 The `solidModel` implementations, deriving from the `solidModel` base class,
 include specific modelling approaches and discretisations for solid mechanics,
@@ -214,7 +214,7 @@ e.g.
 More details about the solid model can be found in
 [solid models section](https://solids4foam.github.io/documentation/solid-models.html).
 
-#### Fluid-Solid Interaction Class
+### Fluid-Solid Interaction Class
 
 The fluid-solid interaction models, deriving from the `fluidSolidInterface` base
 class, include implementations for partitioned coupling approaches, e.g.
