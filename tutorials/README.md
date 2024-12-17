@@ -2,7 +2,9 @@
 sort: 2
 ---
 
-# Tutorials Guide
+# Tutorials
+
+## Overview
 
 The solids4foam tutorials are organised into fluids, solids and fluid-solid
 interaction cases, where physical phenomena further categorise the solid
@@ -42,10 +44,11 @@ required for a fluid analysis, and the `fsiProperties` dictionary for a
 fluid-solid interaction analysis. These dictionaries let us specify what type of
 solid, fluid or fluid-solid interaction analysis is to be performed.
 
-## Running the Tutorials Using a Native Installation
+### Running the Tutorials Using a Native Installation
 
 ```tip
-We suggest making a backup copy of the solids4foam tutorials in case you want to reset them. Alternatively, you can reset them with git.
+We suggest making a backup copy of the solids4foam tutorials in case you want
+to reset them. Alternatively, you can reset them with git.
 ```
 
 Change the directory to the “run” directory (create the directory if needed):
@@ -81,7 +84,7 @@ commands:
 > touch case.foam && paraview case.foam
 ```
 
-## Running the Tutorials using a Docker Installation
+### Running the Tutorials using a Docker Installation
 
 If you are using the solids4foam docker image, it is not convenient to directly
 open ParaView from within the image, so a workaround is to copy the tutorials to
@@ -121,6 +124,6 @@ created in the docker container:
 
 ---
 
-# Tutorial Guides
+## Tutorial Guides
 
 {% include list.liquid all=true %}
