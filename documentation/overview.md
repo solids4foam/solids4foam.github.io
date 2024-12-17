@@ -208,7 +208,8 @@ success = true;
 }
 
 …
-```c++
+```
+
 ### Good
 ```c++
 Info<< “That’s better”
