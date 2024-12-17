@@ -4,7 +4,11 @@ sort: 4
 
 # Tutorials for Multiple Materials
 
-The tutorials described in this section are located in `tutorials/solid/multiMaterial` directory. These tutorials demonstrate how to use multiple materials in a `solids4foam` analysis. Mulitple materials can be defined in `constant/mechanicalProperties` as, for example,
+The tutorials described in this section are located in
+`tutorials/solid/multiMaterial` directory. These tutorials demonstrate how to
+use multiple materials in a `solids4foam` analysis. Mulitple materials can be
+defined in `constant/mechanicalProperties` as, for example,
+
 ```
     steel
     {
@@ -21,7 +25,10 @@ The tutorials described in this section are located in `tutorials/solid/multiMat
         nu              nu [0 0 0 0 0 0 0] 0.4;
     }
 ```
-where the `solids4Foam` solver expects to find a `cellZone` defined in the mesh for each material. It is assumed that the `cellZones` have the same names as the materials, e.g. `steel`, `rubber`.
+
+where the `solids4Foam` solver expects to find a `cellZone` defined in the mesh
+for each material. It is assumed that the `cellZones` have the same names as the
+materials, e.g. `steel`, `rubber`.
 
 ---
 

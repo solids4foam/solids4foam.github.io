@@ -4,7 +4,8 @@ sort: 2
 
 # Tutorials for Elastoplasticity
 
-The tutorials described in this section are located in the `tutorials/solid/elastoplasticity` directory.
+The tutorials described in this section are located in the
+`tutorials/solid/elastoplasticity` directory.
 
 ---
 

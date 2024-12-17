@@ -4,7 +4,8 @@ sort: 6
 
 # Tutorials for Viscoelasticity
 
-The tutorials described in this section are located in `tutorials/solid/viscoelasticity` directory.
+The tutorials described in this section are located in
+`tutorials/solid/viscoelasticity` directory.
 
 ---
 
