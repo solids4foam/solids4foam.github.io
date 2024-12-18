@@ -140,7 +140,7 @@ commonly used to achieve this:
 
 ```note
 In the limit of small deformations, nonlinear geometry approaches will give the
-same answer as linear geometry approaches.
+ same answer as linear geometry approaches.
 ```
 
 #### Total Lagrangian Formulation
@@ -324,7 +324,7 @@ the specific solution algorithms:
 
 ```note
 Most solid models in solids4foam are discretised using the cell-centred finite
-volume method; however, vertex-centred solid models are also available.
+ volume method; however, vertex-centred solid models are also available.
 ```
 
 ---
