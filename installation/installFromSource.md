@@ -71,7 +71,7 @@ on these optional changes.
 
 ```tip
 These dependencies are optional. You can skip them if you want to get up and
-running quickly.
+ running quickly.
 ```
 
 Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have
@@ -140,7 +140,7 @@ export PETSC_DIR=/opt/homebrew/Cellar/petsc/3.17.2
 
 ```tip
 Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable
-for new terminal sessions automatically.
+ for new terminal sessions automatically.
 ```
 
 #### gfortran
@@ -159,8 +159,8 @@ Or, on macOS with
 
 ```warning
 If the GCC compilers were used to compile OpenFOAM or foam-extend, then a
-compatible version of gfortran should be installed. For example, gfortran-7
-should be used with gcc-7.
+ compatible version of gfortran should be installed. For example, gfortran-7
+ should be used with gcc-7.
 ```
 
 solids4foam will use gfortran if the `gfortran` executable is found in the
