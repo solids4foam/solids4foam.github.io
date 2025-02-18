@@ -442,7 +442,7 @@ To monitor residuals, we can open a new terminal and type the following command 
 $ tail -f log.solids4Foam
 ```
 
-Now the solver is running and will take some time, as the mesh size is notable. In the meantime, we can check how the case is decomposed, i.e., which processors are solving which parts of the domain, by transforming each processor domain into a `vtk` file using the following commands:
+Now the solver is running and will take some time (~4 hours), as the mesh size is notable. In the meantime, we can check how the case is decomposed, i.e., which processors are solving which parts of the domain, by transforming each processor domain into a `vtk` file using the following commands:
 
 ```bash
 $ foamToVTK -case processor0
