@@ -1,4 +1,8 @@
-# Building custom solid case: `openEndWrench`
+---
+sort: 5
+---
+
+# My fifth tutorial: `openEndWrench`
 
 Prepared by: Ivan Batistić and Philip Cardiff
 
