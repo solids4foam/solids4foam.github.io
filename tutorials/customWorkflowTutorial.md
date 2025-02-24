@@ -261,14 +261,17 @@ test and is OK for use:
 
 ```plaintext
 Checking geometry...
-    Overall domain bounding box (-0.693371 -0.137758 -0.832674) (5.8863 1.987e-08 0.784286)
+    Overall domain bounding box (-0.693371 -0.137758 -0.832674)
+     (5.8863 1.987e-08 0.784286)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
     Boundary openness (-1.9122e-18 3.4032e-14 -2.15079e-15) OK.
     Max cell openness = 3.39452e-16 OK.
     Max aspect ratio = 7.41112 OK.
-    Minimum face area = 1.49903e-06. Maximum face area = 0.000593324.  Face area magnitudes OK.
-    Min volume = 5.80657e-09. Max volume = 4.96332e-06.  Total volume = 0.45235.  Cell volumes OK.
+    Minimum face area = 1.49903e-06. Maximum face area = 0.000593324.
+     Face area magnitudes OK.
+    Min volume = 5.80657e-09. Max volume = 4.96332e-06.  Total volume = 0.45235.
+     Cell volumes OK.
     Mesh non-orthogonality Max: 52.4483 average: 4.18888
     Non-orthogonality check OK.
     Face pyramids OK.
@@ -585,4 +588,3 @@ filter, where the `D` displacement field is selected as the *Vector* and a
 ![Case geometry and mesh](images/openEndWrench-results.png)
 
 *Deformed geometry by resulting displacement (scaled by factor of 100)*  
-
