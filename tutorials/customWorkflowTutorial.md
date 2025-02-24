@@ -10,7 +10,7 @@ This guide covers the step-by-step process of building a custom solid case
 from scratch. It demonstrates how to generate the mesh for the provided
 geometry, use the `cfMesh` mesh generator, set up patches for boundary
 conditions, apply boundary conditions, solve the problem, and post-process the
-results. We’ll use an open-end wrench as the example.
+results. We’ll use an "open-end wrench" as the example problem.
 
 ## Prerequisites
 
@@ -25,39 +25,39 @@ It is possible to follow the tutorial steps with other `OpenFOAM` and
 
 ## Step 1. Preparing Case Geometry
 
-Before using geometry for simulations, it’s essential to ensure the geometry
+Before using geometry for simulations, it is essential to ensure the geometry
 is clean and free of flaws that could compromise mesh generation. Common flaws
 to address include non-manifold edges, self-intersecting surfaces, gaps,
-overlapping faces, very sharp angles, improper units, disconnected bodies,
-tolerance issues and others. These can be resolved using any CAD software.
+overlapping faces, sharp angles, improper units, disconnected bodies,
+tolerance issues, etc. These can be resolved using CAD software.
 In this example, geometry preparation was done using Rhino, but other software
 such as Blender or Salome can also be used. The case geometry is an open-end
 wrench, as shown in the figure below.
 
 ![Case geometry and mesh](images/openEndWrench-geometry.png)
 
-**Case geometry**  
-For `cfMesh`, the prepared geometry should be exported in `stl` format
-(preferably written in `ascii` format). Before exporting, it’s advisable
+### Case geometry
+
+For `cfMesh`, the prepared geometry should be exported in the `stl` format
+(preferably written in the `ascii` format). Before exporting, it is advisable
 to divide the surface so that each portion corresponds to the boundary
 condition that will be applied later in the simulation. In this case, we
 distinguish between the faces where zero displacement will be prescribed,
-surfaces where the load will be applied and symmetry surface. These surfaces
-are shown in the image below, with the load surface marked in green, symmetry
-surface in blue and the fixed displacement surface in red. Overall, this means
+surfaces where the load will be applied and the symmetry surface. These surfaces
+are shown in the image below, with the load surface marked in green, the symmetry
+surface in blue, and the fixed displacement surface in red. Overall, this means
 the wrench geometry is divided into four `.stl` files: `wrench-fixed.stl`,
 `wrench-sym.stl`,  `wrench-free.stl`, and `wrench-load.stl`.
 
 ```tip
-Note that only half of the geometry is the computational domain. 
-The symmetry of the geometry and loads allows us to model one-half of the 
-geometry, which at the end saves computational time.
+Note that only half of the geometry is the computational domain.
+The symmetry of the geometry and loads allows us to model one-half of the
+geometry, which saves computational time.
 ```
 
 ![Case geometry and mesh](images/openEndWrench-bc.png)
 
-*Computational model: load surface (green), fixed surface (red)
-and symmetry surface (blue)*  
+### Loading (green), fixed (red) and symmetry surfaces (blue)
 
 ```tip
 When exporting geometry to stl format, you can control the fineness of the
@@ -67,14 +67,14 @@ increase meshing time.
 ```
 
 To download the geometry, first, we need  to open the terminal and
-create a case directory at a location of your choice:  
+create a case directory at a location of your choice:
 
 ```bash
 mkdir openEndWrench
-cd openEndWrench        
+cd openEndWrench
 ```
 
-Next, download the geometry using the following command:  
+Next, download the geometry using the following command:
 
 ```bash
 wget https://raw.githubusercontent.com/solids4foam/
@@ -84,21 +84,36 @@ solid-benchmarks.git/main/path/to/file
 Before proceeding to the next phase, we will set up the `SOLIDS4FOAM_DIR`
 variable to point to the `solids4foam` folder. Since this location is
 user-dependent, this will ensure that the subsequent commands are
-applicable to all users.
+applicable to all users. You can add the `SOLIDS4FOAM_DIR` variable to your
+`.bashrc` file with the following command, where you should replace
+`<PATH_TO_SOLIDS4FOAM>` with the location of location of the solids4foam
+directory on your system.
 
 ```bash
-echo 'export SOLIDS4FOAM_DIR=~/path-to-solids4foam/' >> ~/.bashrc
+echo 'export SOLIDS4FOAM_DIR=<PATH_TO_SOLIDS4FOAM>' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 ## Step 2. Meshing using cfMesh
 
-Before proceeding to the meshing phase, we need to populate the case directory
+The cfMesh mesher comes with OpenFOAM (OpenFOAM.com) as a sub-module, so you
+ need to compile it before being able to use it. This can be done with the
+ following commands:
+
+```bash
+foam
+cd modules
+git submodule update --init cfmesh
+cd cfmesh
+./Allwmake
+```
+
+Before proceeding to the meshing phase, we must populate the case directory
 with the necessary `OpenFOAM` folders and files. The most efficient way to do
-this is by finding the most similar case and copying its structure.
+this is by finding the most similar tutorial case and copying its structure.
 For our simulation, which assumes small deformations and a linear elastic
 material, the cases in `solids4foam/tutorials/solids/linearElasticity` are the
-most suitable.  For this case, we will copy case structure from the `plateHole`
+most suitable.  For this case, we will copy the case structure from the `plateHole`
 tutorial case:
 
 ```bash
@@ -107,7 +122,7 @@ cp -r $SOLIDS4FOAM_DIR/tutorials/solids/linearElasticity/plateHole/* .
 
 Meshing with cfMesh is controlled using the `meshDict` file. Since `cfMesh`
 is included in the `OpenFOAM` distribution (at least for version `v2312`),
-we can find examples of this file either in the `OpenFOAM` tutorials or the
+we can find examples of this file either in the `OpenFOAM` tutorials or in the
 `solids4foam` tutorials:
 
 ```bash
@@ -147,8 +162,8 @@ boundaryCellSize 0.0025;
 The next step is to prepare the file to be meshed. Since we have divided
 our surface into three `stl` files, we need to combine them into one `stl`
 file. Before combining, we must open each `stl` file and rename the beginning
-and end of the file to match the `stl` name. For example for `wrench-free`
-file we need to replace `OBJECT` in the first and the last
+and end of the file to match the `stl` name. For example for the `wrench-free`
+file, we need to replace `OBJECT` in the first and the last
 line with `wrench-free`.
 
 ```plaintext
@@ -182,13 +197,13 @@ cat *.stl > wrench.stl
 ```
 
 `cfMesh` prefers the `fms` format over the `stl` format, so we will
-convert `stl` to`fms` using following command:
+convert `stl` to`fms` using the following command:
 
 ```bash
-surfaceToFMS wrench.stl 
+surfaceToFMS wrench.stl
 ```
 
-Now we can adjust the `meshDict` and try to generate a mesh. Set the
+Now, we can adjust the `meshDict` and try to generate a mesh. Set the
 entries in the `meshDict` as follows,
 
 ```plaintext
@@ -197,12 +212,12 @@ maxCellSize 0.016;
 boundaryCellSize $maxCellSize;
 ```
 
-and run the mesher using following command (after which we will use
-`paraFoam` to visualize it):
+and run the mesher using the following command (after which we will use
+`paraFoam` to visualise it):
 
 ```bash
 cartesianMesh
-paraFoam
+paraFoam   # or 'touch case.foam && paraview case.foam'
 ```
 
 ![Case geometry and mesh](images/openEndWrench-mesh1.png)
@@ -212,12 +227,12 @@ However, if we want to capture smaller features, such as the engraved letters,
 we need to refine the mesh in that region. To do so, we can refer to the
 `cfMesh` [user guide](https://cfmesh.com/wp-content/uploads/2015/09/User_Guide-cfMesh_v1.1.pdf),
 which details the available meshing features. In this case, we will refine the
-mesh within a box zone. To determine the box's center and size, we can use
+mesh within a box zone. To determine the box's centre and size, we can use
 *Sources > Alphabetical > Box* in ParaView.
 
 ![Case geometry and mesh](images/openEndWrench-boxRef.png)
 
-Now when we know box dimensions we can add the refinement in the `meshDict` file:
+Now that we know the box dimensions we can add the refinement in the `meshDict` file:
 
 ```plaintext
 surfaceFile "wrench.fms";
@@ -238,14 +253,14 @@ objectRefinements
 }
 ```
 
-Afterward, we will run the mesher again,
+Afterwards, we will run the mesher again,
 
 ```bash
 cartesianMesh
 paraFoam
 ```
 
-and check mesh in paraView.
+and check mesh in ParaView:
 
 ![Case geometry and mesh](images/openEndWrench-mesh2.png)
 
@@ -283,7 +298,7 @@ Mesh OK.
 
 From the `Overall domain bounding box` line, we can see that the bounding box
 for our mesh is 6.5 meters in the x-direction, which suggests that we have
-scaling issues. This typically happens when the mesh is created in millimeters
+scaling issues. This typically happens when the mesh is created in millimetres
 but exported in meters, or vice versa. In this example, the CAD model was
 in inches, so we need to scale it by a factor of 0.0254 to convert
 it to meters:
@@ -306,7 +321,7 @@ Checking patch topology for multiply connected surfaces...
 ```
 
 The same patch names are written in the `constant/polyMesh/boundary` file,
-which in our case looks like this:
+which, in our case, looks like this:
 
 ```plaintext
 3
@@ -405,18 +420,16 @@ mechanical
 ```
 
  After inspecting the file, we can see that the properties match those
- of steel, so we can leave the file as it is.  
+ of steel, so we can leave the file as it is.
 
 In the `constant/solidProperties` file, we choose the solver type,
 solution tolerances, and the maximum number of iterations per time step
-(`nCorrectors`). More informations regarding entries in`solidProperties`
-can be found in
-[`hotSphere`](https://www.solids4foam.com/tutorials/tutorial1.html)
-tutorial case. The chosen solver is same as in `plateHole` tutorial;
+(`nCorrectors`). More information regarding entries in`solidProperties`
+can be found in the [`hotSphere`](https://www.solids4foam.com/tutorials/tutorial1.html)
+tutorial case. The chosen solver is the same as in `plateHole` tutorial;
 `linearGeometryTotalDisplacement`, which is a segregated solver for small
 strains and rotations. For a list of the solid models currently available
-in `solids4foam`, check this
-[page](https://www.solids4foam.com/documentation/solid-models.html).
+in `solids4foam`, check this [page](https://www.solids4foam.com/documentation/solid-models.html).
 
 ```plaintext
 // linearGeometry: assumes small strains and rotations
@@ -550,7 +563,7 @@ command for live monitoring of the solver log file:
 tail -f log.solids4Foam
 ```
 
-Now the solver is running and will take some time (~4 hours), as the mesh
+Now the solver is running and will take some time (~4 hours) as the mesh
 size is notable. In the meantime, we can check how the case is decomposed,
 i.e., which processors are solving which parts of the domain,
 by transforming each processor domain into a `vtk`
@@ -569,22 +582,23 @@ file located in the processor directory.
 
 The decomposition for this case is shown in the figure below.
 One can observe that the purple and green processor domains are smaller
-in size; however, this region contains a finer mesh for the engraved letters,
+; however, this region contains a finer mesh for the engraved letters,
 resulting in an overall balanced load on all CPUs.
 
 ![Case geometry and mesh](images/openEndWrench-processors.png)
 
-*Computational domain decomposition, colors denote different processors*  
+### Computational domain decomposition, colours denote different processors
 
 ## Step 5. Analysing the Results
 
 When viewing the results in ParaView, we can first mirror the computational
 domain to obtain the full one by choosing *Filters > Alphabetical > Reflect*
-and mirroring around the Y plane. Afterward, we can warp the geometry by a
+and mirroring around the Y plane. Afterwards, we can warp the geometry by a
 scaled displacement field, which can be achieved using the *Warp By Vector*
-filter, where the `D` displacement field is selected as the *Vector* and a
+filter, where the `D` displacement field is selected as the *Vector,* and a
 *Scale Factor* of 1 shows the true deformation. In this case, using a
 *Scale Factor* of 100 allows the deformation to be seen.
+
 ![Case geometry and mesh](images/openEndWrench-results.png)
 
-*Deformed geometry by resulting displacement (scaled by factor of 100)*  
+### Deformed geometry by resulting displacement (scaled by factor of 100)
