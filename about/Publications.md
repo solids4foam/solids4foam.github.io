@@ -32,12 +32,12 @@ Publications are listed in reverse chronological order.
 
 🟢 Whelan A., Tang T., Pakrashi V. & Cardiff P. (2025).
 [**A Finite Volume Framework for Damage and Fracture Prediction in Wire Drawing**]
-(https://api.semanticscholar.org/CorpusID:275318400),
+(https://doi.org/10.1002/nme.7640),
 _International Journal for Numerical Methods in Engineering, 126: e7640._
 
 🔵 Boughou S., Batistić I.,  Boukharfane R., Omar A. & Inman D. J. (2025).
 [**Developing a Morphing Wingtip: Aeroelastic Design and FSI Analysis.**]
-(https://arc.aiaa.org/doi/abs/10.2514/6.2025-0283)
+(https://doi.org/10.2514/6.2025-0283),
 _AIAA SCITECH 2025 Forum, Florida._
 
 🟢 Boughou S., Batistić I., Omar A., Cardiff P., Inman D. J., Boukharfane R.
