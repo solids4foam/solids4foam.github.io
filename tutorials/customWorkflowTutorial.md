@@ -78,11 +78,10 @@ mkdir openEndWrench
 cd openEndWrench
 ```
 
-Next, download the geometry using the following command:
+Next, download and unzip the geometry using the following command:
 
 ```bash
-wget https://raw.githubusercontent.com/solids4foam/
-solid-benchmarks.git/main/path/to/file
+wget https://www.solids4foam.com/tutorials/archive/wrench.zip && unzip wrench.zip
 ```
 
 Before proceeding to the next phase, we will set up the `SOLIDS4FOAM_DIR`
