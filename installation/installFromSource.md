@@ -8,8 +8,8 @@ sort: 1
 
 ## Quickstart
 
-Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then
-download, build and test solids4foam-v2.1:
+Source a [supported version of OpenFOAM](#supported-versions-of-openfoamfoam),
+then download, build and test solids4foam-v2.1:
 
 ```bash
 git clone --branch v2.1 https://github.com/solids4foam/solids4foam.git
@@ -55,7 +55,7 @@ changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before
 running the Allwmake script when [building solids4foam](#building-solids4foam),
 e.g.
 
-```
+```bash
 > export S4F_NO_FILE_FIXES=1 && ./Allwmake -j
 ```
 
@@ -70,20 +70,23 @@ on these optional changes.
 ### Dependencies
 
 ```tip
-These dependencies are optional. You can skip them if you want to get up and running quickly.
+These dependencies are optional. You can skip them if you want to get up and
+ running quickly.
 ```
 
 Beyond a working version of OpenFOAM or foam-extend, solids4foam does not have
 any **mandatory** dependencies; however, several **optional** dependencies are
 required to use the complete set of functionalities:
 
-| Dependency | Functionality Provided                                                    |
-| ---------- | ------------------------------------------------------------------------- |
-| Eigen      | Block-coupled cell-centred and vertex-centred solid models linear solvers |
-| PETSc      | Block-coupled vertex-centred solid models linear solvers                  |
-| gfortran   | Abaqus UMAT mechanical law interface                                      |
-| cfmesh     | Some tutorials use cfmesh for creating the meshes                         |
-| gnuplot    | Some tutorials use Gnuplot to generate graphs after running the solver    |
+| Dependency | Functionality Provided                                           |
+| ---------- | ---------------------------------------------------------------- |
+| Eigen      | Block-coupled cell-centred and vertex-centred solid models       |
+|            | linear solvers.                                                  |
+| PETSc      | Block-coupled vertex-centred solid models linear solvers.        |
+| gfortran   | Abaqus UMAT mechanical law interface.                            |
+| cfmesh     | Some tutorials use cfmesh for creating the meshes.               |
+| gnuplot    | Some tutorials use Gnuplot to generate graphs after running the  |
+|            | solver.                                                          |
 
 Note that, for running the tests, the OpenFOAM or foam-extend tutorials are also
 required. If preCICE is installed, this will enable additional tests.
@@ -136,7 +139,8 @@ export PETSC_DIR=/opt/homebrew/Cellar/petsc/3.17.2
 ```
 
 ```tip
-Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable for new terminal sessions automatically.
+Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable
+ for new terminal sessions automatically.
 ```
 
 #### gfortran
@@ -154,7 +158,9 @@ Or, on macOS with
 ```
 
 ```warning
-If the GCC compilers were used to compile OpenFOAM or foam-extend, then a compatible version of gfortran should be installed. For example, gfortran-7 should be used with gcc-7.
+If the GCC compilers were used to compile OpenFOAM or foam-extend, then a
+ compatible version of gfortran should be installed. For example, gfortran-7
+ should be used with gcc-7.
 ```
 
 solids4foam will use gfortran if the `gfortran` executable is found in the
@@ -168,8 +174,10 @@ script within these tutorials will exit.
 
 ```tip
 - **foam-extend**: cfmesh is included in foam-extend.
-- **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be installed from [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
-- **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org.
+- **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be
+  installed from [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
+- **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently
+  not compatible with OpenFOAM.org.
 ```
 
 #### gnuplot
@@ -223,7 +231,7 @@ The latest nightly build development branch can be downloaded with
 ### Building solids4foam
 
 Before building solids4foam, a compatible version of OpenFOAM or foam-extend
-should be sourced: see the [table above](#supported-versions-of-openfoam). To
+should be sourced: see the [table above](#supported-versions-of-openfoamfoam). To
 build solids4foam, enter the solids4foam directory and execute the included
 Allwmake script, e.g.
 

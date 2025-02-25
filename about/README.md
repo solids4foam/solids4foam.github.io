@@ -60,8 +60,7 @@ If you use solids4foam for a publication, please cite the following references:
 
 > P. Cardiff, A Karac, P. De Jaeger, H. Jasak, J. Nagy, A. Ivanković, Ž.
 > Tuković: An open-source finite volume toolbox for solid mechanics and
-> fluid-solid interaction simulations. 2018, 10.48550/arXiv.1808.10736,
-> available at https://arxiv.org/abs/1808.10736.
+> fluid-solid interaction simulations. 2018, 10.48550/arXiv.1808.10736
 >
 > Ž. Tuković, A. Karač, P. Cardiff, H. Jasak, A. Ivanković: OpenFOAM finite
 > volume solver for fluid-solid interaction. Transactions of Famena, 42 (3), pp.

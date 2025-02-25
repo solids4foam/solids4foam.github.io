@@ -4,12 +4,14 @@ sort: 4
 
 # Tutorials for Multiple Materials
 
+## Overview
+
 The tutorials described in this section are located in
 `tutorials/solid/multiMaterial` directory. These tutorials demonstrate how to
 use multiple materials in a `solids4foam` analysis. Mulitple materials can be
 defined in `constant/mechanicalProperties` as, for example,
 
-```
+```c++
     steel
     {
         type            linearElastic;
@@ -32,6 +34,6 @@ materials, e.g. `steel`, `rubber`.
 
 ---
 
-# Tutorial Guides
+## Tutorial Guides
 
 {% include list.liquid all=true %}

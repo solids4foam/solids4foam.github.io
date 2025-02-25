@@ -28,7 +28,7 @@ Once docker is installed, open a terminal on Linux or macOS or PowerShell on
 Windows; the solids4foam docker image can be downloaded from Docker Hub with one
 of commands below depending on which version of OpenFOAM or foam you would like
 
-```
+```bash
 > docker pull solids4foam/solids4foam-v2.0-openfoam-v2012
 > docker pull solids4foam/solids4foam-v2.0-openfoam-9
 > docker pull solids4foam/solids4foam-v2.0-foam-extend-4.1
@@ -43,7 +43,7 @@ The image is ~6.2 GB.
 In macOS and Linux, the solids4foam container can be created with
 (OpenFOAM-v2012 as an example here)
 
-```
+```bash
 > docker create --entrypoint /bin/bash -v="${HOME}":/shared \
        --name solids4foam-v2.0-openfoam-v2012 \
        -it solids4foam/solids4foam-v2.0-openfoam-v2012
@@ -55,7 +55,7 @@ container should be updated to use the version that you downloaded.
 
 In Windows PowerShell, the command becomes:
 
-```
+```bash
 > docker create --entrypoint /bin/bash -v="${HOME}":/shared \
        \--name solids4foam-v2.0-openfoam-v2012 \
        -it solids4foam/solids4foam-v2.0-openfoam-v2012
@@ -69,13 +69,13 @@ where `--name` has become `\--name`.
 
 You can now attach to the created container with
 
-```
+```bash
 > docker start solids4foam-v2.0-openfoam-v2012
 ```
 
 and subsequently, connect to it with
 
-```
+```bash
 > docker attach solids4foam-v2.0-openfoam-v2012
 ```
 
@@ -94,7 +94,7 @@ appropriate command the version you downloaded:
 
 You can then navigate to the solids4foam tutorials directory with
 
-```
+```bash
 > cd $WM_PROJECT_DIR/../solids4foam/tutorials
 ```
 
@@ -102,11 +102,14 @@ Please see the [tutorials guide](../tutorials/README.md) to learn how to run the
 tutorials.
 
 ```tip
-Note: it is straightforward to install additional software in the Docker container, e.g. `sudo apt-get install emacs`
+Note: it is straightforward to install additional software in the Docker
+container, e.g. `sudo apt-get install emacs`
 ```
 
 ```tip
-Models run from within the `/shared' mounted directory will be visible from your host computer. In that way, you can use ParaView on your host computer to view the cases.
+Models run from within the `/shared` mounted directory will be visible from your
+host computer. In that way, you can use ParaView on your host computer to view
+the cases.
 ```
 
 --
@@ -115,7 +118,7 @@ Models run from within the `/shared' mounted directory will be visible from your
 
 You can exit a container with
 
-```
+```bash
 > exit
 ```
 
