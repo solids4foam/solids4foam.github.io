@@ -16,9 +16,16 @@ git clone --branch v2.1 https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
-The `-j` flag instructs `Allwmake` to use all available cores. For the latest
-nightly build, specify the `development` branch instead of `v2.1`. For a
-detailed installation guide, see below.
+The `-j` flag instructs `Allwmake` to use all available cores.
+
+Similarly, the latest  the `development` branch can be downloaded and compiled
+ with
+```bash
+git clone --branch development https://github.com/solids4foam/solids4foam.git
+cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
+```
+
+For a detailed installation guide, see below.
 
 ---
 
