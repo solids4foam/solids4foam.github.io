@@ -20,6 +20,7 @@ The `-j` flag instructs `Allwmake` to use all available cores.
 
 Similarly, the latest  the `development` branch can be downloaded and compiled
  with
+
 ```bash
 git clone --branch development https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
