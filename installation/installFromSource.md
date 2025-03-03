@@ -53,6 +53,10 @@ the following OpenFOAM versions are supported:
 | solids4foam-v2.1    | foam-extend-4.1                  |
 |                     | OpenFOAM-v2012 -> OpenFOAM-v2312 |
 |                     | OpenFOAM-9                       |
+| -------             | --------                         |
+| development         | foam-extend-4.1                  |
+|                     | OpenFOAM-v2012 -> OpenFOAM-v2412 |
+|                     | OpenFOAM-9                       |
 
 ### Optional fixes for the OpenFOAM installation
 
