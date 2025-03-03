@@ -206,9 +206,9 @@ computer; we suggest placing it in `$FOAM_RUN/..`.
 solids4foam-v2.1 can be downloaded as an archive file:
 
 - [solids4foam-v2.1.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.1.zip):
-  extracted with `> unzip v2.1.tar.gz`
+  extracted with `> unzip v2.1.zip`
 - [solids4foam-v2.1.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.1.tar.gz):
-  extracted with `> tar xzf unzip v2.1.tar.gz`
+  extracted with `> tar xzf v2.1.tar.gz`
 
 #### Git repository: v2.1
 
