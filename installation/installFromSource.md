@@ -186,10 +186,10 @@ script within these tutorials will exit.
 
 ```tip
 - **foam-extend**: cfmesh is included in foam-extend.
-- **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be
-  installed from [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
+- **OpenFOAM.com (OpenCFD/ESI version)**: cfmesh is provided as an optional
+   submodule: see [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
 - **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently
-  not compatible with OpenFOAM.org.
+   not compatible with OpenFOAM.org.
 ```
 
 #### gnuplot
