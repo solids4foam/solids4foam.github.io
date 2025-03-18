@@ -298,8 +298,8 @@ can use either GDB or LLDB, whereas on macOS, only LLDB is available.
     ```
 
     ```note
-    To prevent `gdb` from printing its banner information on startup, use the `-q` or
-    `--quiet` option.
+    To prevent `gdb` from printing its banner information on startup, use the
+    `-q` or `--quiet` option.
     ```
 
     If you forget to specify the executable before starting the debugger, you
