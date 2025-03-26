@@ -298,7 +298,7 @@ This method is **faster and more efficient**, as it avoids recompiling the
 entire OpenFOAM library. However, we won't be able to step inside OpenFOAM's
 libraries.
 
-```note
+```tip
 Other debugging flags not included by OpenFOAM can be added either by including
 them in `Make/options` for local projects or by altering the rules defined in
 `$WM_DIR/rules` globally.
@@ -358,7 +358,7 @@ can use either GDB or LLDB, whereas on macOS, only LLDB is available.
     > lldb -- laplacianFoam -case /path/to/case -otherOptions
     ```
 
-    ```note
+    ```tip
     To prevent `gdb` from printing its banner information on startup, use the
     `-q` or `--quiet` option.
     ```
@@ -391,7 +391,7 @@ can use either GDB or LLDB, whereas on macOS, only LLDB is available.
     (lldb) breakpoints list
     ```
 
-    ```note
+    ```tip
     There are various ways to set a breakpoint (including conditional
     breakpoints, etc.). Additionally, breakpoints can be enabled, disabled, and
     deleted.
@@ -413,7 +413,7 @@ can use either GDB or LLDB, whereas on macOS, only LLDB is available.
     allowing us to inspect the state of the program.
 
     <!-- markdownlint-disable MD046 -->
-    ```note
+    ```tip
     For added convenience, GDB offers the `start` command, which automatically
     sets a _temporary_ breakpoint at the beginning of the `main()` function and
     initiates program execution up to that point.
@@ -565,7 +565,7 @@ the following approaches:
     ```
     <!-- markdownlint-enable MD013 -->
 
-   ```note
+   ```tip
    The `llvm` package also includes usefull softwares like `clangd` and
    `clang-format`.
    ```
