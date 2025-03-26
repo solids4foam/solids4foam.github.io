@@ -118,11 +118,70 @@ OpenFOAM developers have three main methods for debugging:
       an issue occurs.
     - While useful for quick debugging, it is often not enough for complex issues.
 
-1. Debug Switches (`$WM_PROJECT_DIR/etc/controlDict`)
+1. Debug Switches
 
-    - OpenFOAM provides built-in debug switches that allow finer control over
-      solver execution.
-    - These are useful for logging additional details but require prior setup.
+    Debug switches are a built-in runtime logging mechanism in OpenFOAM,
+    allowing users to specify a log level for a particular switch to print
+    additional information to `stdout`. Each class in OpenFOAM typically has its
+    own debug switch, providing extra debugging details specific to that class.
+    For example, `SolverPerformance` (from the `SolverPerformance` class in
+    `$FOAM_SRC/OpenFOAM/matrices/LduMatrix/LduMatrix/`) logs iteration details,
+    while `lduMatrix` prints solver convergence messages. All available switches
+    and their default values can be found in `$WM_PROJECT_DIR/etc/controlDict`
+    under the `DebugSwitches` sub-dictionary. The log level of a switch can be
+    set locally in `$FOAM_CASE/system/controlDict` or applied globally to all
+    solvers in `$HOME/.OpenFOAM/$FOAM_API/controlDict`. For example, to activate
+    a debug switch, add an entry in `controlDict`:
+
+    ```foam
+    DebugSwitches
+    {
+       SolverPerformance 1;
+    }
+    ```
+
+    The following shows the output of `icoFoam` simulating the cavity case with
+    different debugging log levels of `SolverPerformance`.
+
+   <!-- markdownlint-disable MD013 -->
+   ```txt
+   # level 0
+   Courant Number mean: 0.222158 max: 0.852134
+   time step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17
+   time step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17
+   ExecutionTime = 0.22 s  ClockTime = 1 s
+
+   # level 1 (default)
+   Courant Number mean: 0.222158 max: 0.852134
+   smoothSolver:  Solving for Ux, Initial residual = 2.3091e-07, Final residual = 2.3091e-07, No Iterations 0
+   smoothSolver:  Solving for Uy, Initial residual = 5.0684e-07, Final residual = 5.0684e-07, No Iterations 0
+   DICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0
+   time step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17
+   DICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0
+   time step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17
+   ExecutionTime = 0.23 s  ClockTime = 1 s
+
+   # level 3
+   Courant Number mean: 0.222158 max: 0.852134
+   smoothSolver:  Iteration 0 residual = 2.3091e-07
+   smoothSolver:  Solving for Ux, Initial residual = 2.3091e-07, Final residual = 2.3091e-07, No Iterations 0
+   smoothSolver:  Iteration 0 residual = 5.0684e-07
+   smoothSolver:  Solving for Uy, Initial residual = 5.0684e-07, Final residual = 5.0684e-07, No Iterations 0
+   DICPCG:  Iteration 0 residual = 8.63844e-07
+   DICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0
+   time step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17
+   DICPCG:  Iteration 0 residual = 9.59103e-07
+   DICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0
+   time step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17
+   ExecutionTime = 0.25 s  ClockTime = 0 s
+   ```
+   <!-- markdownlint-enable MD013 -->
+
+    Moreover, switches relevant to a solver can be listed using `<solver>
+    -listRegisteredSwitches`, specifically under the `DebugSwitches` entry.
+    Alternatively, and especially for third-party solvers like `solids4Foam`,
+    users can locate debug switches in source files by searching for
+    `defineTypeNameAndDebug` macro statements.
 
 1. Interactive Debugging with GDB/LLDB (Our Focus)
 
@@ -132,7 +191,9 @@ OpenFOAM developers have three main methods for debugging:
       different conditions.
 
 In this section, we will focus on the third method, using `gdb` and `lldb` to
-systematically diagnose and fix OpenFOAM crashes.
+systematically diagnose and fix OpenFOAM crashes. For more information on these
+methods, please refer to [this openfoamwiki
+HowTo](https://openfoamwiki.net/index.php/HowTo_debugging)
 
 ```note
 Debuggers are more than just tools for fixing errors; they provide deep insight
