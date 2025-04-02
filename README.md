@@ -6,6 +6,7 @@
 ![Build and test](https://github.com/solids4foam/solids4foam/actions/workflows/buildAndTest.yml/badge.svg?branch=development)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/solids4foam/solids4foam)
 ![GitHub issues](https://img.shields.io/github/issues/solids4foam/solids4foam)
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.07407/status.svg)](https://doi.org/10.21105/joss.07407)
 
 ---
 

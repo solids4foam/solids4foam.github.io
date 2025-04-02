@@ -58,9 +58,13 @@ solids4foam builds on and generalises the
 
 If you use solids4foam for a publication, please cite the following references:
 
+> P. Cardiff, I. Batistić Ž. Tuković: solids4foam: A toolbox for performing
+> solid mechanics and fluid-solid interaction simulations in OpenFOAM. Journal
+> of Open Source Software. 2025, 10(108), 7407, 10.21105/joss.07407.
+>
 > P. Cardiff, A Karac, P. De Jaeger, H. Jasak, J. Nagy, A. Ivanković, Ž.
 > Tuković: An open-source finite volume toolbox for solid mechanics and
-> fluid-solid interaction simulations. 2018, 10.48550/arXiv.1808.10736
+> fluid-solid interaction simulations. 2018, 10.48550/arXiv.1808.10736.
 >
 > Ž. Tuković, A. Karač, P. Cardiff, H. Jasak, A. Ivanković: OpenFOAM finite
 > volume solver for fluid-solid interaction. Transactions of Famena, 42 (3), pp.
@@ -69,6 +73,20 @@ If you use solids4foam for a publication, please cite the following references:
 The corresponding BibTeX entries are
 
 ```bibtex
+@article{Cardiff2025,
+    author =     {P. Cardiff and I. Batisti$\'{c}$ and $\v{Z}$ Tukovi$\'{c}$},
+    title =      {solids4foam: A toolbox for performing solid mechanics and
+                 fluid-solid interaction simulations in OpenFOAM},
+    journal =    {Journal of Open Source Software},
+    year =       {2025},
+    publisher =  {The Open Journal},
+    volume =     {10},
+    number =     {108},
+    pages =      {7407},
+    doi =        {10.21105/joss.07407},
+    url =        {https://doi.org/10.21105/joss.07407}
+}
+
 @article{Cardiff2018,
   author =       {P. Cardiff and A. Karac and P. De Jaeger and H. Jasak and J.
                  Nagy and A. Ivankovi\'{c} and \v{Z}. Tukovi\'{c}},
