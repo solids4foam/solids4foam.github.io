@@ -6,6 +6,107 @@ sort: 1
 
 ---
 
+## What's new in solids4foam-v2.2?
+
+The main changes from `v2.1` to `v2.2` are:
+
+- solids4foam-v2.2 compiles with OpenFOAM-v2012 to OpenFOAM-v2412, OpenFOAM-9,
+  and foam-extend-4.1
+
+- Added CITATION.cff file
+
+- Introduced OPENFOAM_NOT_EXTEND, OPENFOAM_COM, OPENFOAM_ORG defs aligning more
+  with swak4foam, improve readability etc
+    * OPENFOAM_COM         (replaces: OPENFOAMESI)
+    * OPENFOAM_ORG         (replaces: OPENFOAMFOUNDATION)
+    * OPENFOAM_NOT_EXTEND  (replaces: OPENFOAMESIORFOUNDATION)
+
+- Centralise wmake-options, provision for OpenFOAM/modules integration
+
+- Parse Allwmake arguments in high-level Allwmake
+
+- New tutorials and README.mds, and fixes for existing tutorials
+
+- Update Alltest to catch non-foam errors
+
+- New GitHub actions to catch whitespace, enforce lint rules and check
+  copyrights
+
+- Added applications/utilities/README.md
+
+- Added contact patch test tutorial
+
+- Added applications/scripts/README.md
+
+- Fixes and updates for material models
+
+- Added README for functionObjects
+
+- Write all dicts with default values to show the users the silent options
+
+- Added vertex centred solid model
+
+- Added transformStressToCylindrical function object
+
+- Added README.md for punch tutorial case
+
+- Added layeredPipe README.md
+
+- Added curvedBeams case
+
+- Added elastoplasticity curvedBeams README.md
+
+- Updated the README.md in flexibleDamBreak
+
+- Added README for slabCooling case
+
+- Added readme for hotCylinder
+
+- Added README for viscoTube
+
+- Added README file for pressurisedCylinder case
+
+- Added README file for neckingBar case
+
+- Added README file for cylinderExpansion
+
+- Boundary condition updates and fixes
+
+- Add README.md for HronTurekFsi3
+
+- 3dTube merged with 3dTubeRobin
+
+- fluidSolidInterface: add new residual calculation option, but defaults to original incrementalResiduals approach
+
+- Add optionalFixes/README.md
+
+- Add segment-to-segment contact procedure based on volume intersection
+
+- Added GuccioneElastic and electroMechanicalLaw mechanical laws
+
+- Added enhancedVolPointInterpolation
+
+- Ports more cases to all variants of OpenFOAM
+
+- Add rigidRotation README
+
+- Create LICENSE file
+
+- linearElasticity/plateHole: use analytical solution and boundary conditions
+
+- Added CONTRIBUTING.md file
+
+- Added markdownlint.yml for checking all markdown files
+
+- Added GitHub action to update the soldis4foam.github.io repository
+
+- Add GitHub Action to remove trailing whitespace
+
+- Add normalDisplacementZeroShear boundary condition
+
+
+---
+
 ## What's new in solids4foam-v2.1?
 
 The main changes from `v2.0` to `v2.1` are:
