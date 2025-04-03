@@ -3,9 +3,9 @@
 ![solids4foam logo](solids4foamLogoName.png)
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![Build and test](https://github.com/solids4foam/solids4foam/actions/workflows/buildAndTest.yml/badge.svg?branch=development)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/solids4foam/solids4foam)
-![GitHub issues](https://img.shields.io/github/issues/solids4foam/solids4foam)
+[![Build and test](https://github.com/solids4foam/solids4foam/actions/workflows/buildAndTest.yml/badge.svg?branch=development)](https://github.com/solids4foam/solids4foam/actions/workflows/buildAndTest.yml)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/solids4foam/solids4foam)](https://github.com/solids4foam/solids4foam/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/solids4foam/solids4foam)](https://github.com/solids4foam/solids4foam/issues)
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.07407/status.svg)](https://doi.org/10.21105/joss.07407)
 
 ---
