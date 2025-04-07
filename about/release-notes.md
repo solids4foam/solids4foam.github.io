@@ -17,9 +17,9 @@ The main changes from `v2.1` to `v2.2` are:
 
 - Introduced OPENFOAM_NOT_EXTEND, OPENFOAM_COM, OPENFOAM_ORG defs aligning more
   with swak4foam, improve readability etc
-    * OPENFOAM_COM         (replaces: OPENFOAMESI)
-    * OPENFOAM_ORG         (replaces: OPENFOAMFOUNDATION)
-    * OPENFOAM_NOT_EXTEND  (replaces: OPENFOAMESIORFOUNDATION)
+  - OPENFOAM_COM         (replaces: OPENFOAMESI)
+  - OPENFOAM_ORG         (replaces: OPENFOAMFOUNDATION)
+  - OPENFOAM_NOT_EXTEND  (replaces: OPENFOAMESIORFOUNDATION)
 
 - Centralise wmake-options, provision for OpenFOAM/modules integration
 
@@ -76,7 +76,8 @@ The main changes from `v2.1` to `v2.2` are:
 
 - 3dTube merged with 3dTubeRobin
 
-- fluidSolidInterface: add new residual calculation option, but defaults to original incrementalResiduals approach
+- fluidSolidInterface: add new residual calculation option, but defaults to
+  original incrementalResiduals approach
 
 - Add optionalFixes/README.md
 
@@ -103,7 +104,6 @@ The main changes from `v2.1` to `v2.2` are:
 - Add GitHub Action to remove trailing whitespace
 
 - Add normalDisplacementZeroShear boundary condition
-
 
 ---
 
