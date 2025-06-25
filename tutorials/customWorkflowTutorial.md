@@ -338,7 +338,7 @@ The same patch names are written in the `constant/polyMesh/boundary` file,
 which, in our case, looks like this:
 
 ```plaintext
-3
+4
 (
 wrench-fixed
 {
