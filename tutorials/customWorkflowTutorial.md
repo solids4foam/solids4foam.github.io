@@ -377,7 +377,7 @@ boundaries and with `symmetry` for patches where symmetry
 conditions are applied.
 
 ```plaintext
-3
+4
 (
 wrench-fixed
 {
