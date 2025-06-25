@@ -148,8 +148,8 @@ should be located under the `system` folder (locate your terminal in
 `openEndWrench` directory):
 
 ```bash
-cp $SOLIDS4FOAM_DIR/tutorials/solids/linearElasticity/
-wobblyNewton/system/meshDict system/.
+cp $SOLIDS4FOAM_DIR/tutorials/solids/linearElasticity/wobblyNewton/\
+ system/meshDict system/
 ```
 
 If we open the `meshDict` file, we will see three entries.
