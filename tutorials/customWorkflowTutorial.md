@@ -81,7 +81,8 @@ cd openEndWrench
 Next, download and unzip the geometry using the following command:
 
 ```bash
-wget https://www.solids4foam.com/tutorials/archive/wrench.zip && unzip wrench.zip
+wget https://www.solids4foam.com/tutorials/archive/wrench.zip \
+ && unzip wrench.zip && mv wrench/* . && rm -rf wrench wrench.zip
 ```
 
 Before proceeding to the next phase, we will set up the `SOLIDS4FOAM_DIR`
