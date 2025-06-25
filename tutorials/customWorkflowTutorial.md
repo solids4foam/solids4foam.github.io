@@ -194,6 +194,16 @@ solid wrench-free
 endsolid wrench-free
 ```
 
+You can automatically make these replacements with the following `bash` loop:
+
+```bash
+for file in wrench-*.stl
+do
+    name="${file%.stl}"
+    sed -i "s/OBJECT/$name/g" "$file"
+done
+```
+
 Now, we can combine the `stl` files into one `stl` file:
 
 ```bash
