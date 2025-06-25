@@ -533,10 +533,11 @@ relaxationFactors
 }
 ```
 
-In the `system/controlDict`, we need to set `endTime` to 1, as we are solving
-a static simulation with one load increment and no time marching.
-The `forceDisp1` entry in `functions` should be removed, and for `pointDisp`,
-we can set the value to `(0.0055 0 0)` to monitor the wrench end deflection.
+In the `system/controlDict`, we need to set `endTime` to 1, as we are solving a
+ static simulation with one load increment and no time marching. The `forceDisp1`
+ and `plateHoleAnalyticalSolution1` entries in `functions` should be removed, and
+ for `pointDisp`, we can set the value to `(0.0055 0 0)` to monitor the wrench
+ end deflection.
 
 ## Step 4. Running the Case
 
