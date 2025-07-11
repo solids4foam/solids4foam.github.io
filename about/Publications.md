@@ -55,7 +55,7 @@ D. Gabriel, J. kaufman, J. Brajer, (2025).
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
 🔵 A. Mullen-Halles, P. Cardiff, (2025).
-**Verification of a finite volume solver for active and 
+**Verification of a finite volume solver for active and
 passive cardiac material behaviour**,
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
