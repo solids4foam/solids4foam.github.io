@@ -30,6 +30,60 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+🔵 P. Cardiff, D. Armfield, Ž. Tuković, I. Batistić, (2025).
+[**Implementing a Jacobian-free Newton-Krylov method in OpenFOAM
+Applications to solids fluids and fluid-solid interaction**](http://dx.doi.org/10.13140/RG.2.2.35692.48009),
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 P. Cardiff, (2025).
+[**Solid mechanics and fluid-solid interactions with the
+solids4foam toolbox training**](http://dx.doi.org/10.13140/RG.2.2.31498.17607),
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 I. Batistić, P. Cardiff, (2025).
+[**The high-order finite volume method for solid mechanics in
+OpenFOAM**](http://dx.doi.org/10.13140/RG.2.2.21772.63369),
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 A. Shayegh, P. Cardiff, (2025).
+[**Second-order Conservative Advective Remap for ALE**](http://dx.doi.org/10.13140/RG.2.2.35712.14085),
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 M. Isoz, P. gruber, L. Kubickova, A. Kovarnova,
+D. Gabriel, J. kaufman, J. Brajer, (2025).
+**Open-source approach to the prototyping of laser shock peening**,
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 A. Mullen-Halles, P. Cardiff, (2025).
+**Verification of a finite volume solver for active and
+passive cardiac material behaviour**,
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 C. Alister, A. Taran, M. Campell, S. Bali,
+M. Karimirad, V. Pakrashi, P. Cardiff, (2025).
+**Validation of a finite volume Simo-Reissner beam
+method for moored floating solar platforms**,
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 T. Valldeperas, I. Batistić, M. Renzi, P. Cardiff, S. Bali (2025).
+**On development of finite volume method implementation
+of Mindlin thick plates in solids4foam**,
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 A. Taran, S. Bali, Ž. Tuković, V. Pakrashi, P. Cardiff, (2025).
+**A unified framework for coupled fluid-mooring modelling in OpenFOAM**,
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🔵 R. Ribeiro, B. Ramoa, R. Costa, J.M. Nobrega, (2025).
+**Implementation and verification of a fluid-structure interaction
+solver for injection moulding simulation**,
+_20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
+
+🟢 P. Cardiff, I. Batistić, Ž. Tuković, (2025).
+[**solids4foam: A toolbox for performing solid mechanics and fluid-solid
+interaction simulations in OpenFOAM**](https://doi.org/10.21105/joss.07407),
+_Journal of Open Source Software. 10(108), 7407._
+
 🟢 Whelan A., Tang T., Pakrashi V. & Cardiff P. (2025).
 [**A Finite Volume Framework for Damage and Fracture Prediction in Wire Drawing**](https://doi.org/10.1002/nme.7640),
 _International Journal for Numerical Methods in Engineering, 126: e7640._
