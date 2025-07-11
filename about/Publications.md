@@ -76,7 +76,7 @@ _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 🟢 P. Cardiff, I. Batistić, Ž. Tuković, (2025).
 [**solids4foam: A toolbox for performing solid mechanics and fluid-solid
 interaction simulations in OpenFOAM**](https://doi.org/10.21105/joss.07407),
-_Journal of Open Source Software. 10(108), 7407_
+_Journal of Open Source Software. 10(108), 7407._
 
 🟢 Whelan A., Tang T., Pakrashi V. & Cardiff P. (2025).
 [**A Finite Volume Framework for Damage and Fracture Prediction in Wire Drawing**](https://doi.org/10.1002/nme.7640),
