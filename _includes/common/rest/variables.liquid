@@ -28,7 +28,8 @@
 {%- if site.debug -%}
     {%- assign base = site.baseurl -%}
 {%- else -%}
-    {%- assign base = "https://cdn.jsdelivr.net/gh/" | append: theme_alias -%}
+    {%- comment %}Use local assets instead of jsDelivr CDN{%- endcomment -%}
+    {%- assign base = '/assets' | relative_url -%}
 {%- endif -%}
 
 {% comment %} extra {% endcomment %}
