@@ -1,8 +1,8 @@
 ---
-sort: 5
+sort: 1
 ---
 
-# My fifth tutorial: `openEndWrench`
+# Custom workflow tutorial: `openEndWrench`
 
 Prepared by: Ivan Batistić and Philip Cardiff
 
@@ -10,11 +10,11 @@ Prepared by: Ivan Batistić and Philip Cardiff
 
 ## Tutorial Aims
 
-This guide covers the step-by-step process of building a custom solid case
-from scratch. It demonstrates how to generate the mesh for the provided
-geometry, use the `cfMesh` mesh generator, set up patches for boundary
-conditions, apply boundary conditions, solve the problem, and post-process the
-results. We’ll use an "open-end wrench" as the example problem.
+- Demonstrate the step-by-step process of building a custom solid case
+    from scratch, including how to generate the mesh for the provided geometry,
+    using the `cfMesh` mesh generator, setting up patches for boundary
+    conditions, applying boundary conditions, solving the problem, and
+    post-processing the results.
 
 ## Prerequisites
 
