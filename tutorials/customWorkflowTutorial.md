@@ -20,7 +20,7 @@ results. We’ll use an "open-end wrench" as the example problem.
 
 Prerequisites for this tutorial are:
 
-- `solids4foam-v2.1`
+- `solids4foam-v2.2`
 - `openfoam2312`
 - `ParaView-5.13.2`
 
