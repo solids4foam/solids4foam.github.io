@@ -1,0 +1,1 @@
+../../../../imported/solids4foam/tutorials/solids/linearElasticity/sphericalCavity/README.md
