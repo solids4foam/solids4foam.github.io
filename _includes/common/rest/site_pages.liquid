@@ -1,6 +1,6 @@
 {%- assign site_pages = site.html_pages
     | sort: "path"
-    | sort: "sort"
+    | sort_natural: "sort"
     | where_exp: "item", "item.url != '/404.html'"
     | where_exp: "item", "item.url != '/search.html'" -%}
 
