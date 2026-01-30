@@ -1,4 +1,10 @@
+---
+sort: 3
+---
+
 # Installing solids4foam with styro
+
+---
 
 ## What is styro?
 
