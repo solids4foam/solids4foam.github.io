@@ -25,12 +25,12 @@ instructions on the [Docker website](https://docs.docker.com/get-docker/).
 ## Creating the solids4foam Docker Container
 
 In macOS and Linux, the solids4foam container can be created with
- (OpenFOAM-v2412 as an example here)
+ (OpenFOAM-v2512 as an example here)
 
 ```bash
 docker run -it --rm 
   -v "${HOME}":/shared \
-  solids4foam/solids4foam:v2.3-openfoam-v2412 \
+  solids4foam/solids4foam:v2.3-openfoam-v2512 \
   bash
 ```
 
@@ -54,7 +54,7 @@ Once you have logged into the container, you should load OpenFOAM using the
 appropriate command the version you downloaded:
 
 ```bash
-source /lib/openfoam/openfoam2412/etc/bashrc            # OpenFOAM-v2412
+source /lib/openfoam/openfoam2512/etc/bashrc            # OpenFOAM-v2512
 source /opt/openfoam9/etc/bashrc                        # OpenFOAM-9
 source /home/dockeruser/foam/foam-extend-4.1/etc/bashrc # foam-extend-4.1
 ```
@@ -63,7 +63,7 @@ You can then navigate to the solids4foam tutorials directory with the appropriat
  command below:
 
 ```bash
-cd /usr/lib/solids4foam/tutorials   # OpenFOAM-v2412
+cd /usr/lib/solids4foam/tutorials   # OpenFOAM-v2512
 cd /opt/solids4foam/tutorials       # OpenFOAM-9
 cd /home/dockeruser/solids4foam     # foam-extend-4.1
 ```
