@@ -1,5 +1,5 @@
 ---
-sort: 3
+sort: 2
 ---
 
 # Installing solids4foam with styro
