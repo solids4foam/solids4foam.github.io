@@ -8,7 +8,7 @@ sort: 2
 
 ## What is styro?
 
-**[styro](https://github.com/gerlero/styro)** is a lightweight package manager
+[styro](https://github.com/gerlero/styro) is a lightweight package manager
  for OpenFOAM-related software. It provides a simple way to install and manage
  pre-built packages without manually compiling from source.
 
@@ -78,7 +78,7 @@ brew install gerlero/tap/styro
 First, source your OpenFOAM installation, for example:
 
 ```bash
-source /lib/openfoam/OpenFOAM-v2412/etc/bashrc   # OpenFOAM.com
+source /lib/openfoam/OpenFOAM-v2512/etc/bashrc   # OpenFOAM.com
 # or
 source /opt/openfoam9/etc/bashrc                 # OpenFOAM.org
 ```

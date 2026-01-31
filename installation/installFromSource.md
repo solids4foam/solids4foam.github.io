@@ -40,7 +40,7 @@ the following OpenFOAM versions are supported:
 | solids4foam version | OpenFOAM/foam version            |
 | ------------------- | -------------------------------- |
 | solids4foam-v2.3    | foam-extend-4.1                  |
-|                     | OpenFOAM-v2312 -> OpenFOAM-v2412 |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2512 |
 |                     | OpenFOAM-9                       |
 | -------             | --------                         |
 | solids4foam-v2.2    | foam-extend-4.1                  |
@@ -64,11 +64,11 @@ the following OpenFOAM versions are supported:
 |                     |                                  |
 | -------             | --------                         |
 | development         | foam-extend-4.1                  |
-|                     | OpenFOAM-v2312 -> OpenFOAM-v2412 |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2512 |
 |                     | OpenFOAM-9                       |
 
 solids4foam is primarily developed using the OpenFOAM.com variant of OpenFOAM
- (i.e., OpenFOAM-v2412); consequently, this is the recommended variant for using
+ (i.e., OpenFOAM-v2512); consequently, this is the recommended variant for using
  solids4foam.
 
 ### Optional fixes for the OpenFOAM installation
