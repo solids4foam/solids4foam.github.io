@@ -9,10 +9,10 @@ sort: 1
 ## Quickstart
 
 Source a [supported version of OpenFOAM](#supported-versions-of-openfoamfoam),
-then download, build and test solids4foam-v2.2:
+then download, build and test solids4foam-v2.3:
 
 ```bash
-git clone --branch v2.2 https://github.com/solids4foam/solids4foam.git
+git clone --branch v2.3 https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
@@ -25,8 +25,6 @@ Similarly, the latest  the `development` branch can be downloaded and compiled
 git clone --branch development https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
-
-For a detailed installation guide, see below.
 
 ---
 
@@ -41,38 +39,48 @@ the following OpenFOAM versions are supported:
 
 | solids4foam version | OpenFOAM/foam version            |
 | ------------------- | -------------------------------- |
-| solids4foam-v1.\*   | foam-extend-4.0                  |
-|                     | foam-extend-4.1                  |
-|                     | OpenFOAM-v1812                   |
-|                     | OpenFOAM-v1912                   |
-|                     | OpenFOAM-7                       |
-| -------             | --------                         |
-| solids4foam-v2.0    | foam-extend-4.1                  |
-|                     | OpenFOAM-v2012                   |
-|                     | OpenFOAM-9                       |
-| -------             | --------                         |
-| solids4foam-v2.1    | foam-extend-4.1                  |
-|                     | OpenFOAM-v2012 -> OpenFOAM-v2312 |
+| solids4foam-v2.3    | foam-extend-4.1                  |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2412 |
 |                     | OpenFOAM-9                       |
 | -------             | --------                         |
 | solids4foam-v2.2    | foam-extend-4.1                  |
 |                     | OpenFOAM-v2012 -> OpenFOAM-v2412 |
 |                     | OpenFOAM-9                       |
 | -------             | --------                         |
-| development         | foam-extend-4.1                  |
-|                     | OpenFOAM-v2012 -> OpenFOAM-v2412 |
+| solids4foam-v2.1    | foam-extend-4.1                  |
+|                     | OpenFOAM-v2012 -> OpenFOAM-v2312 |
 |                     | OpenFOAM-9                       |
+| -------             | --------                         |
+| solids4foam-v2.0    | foam-extend-4.1                  |
+|                     | OpenFOAM-v2012                   |
+|                     | OpenFOAM-9                       |
+| -------             | --------                         |
+| solids4foam-v1.\*   | foam-extend-4.0                  |
+|                     | foam-extend-4.1                  |
+|                     | OpenFOAM-v1812                   |
+|                     | OpenFOAM-v1912                   |
+|                     | OpenFOAM-7                       |
+| -------             | --------                         |
+|                     |                                  |
+| -------             | --------                         |
+| development         | foam-extend-4.1                  |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2412 |
+|                     | OpenFOAM-9                       |
+
+solids4foam is primarily developed using the OpenFOAM.com variant of OpenFOAM
+ (i.e., OpenFOAM-v2412); consequently, this is the recommended variant for using
+ solids4foam.
 
 ### Optional fixes for the OpenFOAM installation
 
-The solids4foam `Allwmake` script will ask you to fix files in the main
-OpenFOAM/foam installation. If you do not want to (or cannot) make these
-changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before
-running the Allwmake script when [building solids4foam](#building-solids4foam),
-e.g.
+The solids4foam `Allwmake` script can optionally ask you to fix files in the main
+ OpenFOAM/foam installation; by default, these checks are **not** performed. To
+ enable these checks, set the `S4F_NO_FILE_FIXES` environmental variable to `0`
+ before running the Allwmake script when [building solids4foam](#building-solids4foam),
+ e.g.
 
 ```bash
-> export S4F_NO_FILE_FIXES=1 && ./Allwmake -j
+> export S4F_NO_FILE_FIXES=0 && ./Allwmake -j
 ```
 
 To make these fixes, follow the instructions from the `Allwmake` script when
@@ -98,14 +106,11 @@ required to use the complete set of functionalities:
 | ---------- | ---------------------------------------------------------------- |
 | Eigen      | Block-coupled cell-centred and vertex-centred solid models       |
 |            | linear solvers.                                                  |
-| PETSc      | Block-coupled vertex-centred solid models linear solvers.        |
+| PETSc      | Jacobian-free Newton-Krylov physics models.                      |
 | gfortran   | Abaqus UMAT mechanical law interface.                            |
 | cfmesh     | Some tutorials use cfmesh for creating the meshes.               |
 | gnuplot    | Some tutorials use Gnuplot to generate graphs after running the  |
 |            | solver.                                                          |
-
-Note that, for running the tests, the OpenFOAM or foam-extend tutorials are also
-required. If preCICE is installed, this will enable additional tests.
 
 #### Eigen
 
@@ -113,7 +118,7 @@ Before building solids4foam, the `EIGEN_DIR` environment variable can be set to
 the local Eigen installation location. If `EIGEN_DIR` is not set, then
 solids4foam will download a local copy of Eigen.
 
-If you would like solids4foam **not** to use Eigen (e.g. due to version
+If you would **not** like solids4foam to use Eigen (e.g. due to version
 conflicts when using preCICE), set the `S4F_NO_USE_EIGEN` environment variable,
 e.g. add the following to your bashrc
 
@@ -219,19 +224,19 @@ computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
 
-solids4foam-v2.2 can be downloaded as an archive file:
+solids4foam-v2.3 can be downloaded as an archive file:
 
-- [solids4foam-v2.2.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.2.zip):
-  extracted with `> unzip v2.2.zip`
-- [solids4foam-v2.2.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.2.tar.gz):
-  extracted with `> tar xzf v2.2.tar.gz`
+- [solids4foam-v2.3.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.3.zip):
+  extracted with `> unzip v2.3.zip`
+- [solids4foam-v2.3.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.3.tar.gz):
+  extracted with `> tar xzf v2.3.tar.gz`
 
-#### Git repository: v2.2
+#### Git repository: v2.3
 
-`solids4foam-v2.2` can be downloaded using
+`solids4foam-v2.3` can be downloaded using
 
 ```bash
-> git clone --branch v2.2 https://github.com/solids4foam/solids4foam.git
+> git clone --branch v2.3 https://github.com/solids4foam/solids4foam.git
 ```
 
 #### Git repository: latest development branch
@@ -298,8 +303,6 @@ following commands, executed from the solids4foam parent directory.
 > cd tutorials && ./Alltest
 ```
 
-You can expect these tests to last a few minutes.
-
 If the tests pass, you will receive the message:
 
 ```bash
@@ -320,6 +323,18 @@ or if the errors do not come from the solids4foam calls but elsewhere
 ```bash
 The following commands failed:
 <LIST OF FAILING COMMANDS AND TUTORIALS>
+```
+
+You can expect these _smoke-test_ tests to last a few minutes.
+These _smoke tests_ just check that all cases can be solved for one time-step
+ or iteration without an error; however, the values of the results are not
+ checked. Since version `v2.3`, solids4foam contains an additional `Alltest-regression`
+ script which performs basic regression testing; that is, it compares the
+ predictions for a number of tutorials against stored reference values. These
+ regression tests can be formed with
+
+```bash
+> cd tutorials && ./Alltest-regression
 ```
 
 ---
