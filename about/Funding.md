@@ -22,6 +22,10 @@ We therefore gratefully acknowledge the support of the following funding bodies
 - **Enterprise Ireland** — via industry–academic collaboration projects and
   research centres that contributed to applied modelling challenges and software
   development.
+- **Croatian Science Foundation (HRZZ)** — through nationally funded research projects
+  supporting the development and application of advanced numerical methods, computational
+  fluid dynamics, computational solid mechanics, and high-performance scientific
+  computing.
 
 The views and implementations expressed in solids4foam are those of the developers
  and contributors and do not necessarily reflect the views of the funding agencies.
