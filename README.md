@@ -7,6 +7,7 @@
 [![Pull Requests](https://img.shields.io/github/issues-pr-raw/solids4foam/solids4foam?label=Pull%20Requests)](https://github.com/solids4foam/solids4foam/pulls)
 [![Issues](https://img.shields.io/github/issues/solids4foam/solids4foam?label=Issues)](https://github.com/solids4foam/solids4foam/issues)
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.07407/status.svg)](https://doi.org/10.21105/joss.07407)
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fexasim-project%2Fopi%2Fmain%2Fpkg%2Fsolids4foam%2Fmetadata.json&query=%24.%5Bname%2Ctype%2Cversion%5D&label=OPI&labelColor=%230cc8cf&color=%23131d36)
 
 ---
 
