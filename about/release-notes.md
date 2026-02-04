@@ -6,6 +6,105 @@ sort: 1
 
 ---
 
+## What's new in solids4foam-v2.3?
+
+The changes from `v2.2` to `v2.3` are:
+
+- Cooks membrane tutorial case by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/46>
+- CHT with explicit coupling based on robin bc by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/50>
+- fixed problem with poroMechLaw when used with a stress state dependen effStressMechLaw
+  by @denMaier in <https://github.com/solids4foam/solids4foam/pull/52>
+- Added elastoPlastic cooksMembrane and linearElastic curvedCantilever by @iBatistic
+  in <https://github.com/solids4foam/solids4foam/pull/54>
+- change petsc build options to use petscvariables by @guoxiaohu in <https://github.com/solids4foam/solids4foam/pull/40>
+- Added contact patch test tutorial by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/55>
+- Added flat ended rigid indenter contact case by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/57>
+- Fix Robin condition for ESI and Foundation versions by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/59>
+- Plot file path and file name correction for foam-extend-4.1 by @cloner0110 in <https://github.com/solids4foam/solids4foam/pull/58>
+- fix flatEndedRigidIndenter to work with v2012 by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/61>
+- Documentation draft for solids4foamScripts.sh bash script by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/62>
+- updates to compile with OpenFOAM-v2306 by @olesenm in <https://github.com/solids4foam/solids4foam/pull/60>
+- Modified solids4FoamChangeCopyright.sh to delete banner by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/66>
+- GitHub Action for solids4FoamChangeCopyright.sh; Reply to #69 by @iBatistic
+  in <https://github.com/solids4foam/solids4foam/pull/70>
+- general fix to force postprocessing by @cloner0110 in <https://github.com/solids4foam/solids4foam/pull/71>
+- Added utility README file, finished scripts README by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/75>
+- Fix for arguments in addTinyPatch.C by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/76>
+- Small fix for bolded text in scripts README.md by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/77>
+- Small fixes in utility/README.md by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/78>
+- Replacing NamedEnum with Enum for OPENFOAM_COM by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/79>
+- added a function to recalculate rho by @denMaier in <https://github.com/solids4foam/solids4foam/pull/82>
+- Typo fix in hydrostaticPressure.H by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/85>
+- Feature run multi region case as single case by @denMaier in <https://github.com/solids4foam/solids4foam/pull/83>
+- Added readme file for functionObjects by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/87>
+- Closes solids4foam/solids4foam#72 Feature write out dicts with default values
+  by @denMaier in <https://github.com/solids4foam/solids4foam/pull/81>
+- Update for layeredPipe tutorial case by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/94>
+- README file for punch tutorial case by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/96>
+- Minor update to layeredPipe README.md by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/97>
+- Added curvedBeams case by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/98>
+- modified flexibleDamBreak Tutorial by @cloner0110 in <https://github.com/solids4foam/solids4foam/pull/99>
+- Updates to tutorial README.md files by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/100>
+- Solution of #90 by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/102>
+- Port to OpenFOAM-v2312 by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/101>
+- compile solids4Foam as dockeruser and not as root in docker container for
+  foam-extend-4.1 by @hoehnp in <https://github.com/solids4foam/solids4foam/pull/34>
+- Updates to tutorial README.md files  by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/104>
+- Typo fix in fixedDisplacementFvPatchVectorField.H by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/106>
+- changed the initialization of sigmaSubMesh to get it from baseMesh by @denMaier
+  in <https://github.com/solids4foam/solids4foam/pull/110>
+- Fix in optionalFixes/Allcheck script by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/113>
+- Header fix for solidTorque output file by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/115>
+- minor fix on solids4FoamScripts.sh by @cloner0110 in <https://github.com/solids4foam/solids4foam/pull/109>
+- Make denom always displacement increment in solidModel::converged by @iBatistic
+  in <https://github.com/solids4foam/solids4foam/pull/117>
+- Fix for symmetryPlane point location correction in solidModel by @iBatistic
+  in <https://github.com/solids4foam/solids4foam/pull/118>
+- Removed stressName from solidTorque by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/123>
+- Fix for last update of solidTorque.C #123 by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/124>
+- Segment contact procedure by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/125>
+- Feature vertex centred merge by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/126>
+- Link to tutorial files (featured tutorials) by @MakisH in <https://github.com/solids4foam/solids4foam/pull/148>
+- Hint where the test logs are by @MakisH in <https://github.com/solids4foam/solids4foam/pull/145>
+- Update preCICE configuration files to v3 by @MakisH in <https://github.com/solids4foam/solids4foam/pull/146>
+- Fixes and hints related to the optional file fixes by @MakisH in <https://github.com/solids4foam/solids4foam/pull/147>
+- Solution for #122 by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/138>
+- Added CONTRIBUTING.md file by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/152>
+- Fix for getNumberOfProcessors() & removing compression specifier warning by
+  @iBatistic in <https://github.com/solids4foam/solids4foam/pull/153>
+- Fix syntax typo in beamInCrossFlow tutorial by @MakisH in <https://github.com/solids4foam/solids4foam/pull/154>
+- [Feature] squarePlateAnalyticalSolution by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/171>
+- [Feature] Update `.gitignore` to ignore `clangd` files by @abzrg in <https://github.com/solids4foam/solids4foam/pull/161>
+- Refactor update deprecated keywords by @abzrg in <https://github.com/solids4foam/solids4foam/pull/176>
+- Updated K value for plane stress by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/178>
+- Fix for issue #2711 (openfoam.com) by @MatheusMiguel12 in <https://github.com/solids4foam/solids4foam/pull/182>
+- Fix: Removed ANSI escape sequences by @SMArndt in <https://github.com/solids4foam/solids4foam/pull/186>
+- Merge new PETSc SNES interface into development by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/191>
+- Feature high order by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/199>
+- Add support for Robin copling with interFluid by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/200>
+- Added README for plateHole case by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/203>
+- `cavityWithFlexibleBottom` tutorial by @iBatistic in <https://github.com/solids4foam/solids4foam/pull/204>
+- Development - v2.3 by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/202>
+- Development - OpenFOAM-v2512 compatibility by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/205>
+- Development by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/206>
+- Development by @philipcardiff in <https://github.com/solids4foam/solids4foam/pull/207>
+>
+### New Contributors>
+>
+- @denMaier made their first contribution in <https://github.com/solids4foam/solids4foam/pull/52>
+- @guoxiaohu made their first contribution in <https://github.com/solids4foam/solids4foam/pull/40>
+- @olesenm made their first contribution in <https://github.com/solids4foam/solids4foam/pull/60>
+- @hoehnp made their first contribution in <https://github.com/solids4foam/solids4foam/pull/34>
+- @MakisH made their first contribution in <https://github.com/solids4foam/solids4foam/pull/148>
+- @MatheusMiguel12 made their first contribution in <https://github.com/solids4foam/solids4foam/pull/182>
+- @SMArndt made their first contribution in <https://github.com/solids4foam/solids4foam/pull/186>
+
+### Full Changelog
+
+<https://github.com/solids4foam/solids4foam/compare/v2.2...v2.3>
+
+---
+
 ## What's new in solids4foam-v2.2?
 
 The main changes from `v2.1` to `v2.2` are:
