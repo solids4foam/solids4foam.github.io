@@ -30,6 +30,14 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+🟢 P. Cardiff, D. Armfield, Ž. Tuković, and I. Batistić, (2026).
+[**A Jacobian-Free Newton-Krylov Method for Cell-Centred Finite Volume Solid Mechanics**](https://doi.org/10.1002/nme.70268),
+_International Journal for Numerical Methods in Engineering_ , 127(3), e70268.
+
+🟢 A. Horvat, P. Milović, I. Karšaj and Ž. Tuković, (2025).
+[**A block-coupled finite volume method forincompressible hyperelastic solids**](https://doi.org/10.3390/app152312660),
+_Applied Sciences_, 15(23), 12660.
+
 🔵 P. Cardiff, D. Armfield, Ž. Tuković, I. Batistić, (2025).
 [**Implementing a Jacobian-free Newton-Krylov method in OpenFOAM
 Applications to solids fluids and fluid-solid interaction**](http://dx.doi.org/10.13140/RG.2.2.35692.48009),
@@ -55,14 +63,14 @@ D. Gabriel, J. kaufman, J. Brajer, (2025).
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
 🔵 A. Mullen-Halles, P. Cardiff, (2025).
-**Verification of a finite volume solver for active and
-passive cardiac material behaviour**,
+[**Verification of a finite volume solver for active and
+passive cardiac material behaviour**](https://www.researchgate.net/publication/393704254_Verification_Of_a_Finite_Volume_Solver_For_Active_and_Passive_Cardiac_Material_Behaviour_OF25_Vienna),
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
 🔵 C. Alister, A. Taran, M. Campell, S. Bali,
 M. Karimirad, V. Pakrashi, P. Cardiff, (2025).
-**Validation of a finite volume Simo-Reissner beam
-method for moored floating solar platforms**,
+**[Validation of a finite volume Simo-Reissner beam
+method for moored floating solar platforms**](https://www.researchgate.net/publication/393662435_Validation_Of_A_Finite_Volume_Simo-Reissner_Beam_Method_For_Moored_Floating_Solar_Platforms),
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
 🔵 T. Valldeperas, I. Batistić, M. Renzi, P. Cardiff, S. Bali (2025).
@@ -71,7 +79,7 @@ of Mindlin thick plates in solids4foam**,
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
 🔵 A. Taran, S. Bali, Ž. Tuković, V. Pakrashi, P. Cardiff, (2025).
-**A unified framework for coupled fluid-mooring modelling in OpenFOAM**,
+**[A unified framework for coupled fluid-mooring modelling in OpenFOAM**](https://www.researchgate.net/publication/393640676_A_unified_framework_for_coupled_fluid-mooring_modelling_in_OpenFOAM),
 _20th OpenFOAM Workshop, Austrian Institute of Technology, Vienna, Austria._
 
 🔵 R. Ribeiro, B. Ramoa, R. Costa, J.M. Nobrega, (2025).
