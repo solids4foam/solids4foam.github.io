@@ -73,7 +73,7 @@ tutorials.
 
 ```tip
 Note: it is straightforward to install additional software in the Docker
-container, e.g. `sudo apt-get install emacs`
+container, e.g. `apt update && apt install emacs`
 ```
 
 ```tip
