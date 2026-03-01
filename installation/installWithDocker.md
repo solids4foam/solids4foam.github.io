@@ -28,7 +28,7 @@ In macOS and Linux, the solids4foam container can be created with
  (OpenFOAM-v2512 as an example here)
 
 ```bash
-docker run -it --rm 
+docker run -it --rm \
   -v "${HOME}":/shared \
   solids4foam/solids4foam:v2.3-openfoam-v2512 \
   bash
