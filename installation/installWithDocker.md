@@ -73,13 +73,13 @@ tutorials.
 
 ```tip
 Note: it is straightforward to install additional software in the Docker
-container, e.g. `apt update` followed by `apt install emacs`
+ container, e.g. `apt update` followed by `apt install emacs`
 ```
 
 ```tip
 Models run from within the `/shared` mounted directory will be visible from your
-host computer. In that way, you can use ParaView on your host computer to view
-the cases.
+ host computer. In that way, you can use ParaView on your host computer to view
+ the cases.
 ```
 
 --
