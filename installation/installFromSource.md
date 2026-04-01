@@ -86,7 +86,9 @@ The solids4foam `Allwmake` script can optionally ask you to fix files in the mai
 To make these fixes, follow the instructions from the `Allwmake` script when
 [building solids4foam](#building-solids4foam).
 
-See the page on [Optional Fixes](./optionalFixes/README.md) for further details
+See the upstream
+[Optional Fixes page](https://github.com/solids4foam/solids4foam/blob/master/optionalFixes/README.md)
+for further details
 on these optional changes.
 
 ---

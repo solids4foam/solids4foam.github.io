@@ -123,5 +123,5 @@ OpenFOAM community. In particular, Philip Cardiff (Dublin) is the principal
 toolbox architect, with significant scientific and implementation contributions
 from Željko Tuković (Zagreb).
 
-A full list of contributors can be found in the
-[contributors file](./CONTRIBUTORS.md).
+A full list of contributors can be found on the
+[solids4foam contributors page](https://github.com/solids4foam/solids4foam/graphs/contributors).

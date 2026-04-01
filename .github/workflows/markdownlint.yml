@@ -19,7 +19,7 @@ jobs:
       - name: Run MarkdownLint
         run: >
           npx markdownlint-cli2
-          --disable MD013
+          --config .markdownlint.json
           "documentation/**/*.md"
           "imported/**/*.md"
           "installation/**/*.md"
