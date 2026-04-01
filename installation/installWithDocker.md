@@ -44,7 +44,7 @@ solids4foam/solids4foam:v2.3-openfoam-9
 solids4foam/solids4foam:v2.3-foam-extend-4.1
 ```
 
-All the images available can be found at [hub.docker.com/repository/docker/solids4foam](https://hub.docker.com/repository/docker/solids4foam/solids4foam/tags).
+All the images available can be found at [Docker Hub](https://hub.docker.com/r/solids4foam/solids4foam/tags).
 
 ---
 

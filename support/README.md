@@ -11,7 +11,7 @@ a range of training packages. The format and content can be tailored to your
 specific need. Whether online or in-person, for beginners or advanced, we can
 accommodate your requirements.
 
-Take a look at our public [training material](training-material). For more
+Take a look at our public [training material](training-material.md). For more
 information, contact: [contact@solids4foam.com](mailto:contact@solids4foam.com).
 
 ## Consulting and Support

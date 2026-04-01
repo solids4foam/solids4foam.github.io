@@ -1,4 +1,9 @@
 {
+    "aliveStatusCodes": [
+        200,
+        403,
+        418
+    ],
     "ignorePatterns": [
 	{
 	    "pattern": "https://doi.org/10.1002/nag.2361"
@@ -32,6 +37,24 @@
         },
         {
             "pattern": "https://www.OpenFOAM.com"
+        },
+        {
+            "pattern": "https://OpenFOAM.com"
+        },
+        {
+            "pattern": "https://doi.org/10.3850/IAHR-39WC2521716X2022107"
+        },
+        {
+            "pattern": "https://doi.org/10.3850/IAHR-39WC2521716X2022912"
+        },
+        {
+            "pattern": "https://www.cpe.vt.edu/ofw15/posters/OFW15-IB-ZT-PC-poster.pdf"
+        },
+        {
+            "pattern": "https://www.openfoamworkshop.org/2019/media/PR-Ow2.pdf"
+        },
+        {
+            "pattern": "https://cofea.readthedocs.io/en/latest/benchmarks/002-cook-membrane/results"
         }
     ]
 }
