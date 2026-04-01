@@ -14,6 +14,15 @@
         },
         {
             "pattern": "http://refhub.elsevier.com/S0045-7949(16)30604-6/h0015"
-        }
+        },
+        {
+            "pattern": "https://www.researchgate.net/publication/30053820_The_use_of_Timoshenko's_exact_solution_for_a_cantilever_beam_in_adaptive_analysis"
+        },
+        {
+            "pattern": "https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-0207%2820000530%2948%3A3%3C435%3A%3AAID-NME891%3E3.0.CO%3B2-V"
+        },
+        {
+            "pattern": "https://asmedigitalcollection.asme.org/appliedmechanics/article/37/3/888/427761/Theory-of-Elasticity-3rd-ed"
+        }        
     ]
 }
