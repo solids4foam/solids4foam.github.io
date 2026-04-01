@@ -23,6 +23,15 @@
         },
         {
             "pattern": "https://asmedigitalcollection.asme.org/appliedmechanics/article/37/3/888/427761/Theory-of-Elasticity-3rd-ed"
-        }        
+        },
+        {
+            "pattern": "https://repozitorij.fsb.hr/4072/1/Finite_Tukovic.pdf"
+        },
+        {
+            "pattern": "https://www.gnu.org/software/sed/manual/sed.html"
+        },
+        {
+            "pattern": "https://www.OpenFOAM.com"
+        }
     ]
 }
