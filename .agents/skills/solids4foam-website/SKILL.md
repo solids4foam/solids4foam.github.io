@@ -1,97 +1,103 @@
 # solids4foam Website Skill
 
-Use this skill when working on the solids4foam website repository, which is a
-Jekyll site published on GitHub Pages at `www.solids4foam.com`.
+Use this skill when working in the `website.solids4foam.github.io` repository,
+which publishes the solids4foam website at `www.solids4foam.com`.
 
 ## Goal
 
-Make safe, accurate edits to the website content, layout, and build assets
-without breaking navigation, documentation links, or the site build.
+Make safe edits to website content, navigation, and theme assets without
+breaking the Jekyll build, Markdown CI, or published URLs.
 
-## Repository Shape
+## Repository Map
 
-- `README.md` is the homepage and project overview.
-- Section landing pages live in `about/`, `installation/`, `tutorials/`,
+- `README.md` is the homepage.
+- Primary site sections live in `about/`, `installation/`, `tutorials/`,
   `documentation/`, and `support/`.
-- `assets/`, `_includes/`, `_layouts/`, and `_sass/` contain the theme and site
-  implementation.
-- `imported/solids4foam` is an upstream submodule checkout. Treat it as vendor
-  content unless the task explicitly says to update the imported upstream
-  pointer.
+- Theme and layout code live in `_includes/`, `_layouts/`, `_sass/`, and
+  `assets/`.
+- `assets/js/theme.js` and `_sass/theme.scss` are the source entry points for
+  the compiled theme assets.
+- `imported/solids4foam` is a Git submodule checkout of the upstream toolbox.
+  Treat it as imported/vendor content unless the task is explicitly about
+  updating that submodule.
 
-## How This Site Works
+## Site Mechanics
 
-- The site uses Jekyll with the `readme_index` plugin so many directory
-  `README.md` files become section index pages.
-- Section index pages typically have frontmatter like `sort: N` and then include
-  `list.liquid` to render child pages.
-- Markdown pages are the primary content format. Keep frontmatter intact and
-  preserve existing page ordering and URLs.
-- The theme is custom and partly vendored from npm packages. Build outputs and
-  copied theme assets should be refreshed through the existing scripts rather
-  than edited by hand when possible.
+- The site is Jekyll-based and uses `readme_index`, so many directory
+  `README.md` files are rendered as section landing pages.
+- Section landing pages usually keep YAML frontmatter such as `sort: N` and use
+  `{% include list.liquid all=true %}` to render child-page navigation.
+- Internal navigation depends on directory structure, relative links, and
+  preserved frontmatter. Avoid changing slugs or moving pages unless the task
+  requires it.
+- `_config.yml` excludes `imported/`, `node_modules/`, and build metadata from
+  the site build. Do not assume content under `imported/` is published.
 
-## Editing Rules
+## Content Rules
 
-- Prefer small, targeted changes over broad rewrites.
-- Preserve the existing tone: technical, concise, and practical.
-- Keep installation and tutorial instructions exact and runnable.
-- Use relative links for internal pages and images.
-- Do not change published paths or section structure unless the task requires
-  it.
-- Do not edit generated or vendored assets unless you are intentionally
-  refreshing them.
-- Do not touch `imported/solids4foam` unless the work is specifically about
-  syncing the upstream submodule.
+- Match the current tone: technical, direct, and practical.
+- Prefer small, targeted edits over broad rewrites.
+- Keep installation and tutorial commands exact and runnable.
+- Use relative links for internal pages and local images.
+- Preserve nearby formatting patterns for frontmatter, headings, code fences,
+  tables, and callouts.
+- For citation-heavy pages, keep references precise and avoid promotional copy.
 
-## Content Conventions
+## Asset Rules
 
-- Landing pages usually summarize and link out rather than repeat full details.
-- Tutorial pages should explain prerequisites, commands, and expected outcomes in
-  a way a user can follow directly.
-- Documentation pages should prefer stable terminology and avoid speculative or
-  marketing language.
-- When adding references, keep citations precise and avoid bloated prose.
-- Keep markdown tables, code fences, and callouts consistent with nearby files.
+- Prefer editing source files, not generated outputs.
+- If theme JS or SCSS changes, rebuild `assets/js/theme.min.js` and
+  `assets/css/theme.min.css` through the existing build commands rather than
+  hand-editing minified files.
+- Keep generated diffs tight; review them carefully so real changes are not
+  buried in build noise.
 
-## Verification
+## CI And Validation
 
-Use the existing project commands when validating changes:
+This repo currently checks Markdown rather than running a full deployment build
+in GitHub Actions.
 
-- `npm run format` for formatting checks and fixes.
-- `bundle exec jekyll build --safe --profile` or `make build` for a full site
-  build.
-- `make dist` when theme CSS/JS assets need to be rebuilt.
+- Markdown lint runs on `README.md`, `about/**/*.md`, `documentation/**/*.md`,
+  `installation/**/*.md`, `support/**/*.md`, `tutorials/**/*.md`, and
+  `imported/**/*.md`.
+- Link checking runs with `.markdown_linkcheck_config.json`, which includes a
+  small ignore list for unstable external URLs.
 
-If you change links or citation-heavy pages, also verify that the markdown link
-checker configuration still makes sense for the new URLs.
+Use these commands when validating work:
 
-## Common Tasks
+- `npm run format` to apply/check Prettier formatting.
+- `make dist` or `npm run build` after changing theme JS/SCSS assets.
+- `bundle exec jekyll build --safe --profile` or `make build` for a full local
+  site build when content, layouts, or includes change.
 
-### Adding or updating a documentation page
+## Common Work
 
-1. Find the right section directory.
-2. Add or update the page frontmatter and body.
-3. Ensure any section index pages still include the list helper if needed.
-4. Run the site build and check for broken links or navigation regressions.
+### Updating content pages
 
-### Updating theme or asset files
+1. Edit the page in the most specific section directory.
+2. Preserve existing frontmatter and page ordering.
+3. Check nearby section indexes if the navigation should expose the new page.
+4. Validate formatting and, when relevant, run a Jekyll build.
 
-1. Prefer the repository scripts over manual editing.
-2. Refresh the generated files only when necessary.
-3. Review the diff carefully so generated noise does not hide real content
-   changes.
+### Updating landing pages
 
-### Syncing upstream solids4foam content
+1. Keep the page concise; landing pages usually summarize and link onward.
+2. Preserve `list.liquid` includes unless the change intentionally alters child
+   page navigation.
+3. Recheck local links and section ordering.
 
-1. Update the submodule intentionally.
-2. Review the resulting site-facing diffs separately from the submodule change.
-3. Do not mix unrelated website edits into the same upstream sync unless needed.
+### Updating imported upstream material
+
+1. Treat `imported/solids4foam` changes as a deliberate submodule update.
+2. Keep submodule changes separate from normal site edits unless the task
+   explicitly combines them.
+3. Do not edit imported upstream files casually while working on website-only
+   tasks.
 
 ## What Good Changes Look Like
 
-- Accurate, concise documentation.
-- Navigation that still works from the homepage down into nested content.
-- Minimal churn in generated files.
-- No accidental edits to vendored content or the imported upstream checkout.
-
+- Published pages stay in the same place unless intentionally moved.
+- Tutorial and installation instructions remain executable.
+- Navigation still works from homepage to nested sections.
+- Markdown CI remains clean.
+- The imported submodule is untouched unless the task explicitly requires it.
