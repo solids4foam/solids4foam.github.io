@@ -5,56 +5,38 @@
         418
     ],
     "ignorePatterns": [
-	{
-	    "pattern": "https://doi.org/10.1002/nag.2361"
-	},
-	{
-	    "pattern": "https://doi.org/10.13140/RG.2.2.22896.33283"
-	},
         {
-            "pattern": "https://hrcak.srce.hr/206941"
+            "pattern": "^https?://doi\\.org/"
         },
         {
-            "pattern": "https://onlinelibrary.wiley.com/doi/10.1002/nme.4943"
+            "pattern": "^https?://dx\\.doi\\.org/"
         },
         {
-            "pattern": "http://refhub.elsevier.com/S0045-7949(16)30604-6/h0015"
+            "pattern": "^https?://(www\\.)?researchgate\\.net/"
         },
         {
-            "pattern": "https://www.researchgate.net/publication/30053820_The_use_of_Timoshenko's_exact_solution_for_a_cantilever_beam_in_adaptive_analysis"
+            "pattern": "^https?://onlinelibrary\\.wiley\\.com/"
         },
         {
-            "pattern": "https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-0207%2820000530%2948%3A3%3C435%3A%3AAID-NME891%3E3.0.CO%3B2-V"
+            "pattern": "^https?://(www\\.)?tandfonline\\.com/"
         },
         {
-            "pattern": "https://asmedigitalcollection.asme.org/appliedmechanics/article/37/3/888/427761/Theory-of-Elasticity-3rd-ed"
+            "pattern": "^https?://asmedigitalcollection\\.asme\\.org/"
         },
         {
-            "pattern": "https://repozitorij.fsb.hr/4072/1/Finite_Tukovic.pdf"
+            "pattern": "^https?://(www\\.)?repozitorij\\."
         },
         {
-            "pattern": "https://www.gnu.org/software/sed/manual/sed.html"
+            "pattern": "^https?://urn\\.nsk\\.hr/"
         },
         {
-            "pattern": "https://www.OpenFOAM.com"
+            "pattern": "^https?://(www\\.)?openfoamworkshop\\.org/"
         },
         {
-            "pattern": "https://OpenFOAM.com"
+            "pattern": "^https?://(www\\.)?cpe\\.vt\\.edu/"
         },
         {
-            "pattern": "https://doi.org/10.3850/IAHR-39WC2521716X2022107"
-        },
-        {
-            "pattern": "https://doi.org/10.3850/IAHR-39WC2521716X2022912"
-        },
-        {
-            "pattern": "https://www.cpe.vt.edu/ofw15/posters/OFW15-IB-ZT-PC-poster.pdf"
-        },
-        {
-            "pattern": "https://www.openfoamworkshop.org/2019/media/PR-Ow2.pdf"
-        },
-        {
-            "pattern": "https://cofea.readthedocs.io/en/latest/benchmarks/002-cook-membrane/results"
+            "pattern": "^http://refhub\\.elsevier\\.com/"
         }
     ]
 }

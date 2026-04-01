@@ -1,5 +1,5 @@
-# Check all links in markdown files
-name: Linkcheck
+# Check internal links in markdown files
+name: Internal Linkcheck
 
 on:
   push:
@@ -9,12 +9,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  markdown-link-check:
+  internal-link-check:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
-    - name: Check links
+    - name: Check Internal Links
       run: |
         find README.md about documentation installation support tutorials \
-          -type f -name '*.md' \
-          -exec npx markdown-link-check@3.10.3 --config .markdown_linkcheck_config.json {} \;
+          -type f -name '*.md' -print0 | \
+          xargs -0 -n 1 npx markdown-link-check@3.10.3 \
+            --config .markdown_linkcheck_internal.json

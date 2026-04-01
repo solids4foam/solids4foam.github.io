@@ -1,0 +1,34 @@
+# Audit external links in published markdown without blocking merges
+name: External Link Audit
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  external-link-audit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - name: Audit External Links
+      continue-on-error: true
+      run: |
+        find README.md about documentation installation support tutorials \
+          -type f -name '*.md' -print0 | \
+          xargs -0 -n 1 npx markdown-link-check@3.10.3 \
+            --config .markdown_linkcheck_config.json
+    - name: Summarize
+      if: always()
+      run: |
+        {
+          echo "## External Link Audit"
+          echo
+          echo "This audit is report-only."
+          echo
+          echo "It checks published website markdown and ignores broad classes of"
+          echo "domains that are known to block CI bots, captchas, or unstable"
+          echo "publisher redirects."
+          echo
+          echo "Inspect the previous step log for any remaining actionable failures."
+        } >> "$GITHUB_STEP_SUMMARY"
