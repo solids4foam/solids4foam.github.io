@@ -258,7 +258,7 @@ objectRefinements
     box
     {
         type box;
-        cellSize 0.0;
+        cellSize 0.004;
         centre (3.55 -0.06 -0.006);
         lengthX 1.8;
         lengthY 0.05;
