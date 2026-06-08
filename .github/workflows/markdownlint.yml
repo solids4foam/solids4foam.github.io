@@ -25,5 +25,6 @@ jobs:
           "installation/**/*.md"
           "README.md"
           "about/**/*.md"
+          "sister-repositories/**/*.md"
           "tutorials/**/*.md"
           "support/**/*.md"

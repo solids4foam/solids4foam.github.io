@@ -30,6 +30,13 @@ Please see the [installation guide](installation/README.md), followed by the
 - See [training and support](support/README.md) for training, support and
   consulting services.
 
+## Sister repositories
+
+The solids4foam organisation also develops related OpenFOAM projects. See the
+[sister repositories](sister-repositories/README.md), including
+[beamFoam](sister-repositories/beamFoam/README.md), a cell-centred finite volume
+solver for geometrically exact beams.
+
 ## Disclaimer
 
 This offering is not approved or endorsed by OpenCFD Limited, producer and

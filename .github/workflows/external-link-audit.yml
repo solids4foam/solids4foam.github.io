@@ -14,7 +14,8 @@ jobs:
     - name: Audit External Links
       continue-on-error: true
       run: |
-        find README.md about documentation installation support tutorials \
+        find README.md about documentation installation sister-repositories \
+          support tutorials \
           -type f -name '*.md' -print0 | \
           xargs -0 -n 1 npx markdown-link-check@3.10.3 \
             --config .markdown_linkcheck_config.json

@@ -1,3 +1,6 @@
 [submodule "imported/solids4foam"]
 	path = imported/solids4foam
 	url = git@github.com:solids4foam/solids4foam.git
+[submodule "imported/beamFoam"]
+	path = imported/beamFoam
+	url = https://github.com/solids4foam/beamFoam.git
