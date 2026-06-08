@@ -40,6 +40,15 @@ runApplication setInitialPositionBeam \
     -rotateAngle '((0 -1 0) 90)'
 ```
 
+```note
+`createBeamMesh` assumes that the undeformed reference configuration is a
+straight beam aligned with the global x-direction. This is distinct from the
+initial configuration used by a simulation, which may have any orientation and
+may be curved. `setInitialPositionBeam` applies rigid translations and
+rotations; curved initial configurations require the corresponding reference
+and initial-configuration fields.
+```
+
 The standard OpenFOAM case directories are used:
 
 - `0/`: initial and boundary conditions

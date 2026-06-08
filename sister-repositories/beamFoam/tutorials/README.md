@@ -14,7 +14,7 @@ Source OpenFOAM and ensure beamFoam is compiled before running a tutorial. A
 typical workflow is:
 
 ```bash
-> cd $FOAM_RUN/../beamFoam/tutorials/3DdynamicCantilever
+> cd $FOAM_RUN/../beamFoam/tutorials/3dDynamicCantilever
 > ./Allclean
 > ./Allrun
 ```
