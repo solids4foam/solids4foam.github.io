@@ -68,7 +68,7 @@ pip install styro
 Using Homebrew (recommended):
 
 ```bash
-brew install gerlero/tap/styro
+brew install gerlero/openfoam/styro
 ```
 
 ---
