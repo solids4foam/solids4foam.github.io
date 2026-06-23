@@ -59,7 +59,7 @@ physical setup, dictionaries, execution, post-processing and expected results.
 
 The repository also includes:
 
-- [`cantilever`](cantilever/README.md):
+- [`cantilever`](cantilever/):
   pure bending under a concentrated end moment
 - [`largeDeflectionCantilever`](https://github.com/solids4foam/beamFoam/tree/main/tutorials/largeDeflectionCantilever):
   a rectangular cantilever under self-weight
