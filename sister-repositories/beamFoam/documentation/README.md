@@ -102,7 +102,6 @@ The primary unknowns are:
 Boundary conditions in `0/W` and `0/Theta` apply end constraints, forces and
 moments. Distributed loads may be supplied through fields such as `q`, while
 time-dependent end loads are commonly defined by data files under `constant/`.
-Additional momentum contributions include Morison drag and ground contact.
 
 Static and dynamic behavior is selected through the case dictionaries. Dynamic
 cases can use OpenFOAM time-discretisation schemes such as Euler or Newmark,
@@ -114,8 +113,8 @@ The point displacement field `pointW` is intended for visualising the deformed
 beam in ParaView:
 
 ```bash
-> touch case.foam
-> paraview case.foam
+touch case.foam
+paraview case.foam
 ```
 
 Apply the **Warp By Vector** filter using `pointW`. Many tutorials also provide
