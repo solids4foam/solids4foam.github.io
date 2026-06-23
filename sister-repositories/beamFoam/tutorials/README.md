@@ -14,9 +14,9 @@ Source OpenFOAM and ensure beamFoam is compiled before running a tutorial. A
 typical workflow is:
 
 ```bash
-> cd $FOAM_RUN/../beamFoam/tutorials/3dDynamicCantilever
-> ./Allclean
-> ./Allrun
+cd $FOAM_RUN/../beamFoam/tutorials/3dDynamicCantilever
+./Allclean
+./Allrun
 ```
 
 The scripts generally:
@@ -31,7 +31,7 @@ Clean a case before repeating it or after changing its mesh, time step or time
 scheme:
 
 ```bash
-> ./Allclean
+./Allclean
 ```
 
 ## Post-Processing
@@ -39,8 +39,8 @@ scheme:
 Open the generated case in ParaView:
 
 ```bash
-> touch case.foam
-> paraview case.foam
+touch case.foam
+paraview case.foam
 ```
 
 Apply **Warp By Vector** using `pointW` to visualise the deformed beam. Function
@@ -59,7 +59,7 @@ physical setup, dictionaries, execution, post-processing and expected results.
 
 The repository also includes:
 
-- [`cantilever`](https://github.com/solids4foam/beamFoam/tree/main/tutorials/cantilever):
+- [`cantilever`](cantilever/):
   pure bending under a concentrated end moment
 - [`largeDeflectionCantilever`](https://github.com/solids4foam/beamFoam/tree/main/tutorials/largeDeflectionCantilever):
   a rectangular cantilever under self-weight

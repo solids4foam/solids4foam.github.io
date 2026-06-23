@@ -19,14 +19,14 @@ principal tested version described in the beamFoam paper.
 Source the OpenFOAM environment before installing beamFoam. For example:
 
 ```bash
-> source /path/to/OpenFOAM-v2306/etc/bashrc
+source /path/to/OpenFOAM-v2306/etc/bashrc
 ```
 
 Confirm that the environment is active:
 
 ```bash
-> echo $WM_PROJECT_VERSION
-> which wmake
+echo $WM_PROJECT_VERSION
+which wmake
 ```
 
 ## Download and Build
@@ -34,12 +34,12 @@ Confirm that the environment is active:
 A convenient location is beside the OpenFOAM run directory:
 
 ```bash
-> mkdir -p $FOAM_RUN
-> cd $FOAM_RUN/..
-> git clone https://github.com/solids4foam/beamFoam.git
-> cd beamFoam
-> ./Allwclean
-> ./Allwmake
+mkdir -p $FOAM_RUN
+cd $FOAM_RUN/..
+git clone https://github.com/solids4foam/beamFoam.git
+cd beamFoam
+./Allwclean
+./Allwmake
 ```
 
 The top-level build script builds the Eigen dependency, beam model library,
@@ -51,17 +51,17 @@ errors are found in the generated build logs.
 After a successful build, verify that the main applications are available:
 
 ```bash
-> which beamFoam
-> which createBeamMesh
-> which setInitialPositionBeam
+which beamFoam
+which createBeamMesh
+which setInitialPositionBeam
 ```
 
 Run one of the supplied cases to verify the complete workflow:
 
 ```bash
-> cd tutorials/cantilever
-> ./Allclean
-> ./Allrun
+cd tutorials/cantilever
+./Allclean
+./Allrun
 ```
 
 See the [tutorial guide](../tutorials/README.md) for the featured validation
@@ -72,9 +72,9 @@ cases and post-processing instructions.
 To remove generated build products and rebuild:
 
 ```bash
-> cd $FOAM_RUN/../beamFoam
-> ./Allwclean
-> ./Allwmake
+cd $FOAM_RUN/../beamFoam
+./Allwclean
+./Allwmake
 ```
 
 When changing OpenFOAM versions, clean beamFoam before rebuilding it in the new
