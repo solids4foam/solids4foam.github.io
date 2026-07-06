@@ -30,6 +30,43 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+🔵 P. Cardiff, A. Mullen-Hales, P. Castrillo, Dylan Armfield, I. Batistić (2026).
+**Higher-Order Finite Volume Solid Mechanics with Newton-Krylov Solution Strategies**
+_17th World Congress on Computational Mechanics (WCCM), 10th European Congress
+on Computational Methods in Applied Sciences and Engineering (ECCOMAS), Munich,
+Germany_
+
+🔵 S. Castro, P. Castrillo, P. Cardiff, (2026).
+**Towards the Development of a Finite Volume Method Solver for Cardiac
+Electromechanics: Cardiacfoam**
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🔵 D. Kelly, C. Valeti, P. Cardiff, (2026).
+**On the Development of a Lumped Parameter Circulatory System Coupled to 3D
+Cardiac Chambers**
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🔵 H. Saddal, Y. Karki, C. Bose, (2026).
+**A Comparative Study of preCICE-OpenFOAM-CalculiX and solids4foam for
+Bio-Inspired Fluid-Structure Interaction Simulations**
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🔵 A. Taran, S. Bali, Ž. Tuković, V. Pakrashi, P. Cardiff, (2026).
+**A Finite-Volume Framework for Two-Way Fluid-beam Interaction in OpenFOAM**
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🔵 P. Cardiff, I. Batistić (2026).
+**Towards the Development of a Monolithic Fluid-Solid Interaction Solver in OpenFOAM**
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🔵 I. Batistić, P. Castrillo, P. Cardiff, (2026).
+[**A Jacobian-Free Newton-Krylov Framework for High-Order Cell-Centred Finite Volume Solid Mechanics**](https://www.researchgate.net/publication/408252254_A_Jacobian-Free_Newton-Krylov_Framework_for_High-Order_cell-centred_Finite_Volume_Solid_Mechanics)
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🟢 I. Batistić, P. Castrillo, P. Cardiff, (2026).
+[**High-order cell-centred finite-volume solid mechanics using a Jacobian-free Newton-Krylov method**](https://doi.org/10.1016/j.jcp.2026.115056)
+_Journal of Computational Physics_, vol 563, 115056.
+
 🟢 P. Cardiff, D. Armfield, Ž. Tuković, and I. Batistić, (2026).
 [**A Jacobian-Free Newton-Krylov Method for Cell-Centred Finite Volume Solid Mechanics**](https://doi.org/10.1002/nme.70268),
 _International Journal for Numerical Methods in Engineering_ , 127(3), e70268.
