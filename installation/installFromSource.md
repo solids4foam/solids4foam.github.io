@@ -9,10 +9,10 @@ sort: 1
 ## Quickstart
 
 Source a [supported version of OpenFOAM](#supported-versions-of-openfoamfoam),
-then download, build and test solids4foam-v2.3:
+then download, build and test solids4foam-v2.4:
 
 ```bash
-git clone --branch v2.3 https://github.com/solids4foam/solids4foam.git
+git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
 cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
@@ -39,6 +39,10 @@ the following OpenFOAM versions are supported:
 
 | solids4foam version | OpenFOAM/foam version            |
 | ------------------- | -------------------------------- |
+| solids4foam-v2.4    | foam-extend-4.1                  |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2606 |
+|                     | OpenFOAM-9                       |
+| -------             | --------                         |
 | solids4foam-v2.3    | foam-extend-4.1                  |
 |                     | OpenFOAM-v2312 -> OpenFOAM-v2512 |
 |                     | OpenFOAM-9                       |
@@ -226,19 +230,19 @@ computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
 
-solids4foam-v2.3 can be downloaded as an archive file:
+solids4foam-v2.4 can be downloaded as an archive file:
 
-- [solids4foam-v2.3.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.3.zip):
-  extracted with `> unzip v2.3.zip`
-- [solids4foam-v2.3.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.3.tar.gz):
-  extracted with `> tar xzf v2.3.tar.gz`
+- [solids4foam-v2.4.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.zip):
+  extracted with `> unzip v2.4.zip`
+- [solids4foam-v2.4.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.tar.gz):
+  extracted with `> tar xzf v2.4.tar.gz`
 
-#### Git repository: v2.3
+#### Git repository: v2.4
 
-`solids4foam-v2.3` can be downloaded using
+`solids4foam-v2.4` can be downloaded using
 
 ```bash
-> git clone --branch v2.3 https://github.com/solids4foam/solids4foam.git
+> git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
 ```
 
 #### Git repository: latest development branch
