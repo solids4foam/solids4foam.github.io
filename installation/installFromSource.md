@@ -13,17 +13,28 @@ then download, build and test solids4foam-v2.4:
 
 ```bash
 git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
-cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
+cd solids4foam && S4F_UNITY_BUILD=1 ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
 The `-j` flag instructs `Allwmake` to use all available cores.
+
+```note
+`S4F_UNITY_BUILD=1` enables a Unity build, which groups source files into
+generated compilation units. This reduces repeated parsing of OpenFOAM headers
+and can shorten clean build times, while producing the same library. Unset the
+variable to use a conventional build. Unity builds are best for from-scratch
+builds, such as in continuous integration, container images, or after a
+`wclean`. They are less suitable for day-to-day library development because
+changing one source rebuilds its entire bucket. For details, see
+[`src/solids4FoamModels/README.md`](https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/README.md).
+```
 
 Similarly, the latest  the `development` branch can be downloaded and compiled
  with
 
 ```bash
 git clone --branch development https://github.com/solids4foam/solids4foam.git
-cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
+cd solids4foam && S4F_UNITY_BUILD=1 ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
 ---
