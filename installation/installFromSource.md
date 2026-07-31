@@ -181,6 +181,25 @@ Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable
  for new terminal sessions automatically.
 ```
 
+solids4foam requires PETSc 3.15 or newer. To use the complete PETSc-supported
+functionality, PETSc should also be configured with MUMPS and HYPRE. When
+building PETSc from source, configure it with `--download-mumps` and
+`--download-hypre` (and their dependencies).
+
+````warning
+Some package-managed PETSc installations do not include MUMPS and HYPRE. If
+you choose to use such an installation, set `S4F_ALLOW_INCOMPLETE_PETSC=1`
+when building solids4foam:
+
+```bash
+S4F_ALLOW_INCOMPLETE_PETSC=1 ./Allwmake -j
+```
+
+This allows solids4foam to compile, but some PETSc tutorials and solver
+configurations may fail. Configure PETSc with MUMPS and HYPRE for complete
+functionality.
+````
+
 #### gfortran
 
 gfortran can be installed on Ubuntu with:
