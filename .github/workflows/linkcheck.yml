@@ -12,7 +12,12 @@ jobs:
   internal-link-check:
     runs-on: ubuntu-latest
     steps:
+    # The documentation and tutorial pages are symlinks into the submodule, so
+    # without it they dangle, are skipped by the find below, and any link
+    # pointing at one of them is reported as dead.
     - uses: actions/checkout@v6
+      with:
+        submodules: true
     - name: Check Internal Links
       run: |
         find README.md about documentation installation sister-repositories \
