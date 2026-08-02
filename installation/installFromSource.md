@@ -237,6 +237,24 @@ script within these tutorials will exit.
    not compatible with OpenFOAM.org.
 ```
 
+```note
+Some cfMesh source builds on macOS may fail with `fatal error: 'omp.h' file not
+found`. Apple Clang does not include OpenMP by default, so cfMesh can expose an
+incomplete OpenMP configuration not detected while building OpenFOAM.
+
+If OpenMP is not required, build cfMesh without it; this is sufficient for the
+solids4foam tutorials that require the `cartesianMesh` utility:
+
+~~~bash
+wmake -no-openmp libso meshLibrary && \\
+wmake -no-openmp -all executables && \\
+wmake -no-openmp -all utilities
+~~~
+
+Alternatively, configure the compiler to find both `omp.h` and a matching
+OpenMP runtime library. Homebrew `libomp` is one possible option.
+```
+
 #### gnuplot
 
 gnuplot can be installed on Ubuntu with:
