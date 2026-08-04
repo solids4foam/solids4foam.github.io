@@ -36,5 +36,9 @@ jobs:
           fi
           echo "No dangling symlinks."
 
+      # Runs even when the step above failed, so that one dangling symlink does
+      # not hide the manifest drift that usually explains it. Both reports then
+      # land in the same run.
       - name: Check symlinks match bin/docs-manifest.txt
+        if: ${{ !cancelled() }}
         run: ./bin/sync-docs.sh --check
