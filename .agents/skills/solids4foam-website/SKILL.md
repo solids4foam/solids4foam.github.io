@@ -1,3 +1,8 @@
+---
+name: solids4foam-website
+description: Guidance for safely maintaining the solids4foam website.
+---
+
 # solids4foam Website Skill
 
 Use this skill when working in the `website.solids4foam.github.io` repository,

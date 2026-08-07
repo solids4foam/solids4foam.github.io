@@ -9,21 +9,32 @@ sort: 1
 ## Quickstart
 
 Source a [supported version of OpenFOAM](#supported-versions-of-openfoamfoam),
-then download, build and test solids4foam-v2.3:
+then download, build and test solids4foam-v2.4:
 
 ```bash
-git clone --branch v2.3 https://github.com/solids4foam/solids4foam.git
-cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
+git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
+cd solids4foam && S4F_UNITY_BUILD=1 ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
 The `-j` flag instructs `Allwmake` to use all available cores.
+
+```note
+`S4F_UNITY_BUILD=1` enables a Unity build, which groups source files into
+generated compilation units. This reduces repeated parsing of OpenFOAM headers
+and can shorten clean build times, while producing the same library. Unset the
+variable to use a conventional build. Unity builds are best for from-scratch
+builds, such as in continuous integration, container images, or after a
+`wclean`. They are less suitable for day-to-day library development because
+changing one source rebuilds its entire bucket. For details, see
+[`src/solids4FoamModels/README.md`](https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/README.md).
+```
 
 Similarly, the latest  the `development` branch can be downloaded and compiled
  with
 
 ```bash
 git clone --branch development https://github.com/solids4foam/solids4foam.git
-cd solids4foam && ./Allwmake -j && cd tutorials && ./Alltest
+cd solids4foam && S4F_UNITY_BUILD=1 ./Allwmake -j && cd tutorials && ./Alltest
 ```
 
 ---
@@ -39,6 +50,10 @@ the following OpenFOAM versions are supported:
 
 | solids4foam version | OpenFOAM/foam version            |
 | ------------------- | -------------------------------- |
+| solids4foam-v2.4    | foam-extend-4.1                  |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2606 |
+|                     | OpenFOAM-9                       |
+| -------             | --------                         |
 | solids4foam-v2.3    | foam-extend-4.1                  |
 |                     | OpenFOAM-v2312 -> OpenFOAM-v2512 |
 |                     | OpenFOAM-9                       |
@@ -166,6 +181,25 @@ Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable
  for new terminal sessions automatically.
 ```
 
+solids4foam requires PETSc 3.15 or newer. To use the complete PETSc-supported
+functionality, PETSc should also be configured with MUMPS and HYPRE. When
+building PETSc from source, configure it with `--download-mumps` and
+`--download-hypre` (and their dependencies).
+
+````warning
+Some package-managed PETSc installations do not include MUMPS and HYPRE. If
+you choose to use such an installation, set `S4F_ALLOW_INCOMPLETE_PETSC=1`
+when building solids4foam:
+
+```bash
+S4F_ALLOW_INCOMPLETE_PETSC=1 ./Allwmake -j
+```
+
+This allows solids4foam to compile, but some PETSc tutorials and solver
+configurations may fail. Configure PETSc with MUMPS and HYPRE for complete
+functionality.
+````
+
 #### gfortran
 
 gfortran can be installed on Ubuntu with:
@@ -203,6 +237,24 @@ script within these tutorials will exit.
    not compatible with OpenFOAM.org.
 ```
 
+```note
+Some cfMesh source builds on macOS may fail with `fatal error: 'omp.h' file not
+found`. Apple Clang does not include OpenMP by default, so cfMesh can expose an
+incomplete OpenMP configuration not detected while building OpenFOAM.
+
+If OpenMP is not required, build cfMesh without it; this is sufficient for the
+solids4foam tutorials that require the `cartesianMesh` utility:
+
+~~~bash
+wmake -no-openmp libso meshLibrary && \\
+wmake -no-openmp -all executables && \\
+wmake -no-openmp -all utilities
+~~~
+
+Alternatively, configure the compiler to find both `omp.h` and a matching
+OpenMP runtime library. Homebrew `libomp` is one possible option.
+```
+
 #### gnuplot
 
 gnuplot can be installed on Ubuntu with:
@@ -226,19 +278,19 @@ computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
 
-solids4foam-v2.3 can be downloaded as an archive file:
+solids4foam-v2.4 can be downloaded as an archive file:
 
-- [solids4foam-v2.3.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.3.zip):
-  extracted with `> unzip v2.3.zip`
-- [solids4foam-v2.3.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.3.tar.gz):
-  extracted with `> tar xzf v2.3.tar.gz`
+- [solids4foam-v2.4.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.zip):
+  extracted with `> unzip v2.4.zip`
+- [solids4foam-v2.4.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.tar.gz):
+  extracted with `> tar xzf v2.4.tar.gz`
 
-#### Git repository: v2.3
+#### Git repository: v2.4
 
-`solids4foam-v2.3` can be downloaded using
+`solids4foam-v2.4` can be downloaded using
 
 ```bash
-> git clone --branch v2.3 https://github.com/solids4foam/solids4foam.git
+> git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
 ```
 
 #### Git repository: latest development branch
