@@ -1,0 +1,44 @@
+# Check the symlinks that publish solids4foam's READMEs on the website
+name: Documentation Symlinks
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  docs-symlinks:
+    runs-on: ubuntu-latest
+    steps:
+      # The submodule holds the targets of every documentation and tutorial
+      # symlink; without it they all dangle.
+      - uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      # A mistyped symlink produces a 404 on the site rather than a build
+      # failure, so catch it here.
+      #
+      # Only this repository's own symlinks are checked. The submodule
+      # contains symlinks of its own that dangle by design, such as the
+      # preCICE cases' precice-run links, which point at directories that
+      # only exist once a case has been run.
+      - name: Check for dangling symlinks
+        run: |
+          dangling=$(find . -path ./.git -prune -o -path ./imported -prune \
+            -o -type l ! -exec test -e {} \; -print)
+          if [ -n "$dangling" ]; then
+            echo "::error::dangling symlinks:"
+            echo "$dangling"
+            exit 1
+          fi
+          echo "No dangling symlinks."
+
+      # Runs even when the step above failed, so that one dangling symlink does
+      # not hide the manifest drift that usually explains it. Both reports then
+      # land in the same run.
+      - name: Check symlinks match bin/docs-manifest.txt
+        if: ${{ !cancelled() }}
+        run: ./bin/sync-docs.sh --check

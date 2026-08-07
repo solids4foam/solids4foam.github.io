@@ -443,7 +443,7 @@ can be found in the [`hotSphere`](https://www.solids4foam.com/tutorials/tutorial
 tutorial case. The chosen solver is the same as in `plateHole` tutorial;
 `linearGeometryTotalDisplacement`, which is a segregated solver for small
 strains and rotations. For a list of the solid models currently available
-in `solids4foam`, check this [page](https://www.solids4foam.com/documentation/solid-models.html).
+in `solids4foam`, check this [page](https://www.solids4foam.com/documentation/solid-models/).
 
 ```plaintext
 // linearGeometry: assumes small strains and rotations

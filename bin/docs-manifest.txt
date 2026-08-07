@@ -1,0 +1,90 @@
+# Pages published on the website that are symlinks into the solids4foam
+# submodule. One entry per line:
+#
+#     <site path>    <path within imported/solids4foam>
+#
+# bin/sync-docs.sh creates each symlink, and alongside it an images/
+# directory linking every image the page references. Run it after adding a
+# line here; do not hand-write the symlinks.
+
+documentation/applications/decomposeParMonolithic.md                                 applications/utilities/decomposeParMonolithic/README.md
+documentation/applications/README.md                                                 applications/README.md
+documentation/applications/scripts.md                                                applications/scripts/README.md
+documentation/applications/solids4Foam.md                                            applications/solvers/solids4Foam/README.md
+documentation/applications/utilities.md                                              applications/utilities/README.md
+documentation/fluid-models/README.md                                                 src/solids4FoamModels/fluidModels/README.md
+documentation/fluid-solid-interfaces/README.md                                       src/solids4FoamModels/fluidSolidInterfaces/README.md
+documentation/function-objects/README.md                                             src/solids4FoamModels/functionObjects/README.md
+documentation/solid-models/coupledPressureDisplacementSolid.md                       src/solids4FoamModels/solidModels/coupledPressureDisplacementSolid/README.md
+documentation/solid-models/coupledUnsLinGeomLinearElasticSolid.md                    src/solids4FoamModels/solidModels/coupledUnsLinGeomLinearElasticSolid/README.md
+documentation/solid-models/kirchhoffPlateSolid.md                                    src/solids4FoamModels/solidModels/kirchhoffPlateSolid/README.md
+documentation/solid-models/linGeomTotalDispSolid.md                                  src/solids4FoamModels/solidModels/linGeomTotalDispSolid/README.md
+documentation/solid-models/nonLinGeomTotalLagTotalDispSolid.md                       src/solids4FoamModels/solidModels/nonLinGeomTotalLagTotalDispSolid/README.md
+documentation/solid-models/nonLinGeomUpdatedLagSolid.md                              src/solids4FoamModels/solidModels/nonLinGeomUpdatedLagSolid/README.md
+documentation/solid-models/poroLinGeomSolid.md                                       src/solids4FoamModels/solidModels/poroLinGeomSolid/README.md
+documentation/solid-models/README.md                                                 src/solids4FoamModels/solidModels/README.md
+documentation/solid-models/thermalLinGeomSolid.md                                    src/solids4FoamModels/solidModels/thermalLinGeomSolid/README.md
+documentation/solid-models/thermalSolid.md                                           src/solids4FoamModels/solidModels/thermalSolid/README.md
+documentation/solid-models/unsLinGeomSolid.md                                        src/solids4FoamModels/solidModels/unsLinGeomSolid/README.md
+documentation/solid-models/unsNonLinGeomTotalLagSolid.md                             src/solids4FoamModels/solidModels/unsNonLinGeomTotalLagSolid/README.md
+documentation/solid-models/unsNonLinGeomUpdatedLagSolid.md                           src/solids4FoamModels/solidModels/unsNonLinGeomUpdatedLagSolid/README.md
+documentation/solid-models/vertexCentredLinGeomSolid.md                              src/solids4FoamModels/solidModels/vertexCentredLinGeomSolid/README.md
+documentation/solid-models/vertexCentredNonLinGeomTotalLagSolid.md                   src/solids4FoamModels/solidModels/vertexCentredNonLinGeomTotalLagSolid/README.md
+documentation/solid-models/weakThermalLinGeomSolid.md                                src/solids4FoamModels/solidModels/weakThermalLinGeomSolid/README.md
+documentation/under-the-hood/contributing.md                                         CONTRIBUTING.md
+documentation/under-the-hood/README.md                                               src/solids4FoamModels/README.md
+documentation/under-the-hood/stabilisation-models.md                                 src/solids4FoamModels/numerics/stabilisationModels/README.md
+tutorials/more-tutorials/fluid-mechanics/cylinderInChannel.md                        tutorials/fluids/cylinderInChannel/README.md
+tutorials/more-tutorials/fluid-mechanics/decayingTaylorGreenVortex.md                tutorials/fluids/decayingTaylorGreenVortex/README.md
+tutorials/more-tutorials/fluid-solid-interaction/3dTube.md                           tutorials/fluidSolidInteraction/3dTube/README.md
+tutorials/more-tutorials/fluid-solid-interaction/beamInCrossFlow.md                  tutorials/fluidSolidInteraction/beamInCrossFlow/README.md
+tutorials/more-tutorials/fluid-solid-interaction/cavityFlexibleBottom.md             tutorials/fluidSolidInteraction/cavityFlexibleBottom/README.md
+tutorials/more-tutorials/fluid-solid-interaction/fillingElasticContainer.md          tutorials/fluidSolidInteraction/fillingElasticContainer/README.md
+tutorials/more-tutorials/fluid-solid-interaction/flexibleDamBreak.md                 tutorials/fluidSolidInteraction/flexibleDamBreak/README.md
+tutorials/more-tutorials/fluid-solid-interaction/flexibleOversetCylinder.md          tutorials/fluidSolidInteraction-preCICE/flexibleOversetCylinder/README.md
+tutorials/more-tutorials/fluid-solid-interaction/HronTurekFsi3.md                    tutorials/fluidSolidInteraction/HronTurekFsi3/README.md
+tutorials/more-tutorials/fluid-solid-interaction/perpendicularFlap.md                tutorials/fluidSolidInteraction/perpendicularFlap/README.md
+tutorials/more-tutorials/solid-mechanics/beamsPlatesShells/squarePlate.md            tutorials/solids/beamsPlatesShells/squarePlate/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/cooksMembrane.md           tutorials/solids/elastoplasticity/cooksMembrane/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/curvedBeams.md             tutorials/solids/elastoplasticity/curvedBeams/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/cylinderCrush.md           tutorials/solids/elastoplasticity/cylinderCrush/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/cylinderExpansion.md       tutorials/solids/elastoplasticity/cylinderExpansion/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/impactBar.md               tutorials/solids/elastoplasticity/impactBar/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/neckingBar.md              tutorials/solids/elastoplasticity/neckingBar/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/perforatedPlate.md         tutorials/solids/elastoplasticity/perforatedPlate/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/pipeCrush.md               tutorials/solids/elastoplasticity/pipeCrush/README.md
+tutorials/more-tutorials/solid-mechanics/elastoplasticity/upsetBillet.md             tutorials/solids/elastoplasticity/upsetBillet/README.md
+tutorials/more-tutorials/solid-mechanics/hyperelasticity/cylinderCrush.md            tutorials/solids/hyperelasticity/cylinderCrush/README.md
+tutorials/more-tutorials/solid-mechanics/hyperelasticity/cylindricalPressureVessel.md tutorials/solids/hyperelasticity/cylindricalPressureVessel/README.md
+tutorials/more-tutorials/solid-mechanics/hyperelasticity/idealisedVentricle.md       tutorials/solids/hyperelasticity/idealisedVentricle/README.md
+tutorials/more-tutorials/solid-mechanics/hyperelasticity/longWall.md                 tutorials/solids/hyperelasticity/longWall/README.md
+tutorials/more-tutorials/solid-mechanics/hyperelasticity/rigidRotation.md            tutorials/solids/hyperelasticity/rigidRotation/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/cantilever2d.md            tutorials/solids/linearElasticity/cantilever2d/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/contactPatchTest.md        tutorials/solids/linearElasticity/contactPatchTest/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/cooksMembrane.md           tutorials/solids/linearElasticity/cooksMembrane/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/curvedCantilever.md        tutorials/solids/linearElasticity/curvedCantilever/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/ellipticPlate.md           tutorials/solids/linearElasticity/ellipticPlate/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/flatEndedRigidIndenter.md  tutorials/solids/linearElasticity/flatEndedRigidIndenter/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/narrowTmember.md           tutorials/solids/linearElasticity/narrowTmember/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/patchTest.md               tutorials/solids/linearElasticity/patchTest/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/plateHole.md               tutorials/solids/linearElasticity/plateHole/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/pressurisedCylinder.md     tutorials/solids/linearElasticity/pressurisedCylinder/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/punch.md                   tutorials/solids/linearElasticity/punch/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/rigidCylinderContactBrick.md tutorials/solids/linearElasticity/rigidCylinderContactBrick/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/slidingFrictionBall.md     tutorials/solids/linearElasticity/slidingFrictionBall/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/sphericalCavity.md         tutorials/solids/linearElasticity/sphericalCavity/README.md
+tutorials/more-tutorials/solid-mechanics/linearElasticity/wobblyNewton.md            tutorials/solids/linearElasticity/wobblyNewton/README.md
+tutorials/more-tutorials/solid-mechanics/multiMaterial/layeredPipe.md                tutorials/solids/multiMaterial/layeredPipe/README.md
+tutorials/more-tutorials/solid-mechanics/poroelasticity/rodAndSeabed.md              tutorials/solids/poroelasticity/rodAndSeabed/README.md
+tutorials/more-tutorials/solid-mechanics/poroelasticity/stripFooting.md              tutorials/solids/poroelasticity/stripFooting/README.md
+tutorials/more-tutorials/solid-mechanics/poroelasticity/suctionCaission.md           tutorials/solids/poroelasticity/suctionCaission/README.md
+tutorials/more-tutorials/solid-mechanics/thermoelasticity/hotCylinder.md             tutorials/solids/thermoelasticity/hotCylinder/hotCylinder/README.md
+tutorials/more-tutorials/solid-mechanics/thermoelasticity/hotSphere.md               tutorials/solids/thermoelasticity/hotSphere/README.md
+tutorials/more-tutorials/solid-mechanics/thermoelasticity/slabCooling.md             tutorials/solids/thermoelasticity/slabCooling/README.md
+tutorials/more-tutorials/solid-mechanics/viscoelasticity/viscoTube.md                tutorials/solids/viscoelasticity/viscoTube/README.md
+tutorials/more-tutorials/thermo-fluid-solid-interaction/hotTJunction.md              tutorials/thermoFluidSolidInteraction/hotTJunction/README.md
+tutorials/more-tutorials/thermo-fluid-solid-interaction/thermalCavity.md             tutorials/thermoFluidSolidInteraction/thermalCavity/README.md
+tutorials/tutorial1.md                                                               tutorials/solids/thermoelasticity/hotSphere/README.md
+tutorials/tutorial2.md                                                               tutorials/fluids/cylinderInChannel/README.md
+tutorials/tutorial3.md                                                               tutorials/fluidSolidInteraction/beamInCrossFlow/README.md
+tutorials/tutorial4.md                                                               tutorials/fluidSolidInteraction/3dTube/README.md

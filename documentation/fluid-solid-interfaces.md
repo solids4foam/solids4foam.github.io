@@ -1,1 +1,3 @@
-../imported/solids4foam/src/solids4FoamModels/fluidSolidInterfaces/README.md
+---
+redirect_to: /documentation/fluid-solid-interfaces/
+---

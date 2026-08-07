@@ -20,6 +20,54 @@ In addition, the toolbox aims to be compatible with all major OpenFOAM forks.
 
 ---
 
+## How the Pieces Fit Together
+
+There is one solver, [`solids4Foam`](applications/solids4Foam.md), and it
+contains no details of the physics or the discretisation. Instead it creates a
+run-time selectable `physicsModel` and advances it in time. The `type` entry in
+`constant/physicsProperties` chooses one of three families:
+
+| `type`                  | Dictionary                 | Base class            | Documentation                                              |
+| ----------------------- | -------------------------- | --------------------- | ---------------------------------------------------------- |
+| `solid`                 | `constant/solidProperties` | `solidModel`          | [Solid models](solid-models/README.md)                     |
+| `fluid`                 | `constant/fluidProperties` | `fluidModel`          | [Fluid models](fluid-models/README.md)                     |
+| `fluidSolidInteraction` | `constant/fsiProperties`   | `fluidSolidInterface` | [Fluid-solid interfaces](fluid-solid-interfaces/README.md) |
+
+A **solid model** solves the momentum equation in a solid domain. The available
+models differ in whether the geometry is linear or nonlinear, whether a total
+or updated Lagrangian formulation is used, whether the discretisation is
+cell-centred or vertex-centred, and whether the solution algorithm is
+segregated, coupled or explicit.
+
+A **fluid model** solves the flow equations; most are ports of a standard
+OpenFOAM solver into class form, for example `pimpleFluid` from `pimpleDyMFoam`
+and `interFluid` from `interDyMFoam`.
+
+A **fluid-solid interface** owns one fluid model and one solid model and
+implements the partitioned coupling algorithm between them, for example
+`fixedRelaxationCouplingInterface`, `AitkenCouplingInterface`,
+`IQNILSCouplingInterface`, `weakCouplingInterface` and
+`oneWayCouplingInterface`. The differences between these are explored in
+[tutorial 4](../tutorials/tutorial4.md).
+
+The constitutive behaviour of a solid is kept separate from the solid model
+that uses it, so the two can be varied independently:
+`constant/mechanicalProperties` selects one or more `mechanicalLaw` objects,
+which return the stress for a given deformation, and
+`constant/thermalProperties` does the same for thermal behaviour.
+
+```Note
+Standard solvers in OpenFOAM can differ significantly between OpenFOAM forks.
+solids4foam aims to include the fork-specific solver versions, e.g. when using
+OpenFOAM-v2012, `pimpleFluid` is a port of `pimpleDyMFoam` from OpenFOAM-v2012.
+```
+
+Run-time post-processing is provided by the
+[function objects](function-objects/README.md), and the internal structure of the
+library is described under [under the hood](under-the-hood/README.md).
+
+---
+
 ## Toolbox Structure
 
 The solids4foam toolbox follows the OpenFOAM structure:
@@ -32,140 +80,51 @@ solids4foam
 ├── ThirdParty
 ├── ...
 ├── applications
-│   ├── ...
-│   ├── scripts
-│   ├── solvers
-│   │   └── solids4Foam
-│   └── utilities
+│   ├── scripts
+│   ├── solvers
+│   │   └── solids4Foam
+│   ├── test
+│   └── utilities
 ├── optionalFixes
 ├── src
-│   ├── ...
-│   ├── RBFMeshMotionSolver
-│   ├── abaqusUMATs
-│   ├── blockCoupledSolids4FoamTools
-│   └── solids4FoamModels
+│   ├── RBFMeshMotionSolver
+│   ├── abaqusUMATs
+│   ├── blockCoupledSolids4FoamTools
+│   ├── higherOrderHelpers
+│   └── solids4FoamModels
 └── tutorials
     ├── Alltest
-    ├── ...
     ├── fluidSolidInteraction
     ├── fluids
     └── solids
 ```
 
-- Scripts to compile and clean the toolbox:
+- `Allwmake` and `Allwclean` compile and clean the toolbox:
 
   ```bash
   > ./Allwmake
   > ./Allwclean
   ```
 
-  The README file briefly describes the toolbox.
-
-  Description of solids4foam folders
-
 - `ThirdParty`: solids4foam optionally uses some third-party code (e.g. Eigen,
   PETSc): for more details, see the
-  [installation guide](https://solids4foam.github.io/installation/).
-- `applications`: contains the `solids4Foam` solver and a small number of helper
-  utilities.
+  [installation guide](../installation/README.md).
+- `applications`: contains the `solids4Foam` solver, a small number of helper
+  utilities, and the Bash functions used by the tutorials; see
+  [applications](applications/README.md).
+- `src`: contains the libraries used by the `solids4Foam` solver, of which
+  `solids4FoamModels` is the main one, defining the fluid, solid and
+  fluid-solid interaction algorithms; see [under the hood](under-the-hood/README.md).
+- `tutorials`: contains example cases for fluid, solid and fluid-solid
+  interaction analyses; many of these are described in the
+  [tutorials guide](../tutorials/README.md).
 
-- `src`: contains libraries used by the `solids4Foam` solver, such as
-  `solids4FoamModels` which defines fluid, solid and fluidSolidInteraction
-  algorithms.
-- `tutorial`: contains example cases for fluid, solid and fluidSolidInteraction
-  analyses; some of these example cases are described in the
-  [tutorials guide](https://solids4foam.github.io/tutorials/).
-
----
-
-## `solids4Foam` Solver
-
-The solids4Foam solver code is available at:
-
-> solids4foam/applications/solvers/solids4Foam/solids4Foam.C
-
-```c++
-int main(int argc, char *argv[])
-{
-#   include "setRootCase.H"
-#   include "createTime.H"
-#   include "solids4FoamWriteHeader.H"
-
-    // Create the general physics class
-    autoPtr<physicsModel> physics = physicsModel::New(runTime);
-
-    while (runTime.run())
-    {
-        // Update deltaT, if desired, before moving to the next step
-        physics().setDeltaT(runTime);
-
-        runTime++;
-
-        if (physics().printInfo())
-        {
-            Info<< "Time = " << runTime.timeName() << nl << endl;
-        }
-
-        // Solve the mathematical model
-        physics().evolve();
-
-        // Let the physics model know the end of the time-step has been reached
-        physics().updateTotalFields();
-
-        if (runTime.outputTime())
-        {
-            physics().writeFields(runTime);
-        }
-
-        if (physics().printInfo())
-        {
-            Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
-                << "  ClockTime = " << runTime.elapsedClockTime() << " s"
-                << nl << endl;
-        }
-    }
-
-    physics().end();
-
-    Info<< nl << "End" << nl << endl;
-
-    return(0);
-}
-```
-
-As seen above, the `solid4Foam` solver contains no details about the physics and
-discretisation. Instead, a run-time selectable `physicsModel` object is created
-to encapsulate the specifics. Virtual functions, such as `evolve()`, are used to
-tell the physics model object to solve its governing equation for the current
-time step.
-
----
-
-### `physicsModel` Class
-
-The `physicsModel` is an abstract base class with three derived classes:
-
-- `fluidModel`
-- `solidModel`
-- `fluidSolidInterface`: the fluidSolidInterface class creates its a
-  `fluidModel` and `solidModel`
-
-Each of these three classes is also an abstract base class, where specific
-fluid, solid, and fluid-solid interaction implementations derive from them.
-
----
-
-### `solids4FoamModels` Library
-
-Examining the `solids4FoamModels` library structure:
+The `solids4FoamModels` library is organised by the components above:
 
 ```bash
 solids4foam
-├── ...
 └── src
-    ├── …
-    └── solids4FoamModels
-        ├── ...
+    └── solids4FoamModels
         ├── dynamicFvMesh
         ├── fluidModels
         ├── fluidSolidInterfaces
@@ -175,61 +134,6 @@ solids4foam
         ├── physicsModel
         └── solidModels
 ```
-
-The `fluidModel`, `solidsModel` and `fluidSolidInterface` classes are stored in
-separate directories. In addition, the `physicsModel` is located in the
-`solids4FoamModels` library.
-
----
-
-### `fluidModel` Class
-
-Fluid models implementations that derive from the `fluidModel` base class:
-
-- `pimpleFluid` : OpenFOAM `pimpleDyMFoam` solver ported to a class structure.
-  The PIMPLE algorithm generalises the PISO and SIMPLE algorithms, so `icoFoam`,
-  `pisoFoam` and `simpleFoam` are not ported.
-- `interFluid`: OpenFOAM `interDyMFoam` solver ported to a class structure
-- _..._
-
-Each `fluidModel` corresponds to a standard fluid solver in OpenFOAM, which has
-been repackaged into a class form, e.g. `pimpleFluid` is a port of the
-`pimpleDyMFoam` standard solver.
-
-```Note
-Standard solvers in OpenFOAM can differ significantly between OpenFOAM forks.
-solids4foam aims to include the fork-specific solver versions, e.g. when using
-OpenFOAM-v2012, `pimpleFluid` is a port of `pimpleDyMFoam` from OpenFOAM-v2012.
-```
-
-### `solidModel` Class
-
-The `solidModel` implementations, deriving from the `solidModel` base class,
-include specific modelling approaches and discretisations for solid mechanics,
-e.g.
-
-- `linGeomSolid`
-- `thermalLinGeomSolid`
-- `nonLinGeomTotalLagSolid`
-- _..._
-
-More details about the solid model can be found in
-[solid models section](https://solids4foam.github.io/documentation/solid-models.html).
-
-### Fluid-Solid Interaction Class
-
-The fluid-solid interaction models, deriving from the `fluidSolidInterface` base
-class, include implementations for partitioned coupling approaches, e.g.
-
-- `fixedRelaxationCouplingInterface`
-- `AitkenCouplingInterface`
-- `IQNILSCouplingInterface`
-- `weakCouplingInterface`
-- `oneWayCouplingInterface`
-- _..._
-
-More details of the differences between these approaches can be found in
-[tutorial 4](https://solids4foam.github.io/tutorials/tutorial4.html).
 
 ---
 
@@ -272,3 +176,6 @@ if (myName == “Philip”)
 
 …
 ```
+
+Contributions are welcome; please see the
+[contributing guide](under-the-hood/contributing.md).

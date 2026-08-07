@@ -1,1 +1,3 @@
-../imported/solids4foam/src/solids4FoamModels/functionObjects/README.md
+---
+redirect_to: /documentation/function-objects/
+---

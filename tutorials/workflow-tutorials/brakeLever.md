@@ -448,7 +448,7 @@ For a detailed explanation of the entries in the `solidProperties` dictionary,
 tutorial.
 
 For a list of the solid models currently available
- in `solids4foam`, check this [page](https://www.solids4foam.com/documentation/solid-models.html).
+ in `solids4foam`, check this [page](https://www.solids4foam.com/documentation/solid-models/).
 ```
 
 The other files in the `constant` directory (`physicalProperties`, `dynamicMeshDict`)

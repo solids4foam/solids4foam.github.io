@@ -1,1 +1,3 @@
-../imported/solids4foam/applications/scripts/README.md
+---
+redirect_to: /documentation/applications/scripts.html
+---

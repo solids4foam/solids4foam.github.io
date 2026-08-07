@@ -1,1 +1,3 @@
-../imported/solids4foam/src/solids4FoamModels/solidModels/README.md
+---
+redirect_to: /documentation/solid-models/
+---
