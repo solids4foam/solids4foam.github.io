@@ -71,6 +71,11 @@ _Journal of Computational Physics_, vol 563, 115056.
 [**A Jacobian-Free Newton-Krylov Method for Cell-Centred Finite Volume Solid Mechanics**](https://doi.org/10.1002/nme.70268),
 _International Journal for Numerical Methods in Engineering_ , 127(3), e70268.
 
+🟢 A. M. Pauzi, W. Mao, A. Cioncolini, E. Blanco-Davis & H. Iacovides, (2026).
+[**Best Practices for Axial Flow-Induced Vibration (FIV) Simulation in Nuclear
+Applications**](https://doi.org/10.3390/jne7010003),
+_Journal of Nuclear Engineering, 7_(1), 3.
+
 🟢 A. Horvat, P. Milović, I. Karšaj and Ž. Tuković, (2025).
 [**A block-coupled finite volume method forincompressible hyperelastic solids**](https://doi.org/10.3390/app152312660),
 _Applied Sciences_, 15(23), 12660.
@@ -143,6 +148,11 @@ _AIAA SCITECH 2025 Forum, Florida._
 and virtual structural damping**](https://doi.org/10.1063/5.0223164),
 _Physics of Fluids, 36 (9): 091902._
 
+🟢 W. Mao, H. Iacovides, A. Cioncolini, H. Li & M. R. A. Nabawy, (2024).
+[**A validated numerical methodology for flow-induced vibration of a
+semi-spherical end cantilever rod in axial flow**](https://doi.org/10.1063/5.0211524),
+_Physics of Fluids, 36_(7), 075155.
+
 🟢 Pereira R., Romero J., Norton A., & Nóbrega J.M. (2024).
 [**Advancing the assessment of pacifier effects with a novel computational
 method**](https://doi.org/10.1186/s12903-023-03848-5),
@@ -171,6 +181,16 @@ _Coastal Engineering, 182,_ 104302.
 [**Benchmark simulation of the flow-induced vibrations for nuclear
 applications.**](https://doi.org/10.1016/j.anucene.2022.109425)
 _Annals of Nuclear Energy, 180,_ 109425.
+
+🟢 Z. Hu, L. Huang & Y. Li, (2023).
+[**Fully-coupled hydroelastic modeling of a deformable wall in
+waves**](https://doi.org/10.1016/j.coastaleng.2022.104245),
+_Coastal Engineering, 179,_ 104245.
+
+🔵 A. M. Pauzi, H. Iacovides & A. Cioncolini, (2023).
+[**Pragmatic modelling of axial flow-induced vibration (FIV) for nuclear fuel
+rods**](https://doi.org/10.1088/1757-899X/1285/1/012001),
+_IOP Conference Series: Materials Science and Engineering, 1285_(1), 012001.
 
 🟢 Batistić, I., Cardiff, P., & Ivanković, A., & Tuković, Ž (2023).
 [**A finite volume penalty-based implicit procedure for the treatment of the
@@ -213,6 +233,17 @@ _Commun. Appl. Ind. Math. 13 (1),_ 10–20.
 physical modelling approaches.**](https://doi.org/10.1016/j.apor.2022.103363)
 _Applied Ocean Research._
 
+🟢 D. Zhangaskanov, S. Batay, B. Kamalov, Y. Zhao, X. Su & E. Y. K. Ng, (2022).
+[**High-Fidelity 2-Way FSI Simulation of a Wind Turbine Using Fully Structured
+Multiblock Meshes in OpenFoam for Accurate Aero-Elastic Analysis**](https://doi.org/10.3390/fluids7050169),
+_Fluids, 7_(5), 169.
+
+🟢 I. L. Oliveira, P. Cardiff, C. E. Baccin & J. L. Gasche, (2022).
+[**A numerical investigation of the mechanics of intracranial aneurysms walls:
+Assessing the influence of tissue hyperelastic laws and heterogeneous properties
+on the stress and stretch fields**](https://doi.org/10.1016/j.jmbbm.2022.105498),
+_Journal of the Mechanical Behavior of Biomedical Materials, 136,_ 105498.
+
 🟠 I. Batistić, (2022).
 [**Segment-to-segment algorithm for finite volume mechanical contact
 simulations.**](https://urn.nsk.hr/urn:nbn:hr:235:395801)
@@ -245,6 +276,16 @@ _Complas 2021, Barcelona, Spain._
 [**Fluid-structure interaction simulations with a LES filtering approach in
 solids4Foam.**](https://doi.org/10.2478/caim-2021-0002)
 _Communications in Applied and Industrial Mathematics, 12(1)_.
+
+🟠 L. Ribeiro de Azevedo, (2021).
+[**Development of a block-coupled finite volume methodology for non linear
+elasticity**](https://doi.org/10.26083/tuprints-00013305),
+_PhD thesis, Technische Universität Darmstadt._
+
+🟠 A. Hernández Escobar, (2021).
+[**Numerical analysis of fluid dynamics and solids contact mechanisms in human
+trachea under mechanical ventilation for endotracheal cuff design**](https://hdl.handle.net/10784/30231),
+_Master's thesis, Universidad EAFIT, Medellín, Colombia._
 
 🟢 Rodrigues, P. V., Ramoa, B., Machado, A. V., Cardiff, P., & Nóbrega, J. M.
 (2021).
