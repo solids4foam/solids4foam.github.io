@@ -10,7 +10,11 @@
     </a>
 {%- else %}
     <a class="d-flex flex-items-baseline" href="{{ dir.url | relative_url }}">
-        {{ dir.title | default: dir.url }}
+        {%- if dir.sort -%}
+            {{ dir.sort }}. {{ dir.title | default: dir.url }}
+        {%- else -%}
+            {{ dir.title | default: dir.url }}
+        {%- endif -%}
     </a>
 {%- endif -%}
 
