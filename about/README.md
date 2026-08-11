@@ -115,13 +115,23 @@ relevant references (the solver output will let you know!).
 
 ---
 
-## Contributors
+## Project team
 
 solids4foam is primarily developed by researchers at University College Dublin
 and the University of Zagreb with contributions from researchers across the
-OpenFOAM community. In particular, Philip Cardiff (Dublin) is the principal
-toolbox architect, with significant scientific and implementation contributions
-from Željko Tuković (Zagreb).
+OpenFOAM community.
 
-A full list of contributors can be found on the
-[solids4foam contributors page](https://github.com/solids4foam/solids4foam/graphs/contributors).
+### Principal Developers
+
+- Philip Cardiff
+- Ivan Batistić
+- Željko Tuković
+
+### Contributors
+
+The wider solids4foam community contributes through code, reviews, issue
+reports, testing, documentation, tutorials, and discussions. Contributor details
+are available in the
+[CONTRIBUTORS file](https://github.com/solids4foam/solids4foam/blob/development/CONTRIBUTORS.md)
+and on the
+[GitHub contributors graph](https://github.com/solids4foam/solids4foam/graphs/contributors).
