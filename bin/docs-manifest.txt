@@ -68,6 +68,7 @@ tutorials/more-tutorials/fluid-mechanics/decayingTaylorGreenVortex.md           
 tutorials/more-tutorials/fluid-solid-interaction/3dTube.md                           tutorials/fluidSolidInteraction/3dTube/README.md
 tutorials/more-tutorials/fluid-solid-interaction/beamInCrossFlow.md                  tutorials/fluidSolidInteraction/beamInCrossFlow/README.md
 tutorials/more-tutorials/fluid-solid-interaction/cavityFlexibleBottom.md             tutorials/fluidSolidInteraction/cavityFlexibleBottom/README.md
+tutorials/more-tutorials/fluid-solid-interaction/cerebralAneurysm.md                tutorials/fluidSolidInteraction/cerebralAneurysm/README.md
 tutorials/more-tutorials/fluid-solid-interaction/fillingElasticContainer.md          tutorials/fluidSolidInteraction/fillingElasticContainer/README.md
 tutorials/more-tutorials/fluid-solid-interaction/flexibleDamBreak.md                 tutorials/fluidSolidInteraction/flexibleDamBreak/README.md
 tutorials/more-tutorials/fluid-solid-interaction/flexibleOversetCylinder.md          tutorials/fluidSolidInteraction-preCICE/flexibleOversetCylinder/README.md
