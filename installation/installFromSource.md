@@ -79,7 +79,7 @@ the following OpenFOAM versions are supported:
 |                     |                                  |
 | -------             | --------                         |
 | development         | foam-extend-4.1                  |
-|                     | OpenFOAM-v2312 -> OpenFOAM-v2512 |
+|                     | OpenFOAM-v2312 -> OpenFOAM-v2606 |
 |                     | OpenFOAM-9                       |
 
 solids4foam is primarily developed using the OpenFOAM.com variant of OpenFOAM
@@ -282,7 +282,7 @@ solids4foam-v2.4 can be downloaded as an archive file:
 
 - [solids4foam-v2.4.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.zip):
   extracted with `> unzip v2.4.zip`
-- [solids4foam-v2.4.tgz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.tar.gz):
+- [solids4foam-v2.4.tar.gz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.tar.gz):
   extracted with `> tar xzf v2.4.tar.gz`
 
 #### Git repository: v2.4
