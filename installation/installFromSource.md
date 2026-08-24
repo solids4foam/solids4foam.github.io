@@ -20,13 +20,13 @@ The `-j` flag instructs `Allwmake` to use all available cores.
 
 ```note
 `S4F_UNITY_BUILD=1` enables a Unity build, which groups source files into
-generated compilation units. This reduces repeated parsing of OpenFOAM headers
-and can shorten clean build times, while producing the same library. Unset the
-variable to use a conventional build. Unity builds are best for from-scratch
-builds, such as in continuous integration, container images, or after a
-`wclean`. They are less suitable for day-to-day library development because
-changing one source rebuilds its entire bucket. For details, see
-[`src/solids4FoamModels/README.md`](https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/README.md).
+ generated compilation units. This reduces repeated parsing of OpenFOAM headers
+ and can shorten clean build times, while producing the same library. Unset the
+ variable to use a conventional build. Unity builds are best for from-scratch
+ builds, such as in continuous integration, container images, or after a
+ `wclean`. They are less suitable for day-to-day library development because
+ changing one source rebuilds its entire bucket. For details, see
+ [`src/solids4FoamModels/README.md`](https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/README.md).
 ```
 
 Similarly, the latest  the `development` branch can be downloaded and compiled

@@ -30,7 +30,7 @@ In macOS and Linux, the solids4foam container can be created with
 ```bash
 docker run -it --rm \
   -v "${HOME}":/shared \
-  solids4foam/solids4foam:v2.3-openfoam-v2512 \
+  solids4foam/solids4foam:v2.4-openfoam-v2512 \
   bash
 ```
 
@@ -40,8 +40,8 @@ where `-v="${HOME}":/shared` means that your host computer home directory is
  images for the other OpenFOAM variants are called
 
 ```bash
-solids4foam/solids4foam:v2.3-openfoam-9
-solids4foam/solids4foam:v2.3-foam-extend-4.1
+solids4foam/solids4foam:v2.4-openfoam-9
+solids4foam/solids4foam:v2.4-foam-extend-4.1
 ```
 
 All the images available can be found at [Docker Hub](https://hub.docker.com/r/solids4foam/solids4foam/tags).
