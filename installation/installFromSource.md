@@ -95,7 +95,7 @@ The solids4foam `Allwmake` script can optionally ask you to fix files in the mai
  e.g.
 
 ```bash
-> export S4F_NO_FILE_FIXES=0 && ./Allwmake -j
+export S4F_NO_FILE_FIXES=0 && ./Allwmake -j
 ```
 
 To make these fixes, follow the instructions from the `Allwmake` script when
@@ -140,7 +140,7 @@ conflicts when using preCICE), set the `S4F_NO_USE_EIGEN` environment variable,
 e.g. add the following to your bashrc
 
 ```bash
-> export S4F_NO_USE_EIGEN=1
+export S4F_NO_USE_EIGEN=1
 ```
 
 #### PETSc
@@ -148,13 +148,13 @@ e.g. add the following to your bashrc
 The binaries for PETSc can be installed on Ubuntu with
 
 ```bash
-> sudo apt install petsc-dev
+sudo apt install petsc-dev
 ```
 
 Or, on macOS with
 
 ```bash
-> brew install petsc
+brew install petsc
 ```
 
 Alternatively, and more generally, PETSc can be installed following the
@@ -188,16 +188,16 @@ building PETSc from source, configure it with `--download-mumps` and
 
 ````warning
 Some package-managed PETSc installations do not include MUMPS and HYPRE. If
-you choose to use such an installation, set `S4F_ALLOW_INCOMPLETE_PETSC=1`
-when building solids4foam:
+ you choose to use such an installation, set `S4F_ALLOW_INCOMPLETE_PETSC=1`
+ when building solids4foam:
 
 ```bash
 S4F_ALLOW_INCOMPLETE_PETSC=1 ./Allwmake -j
 ```
 
 This allows solids4foam to compile, but some PETSc tutorials and solver
-configurations may fail. Configure PETSc with MUMPS and HYPRE for complete
-functionality.
+ configurations may fail. Configure PETSc with MUMPS and HYPRE for complete
+ functionality.
 ````
 
 #### gfortran
@@ -205,13 +205,13 @@ functionality.
 gfortran can be installed on Ubuntu with:
 
 ```bash
-> sudo apt-get install gfortran
+sudo apt-get install gfortran
 ```
 
 Or, on macOS with
 
 ```bash
-> brew install gcc
+brew install gcc
 ```
 
 ```warning
@@ -239,11 +239,11 @@ script within these tutorials will exit.
 
 ```note
 Some cfMesh source builds on macOS may fail with `fatal error: 'omp.h' file not
-found`. Apple Clang does not include OpenMP by default, so cfMesh can expose an
-incomplete OpenMP configuration not detected while building OpenFOAM.
+ found`. Apple Clang does not include OpenMP by default, so cfMesh can expose an
+ incomplete OpenMP configuration not detected while building OpenFOAM.
 
 If OpenMP is not required, build cfMesh without it; this is sufficient for the
-solids4foam tutorials that require the `cartesianMesh` utility:
+ solids4foam tutorials that require the `cartesianMesh` utility:
 
 ~~~bash
 wmake -no-openmp libso meshLibrary && \\
@@ -252,7 +252,7 @@ wmake -no-openmp -all utilities
 ~~~
 
 Alternatively, configure the compiler to find both `omp.h` and a matching
-OpenMP runtime library. Homebrew `libomp` is one possible option.
+ OpenMP runtime library. Homebrew `libomp` is one possible option.
 ```
 
 #### gnuplot
@@ -260,13 +260,13 @@ OpenMP runtime library. Homebrew `libomp` is one possible option.
 gnuplot can be installed on Ubuntu with:
 
 ```bash
-> sudo apt-get install gnuplot
+sudo apt-get install gnuplot
 ```
 
 Or, on macOS with
 
 ```bash
-> brew install gnuplot
+brew install gnuplot
 ```
 
 ---
@@ -281,16 +281,16 @@ computer; we suggest placing it in `$FOAM_RUN/..`.
 solids4foam-v2.4 can be downloaded as an archive file:
 
 - [solids4foam-v2.4.zip](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.zip):
-  extracted with `> unzip v2.4.zip`
+  extracted with `unzip v2.4.zip`
 - [solids4foam-v2.4.tar.gz](https://github.com/solids4foam/solids4foam/archive/refs/tags/v2.4.tar.gz):
-  extracted with `> tar xzf v2.4.tar.gz`
+  extracted with `tar xzf v2.4.tar.gz`
 
 #### Git repository: v2.4
 
 `solids4foam-v2.4` can be downloaded using
 
 ```bash
-> git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
+git clone --branch v2.4 https://github.com/solids4foam/solids4foam.git
 ```
 
 #### Git repository: latest development branch
@@ -298,7 +298,7 @@ solids4foam-v2.4 can be downloaded as an archive file:
 The latest nightly build development branch can be downloaded with
 
 ```bash
-> git clone --branch development git@github.com:solids4foam/solids4foam.git
+git clone --branch development git@github.com:solids4foam/solids4foam.git
 ```
 
 ---
@@ -311,8 +311,8 @@ build solids4foam, enter the solids4foam directory and execute the included
 Allwmake script, e.g.
 
 ```bash
-> cd solids4foam
-> ./Allwmake -j 2>&1 | tee log.Allwmake
+cd solids4foam
+./Allwmake -j 2>&1 | tee log.Allwmake
 ```
 
 Depending on your hardware, you can expect this build to last about 5 minutes.
@@ -354,7 +354,7 @@ As instructed, after a successful build, you can test the tutorials using the
 following commands, executed from the solids4foam parent directory.
 
 ```bash
-> cd tutorials && ./Alltest
+cd tutorials && ./Alltest
 ```
 
 If the tests pass, you will receive the message:
@@ -388,7 +388,7 @@ These _smoke tests_ just check that all cases can be solved for one time-step
  regression tests can be formed with
 
 ```bash
-> cd tutorials && ./Alltest-regression
+cd tutorials && ./Alltest-regression
 ```
 
 ---
