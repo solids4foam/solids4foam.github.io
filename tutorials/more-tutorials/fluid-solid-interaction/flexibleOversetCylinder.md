@@ -13,8 +13,9 @@ cases are maintained upstream in
 [precice/tutorials](https://github.com/precice/tutorials), and this standalone
 case was not covered by any test.
 
-The case files remain available here, unchanged apart from the removal of the
-images used on this page:
+The case files remain available here, unchanged apart from the images used on
+this page, which the archived README now links from this website rather than
+bundling:
 
 - [fluidSolidInteraction-preCICE.zip](https://www.solids4foam.com/tutorials/archive/fluidSolidInteraction-preCICE.zip)
   (also contains the `3dTube` preCICE case)
