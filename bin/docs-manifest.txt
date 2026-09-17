@@ -71,7 +71,6 @@ tutorials/more-tutorials/fluid-solid-interaction/cavityFlexibleBottom.md        
 tutorials/more-tutorials/fluid-solid-interaction/cerebralAneurysm.md                tutorials/fluidSolidInteraction/cerebralAneurysm/README.md
 tutorials/more-tutorials/fluid-solid-interaction/fillingElasticContainer.md          tutorials/fluidSolidInteraction/fillingElasticContainer/README.md
 tutorials/more-tutorials/fluid-solid-interaction/flexibleDamBreak.md                 tutorials/fluidSolidInteraction/flexibleDamBreak/README.md
-tutorials/more-tutorials/fluid-solid-interaction/flexibleOversetCylinder.md          tutorials/fluidSolidInteraction-preCICE/flexibleOversetCylinder/README.md
 tutorials/more-tutorials/fluid-solid-interaction/HronTurekFsi3.md                    tutorials/fluidSolidInteraction/HronTurekFsi3/README.md
 tutorials/more-tutorials/fluid-solid-interaction/perpendicularFlap.md                tutorials/fluidSolidInteraction/perpendicularFlap/README.md
 tutorials/more-tutorials/solid-mechanics/beamsPlatesShells/squarePlate.md            tutorials/solids/beamsPlatesShells/squarePlate/README.md
