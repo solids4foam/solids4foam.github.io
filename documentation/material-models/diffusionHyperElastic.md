@@ -1,1 +1,0 @@
-../../imported/solids4foam/src/solids4FoamModels/materialModels/mechanicalModel/mechanicalLaws/nonLinearGeometryLaws/diffusionHyperElastic/README.md
