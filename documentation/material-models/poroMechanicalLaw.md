@@ -1,1 +1,1 @@
-../../imported/solids4foam/src/solids4FoamModels/materialModels/mechanicalModel/mechanicalLaws/linearGeometryLaws/poroMechanicalLaw/README.md
+../../imported/solids4foam/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/poroMechanicalLawMechanicalConstitutiveLaw/README.md

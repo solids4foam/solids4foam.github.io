@@ -1,1 +1,1 @@
-../../imported/solids4foam/src/solids4FoamModels/materialModels/mechanicalModel/mechanicalLaws/nonLinearGeometryLaws/MooneyRivlinElastic/README.md
+../../imported/solids4foam/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/MooneyRivlinElasticMechanicalConstitutiveLaw/README.md

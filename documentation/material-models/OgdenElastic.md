@@ -1,1 +1,1 @@
-../../imported/solids4foam/src/solids4FoamModels/materialModels/mechanicalModel/mechanicalLaws/nonLinearGeometryLaws/OgdenElastic/README.md
+../../imported/solids4foam/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/OgdenElasticMechanicalConstitutiveLaw/README.md
