@@ -12,7 +12,27 @@
         <hr>
         <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
             <div class="markdown-body" itemprop="articleBody">
-                {{ content }}
+                {%- comment -%}
+                    Pages published from solids4foam link relative to their
+                    place there; bin/sync-docs.sh resolves those links.
+                {%- endcomment -%}
+                {%- assign body = content -%}
+                {%- for link in site.data.docs_links[page.path] -%}
+                    {%- if link.page -%}
+                        {%- assign href = link.page | relative_url -%}
+                    {%- else -%}
+                        {%- assign href = link.url -%}
+                    {%- endif -%}
+                    {%- assign from = 'href="' | append: link.from | append: '"' -%}
+                    {%- assign to = 'href="' | append: href | append: '"' -%}
+                    {%- assign body = body | replace: from, to -%}
+                    {%- if link.src -%}
+                        {%- assign from = 'src="' | append: link.from | append: '"' -%}
+                        {%- assign to = 'src="' | append: link.src | append: '"' -%}
+                        {%- assign body = body | replace: from, to -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                {{ body }}
             </div>
         </div>
         {% include templates/footer.liquid %}
