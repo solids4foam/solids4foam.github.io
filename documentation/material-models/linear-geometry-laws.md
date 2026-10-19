@@ -1,1 +1,3 @@
-../../imported/solids4foam/src/solids4FoamModels/materialModels/mechanicalModel/mechanicalLaws/linearGeometryLaws/README.md
+---
+redirect_to: /documentation/material-models/
+---

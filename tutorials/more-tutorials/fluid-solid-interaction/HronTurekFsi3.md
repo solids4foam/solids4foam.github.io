@@ -1,1 +1,3 @@
-../../../imported/solids4foam/tutorials/fluidSolidInteraction/HronTurekFsi3/README.md
+---
+redirect_to: /tutorials/more-tutorials/fluid-solid-interaction/TurekHron2006.html
+---
