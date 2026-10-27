@@ -140,224 +140,183 @@ Before meshing, always inspect your CAD files for flaws like gaps, overlapping f
 ## Step 2. Meshing using gmsh
 
 Before meshing, we must populate the case directory with the necessary
-`OpenFOAM` files. The most efficient way to do this is to copy the structure
-from a similar tutorial case. Since our simulation assumes small deformations
-and a linear elastic material, the cases in
-`solids4foam/tutorials/solids/linearElasticity` are a good starting point.
-We will use the `plateHole` tutorial:
+ `OpenFOAM` files. The most efficient way to do this is to copy the structure
+ from a similar tutorial case. Since our simulation assumes small deformations
+ and a linear elastic material, the cases in
+ `solids4foam/tutorials/solids/linearElasticity` are a good starting point.
+ We will use the `plateHole` tutorial:
 
 ```bash
 cp -r $SOLIDS4FOAM_DIR/tutorials/solids/linearElasticity/plateHole/* .
 ```
 
-The `gmsh` mesher comes with OpenFOAM (OpenFOAM.com) as a sub-module, so you
- You need to compile it before you can use it. This can be done with the
- following commands:
+Gmsh is an open-source mesh generator. It can read STEP geometry directly
+and generate tetrahedral meshes. We control it with a script file, which we
+will call droneFrame.geo. Create this file in the case directory 
+
+```
+touch droneFrame.geo
+```
+
+and add following content:
+
+```geo
+SetFactory("OpenCASCADE");
+Merge "droneFrame.stp";          // geometry in millimetres
+
+Mesh.CharacteristicLengthMin = 0.4;
+Mesh.CharacteristicLengthMax = 1.0;
+Mesh.CharacteristicLengthFromCurvature = 1;
+Mesh.MinimumElementsPerTwoPi = 12;
+Mesh.Algorithm   = 6;             // Frontal-Delaunay (2D)
+Mesh.Algorithm3D = 10;            // HXT (3D)
+Mesh.Optimize    = 1;
+Mesh.OptimizeNetgen = 1;
+
+// --- output ---
+Mesh.ScalingFactor  = 0.001;      // mm -> m
+Mesh.MshFileVersion = 2.2;        // format read by gmshToFoam
+
+// --- boundary patches (CAD face tags from the STEP file) ---
+symX()        = {9, 10, 43, 44};  // cut plane x = 0
+symZ()        = {7, 8, 42};       // cut plane z = 0
+plateTop()    = {35};             // top face of upper plate (y = 28.1)
+plateBottom() = {179};            // bottom face of lower plate (y = 0)
+motorPad()    = {203};            // top face of the motor pad (motor seat)
+free() = Surface{:};
+free() -= symX(); free() -= symZ(); free() -= plateTop();
+free() -= plateBottom(); free() -= motorPad();
+
+Physical Surface("symX")        = symX();
+Physical Surface("symZ")        = symZ();
+Physical Surface("plateTop")    = plateTop();
+Physical Surface("plateBottom") = plateBottom();
+Physical Surface("motorPad")    = motorPad();
+Physical Surface("free")        = free();
+Physical Volume("frame")        = Volume{:};
+```
+
+The script has four parts:
+
+- **Geometry**. The SetFactory line selects the OpenCASCADE kernel, which is
+  necessary to read STEP files. The Merge command loads the geometry.
+- **Mesh size**. The cell size is between 0.4 mm and 1.0 mm. The arm has thin
+  truss members of about 1.7 mm, so the upper limit of 1.0 mm gives at least
+  two cells across each member. The CharacteristicLengthFromCurvature option
+  refines the mesh on curved surfaces, such as the holes, so that each full
+  circle has at least 12 cells. Algorithm3D = 10 selects the HXT algorithm,
+  which is fast and robust for large tetrahedral meshes.
+- **Output**. The geometry is in millimetres, so Mesh.ScalingFactor scales
+  the mesh to metres when it is written. The gmshToFoam utility reads the
+  msh format version 2, so we set Mesh.MshFileVersion to 2.2.
+- **Boundary patches**. Each boundary patch is a Physical Surface, a named
+  group of CAD faces. The faces are identified by their tag in the STEP file.
+  The last group, free, contains all faces that are not in another group. A
+  Physical Volume is also necessary; without it, Gmsh does not write the
+  cells.
+
+```tip
+To find the tag of a CAD face, open the geometry in the Gmsh graphical  interface with `gmsh droneFrame.stp`. Select *Tools > Options > Geometry* and  tick *Surface labels* under *Visibility*. The tag of each face is then shown  in the graphics window. Alternatively, hover the mouse over a face and its tag is shown in the status bar.
+```
+
+Now, run the mesher:
 
 ```bash
-foam
-cd modules
-git submodule update --init cfmesh
-cd cfmesh
-./Allwmake
+gmsh -3 droneFrame.geo -o droneFrame.msh
 ```
 
-Once the compilation is successful, return to your `brakeLever` case directory.
- Meshing with `cfMesh` is controlled by the `system/meshDict` file. We will copy
- a suitable example from the `wobblyNewton` solids4foam tutorial:
+The `-3` flag tells Gmsh to generate a 3D mesh. The mesh generation takes a
+ few seconds, and the end of the output reports the mesh size:
 
 ```bash
-cp $SOLIDS4FOAM_DIR/tutorials/solids/linearElasticity/wobblyNewton/ \
- system/meshDict system/
+Info    : Done meshing 2D (Wall 0.798737s, CPU 0.792499s)
+Info    : Done meshing 3D (Wall 0.431752s, CPU 0.404607s)
+Info    : 36428 nodes 198736 elements
 ```
 
-Next, let us check the geometry file. The `surfaceCheck` utility provides
- statistics about the surface triangulation and its bounding box.
+The mesh is in the Gmsh msh format. We convert it to OpenFOAM format with
+ the gmshToFoam utility:
+
+```
+gmshToFoam droneFrame.msh
+```
+
+The utility writes the mesh in the `constant/polyMesh` directory.
+
+![Case geometry and mesh](images/droneFrame-mesh.png)
+
+### Computational mesh
+
+After generating the mesh, one should always inspect the
+`constant/polyMesh/boundary` file. The `gmshToFoam` utility assigns the
+generic `patch` type to all patches. This is correct for the traction and
+displacement boundaries, but the two symmetry planes must have the `symmetry`
+type. We can change the type by editing the file, or with the
+`foamDictionary` utility:
 
 ```bash
-surfaceCheck brakeLever.stl
-rm -rf *.obj
+foamDictionary constant/polyMesh/boundary -entry entry0/symZ/type -set symmetry
+foamDictionary constant/polyMesh/boundary -entry entry0/symX/type -set symmetry
 ```
 
-```plaintext
-Statistics:
-Triangles    : 45064 in 4 region(s)
-Vertices     : 22607
-Bounding Box : (-30.3771 -24.3679 -4.5) (20.3966 169.632 4.5)
-
-Region  Size
-------  ----
-fixed   4716
-freeRotation    7226
-freeTraction    31544
-load    1578
-
-
-Surface has no illegal triangles.
-...
-```
-
-The output shows that the geometry is valid, but the bounding box dimensions
- suggest the units are in millimetres. We need to scale the geometry to meters
- for our simulation. We can do this with the `scaleSurfaceMesh` utility:
+The boundary file should now look like this:
 
 ```bash
-scaleSurfaceMesh brakeLever.stl brakeLever_scaled.stl 0.001
+6
+(
+    free
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          45539;
+        startFace       256551;
+    }
+    symZ
+    {
+        type            symmetry;
+        physicalType    patch;
+        nFaces          254;
+        startFace       302090;
+    }
+    symX
+    {
+        type            symmetry;
+        physicalType    patch;
+        nFaces          290;
+        startFace       302344;
+    }
+    plateTop
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          2824;
+        startFace       302634;
+    }
+    plateBottom
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          2596;
+        startFace       305458;
+    }
+    motorPad
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          579;
+        startFace       308054;
+    }
+)
 ```
 
-After scaling, we will convert geometry to `fms` format, after which we can
- remove all `stl` files:
+Finally, we perform a formal quality check with the checkMesh utility:
 
-```bash
-surfaceToFMS brakeLever_scaled.stl
-rm -rf *.stl
 ```
-
-Now, we can adjust `system/meshDict` for our first meshing attempt. Set the
- following entries:
-
-```plaintext
-surfaceFile "brakeLever_scaled.fms";
-maxCellSize 0.001;
-boundaryCellSize 0.001;
-```
-
-Run the mesher and inspect the result in ParaView:
-
-```bash
-cartesianMesh
-paraview case.foam
-```
-
-![mesh](images/brakeLever-mesh.png)
-
-### Initial mesh
-
-You will notice that the sharp edges of the geometry are rounded in
- the mesh. To improve this, we can extract the feature edges from the surface and
- instruct `cfMesh` to preserve them. Feature edge extraction is done
- using the command:
-
-```bash
-surfaceFeatureEdges -angle 30 brakeLever_scaled.fms brakeLever_scaled_edge.fms
-```
-
-which will extract all edges where the angle between adjacent faces is 30
- degrees or more. Before re-running the mesher, it is necessary to change the surface
- file name in `system/meshDict`:
-
-```plaintext
-surfaceFile "brakeLever_scaled_edge.stl";
-```
-
-With the feature edge file specified, run the mesher again and view the result:
-
-```bash
-cartesianMesh
-paraview case.foam
-```
-
-![mesh](images/brakeLever-mesh-featureEdges.png)
-
-### Mesh after using `surfaceFeatureEdges` utility to extract edges
-
-The new mesh respects the geometry's sharp features much better. After a visual
- inspection, we should perform a formal quality check using the `checkMesh`
- utility:
-
-```bash
 checkMesh
 ```
 
-From the output of `checkMesh`, we can see that the mesh passed the
- test and is OK for use:
-
-```plaintext
-...
-Checking geometry...
-        Overall domain bounding box (-0.0303905 -0.0243743 -0.00450006)
-        (0.0203966 0.16956 0.00450007)
-        Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
-        Mesh has 3 solution (non-empty) directions (1 1 1)
-        Boundary openness (6.16467e-16 -3.41217e-17 1.354e-16) OK.
-        Max cell openness = 3.17123e-16 OK.
-        Max aspect ratio = 8.35448 OK.
-        Minimum face area = 2.98537e-08. Maximum face area = 1.96001e-06.
-        Face area magnitudes OK.
-        Min volume = 4.77543e-12. Max volume = 1.29557e-09.
-        Total volume = 2.41888e-05. Cell volumes OK.
-        Mesh non-orthogonality Max: 52.2587 average: 9.14128
-        Non-orthogonality check OK.
-        Face pyramids OK.
-        Max skewness = 1.21589 OK.
-        Coupled point location match (average 0) OK.
-Mesh OK.
-```
-
-From the `checkMesh` output, we obtain the maximum values of mesh quality
- metrics such as aspect ratio, skewness, and non-orthogonality. All of these
- metrics are important, but for segregated solvers with semi-implicit
- discretisation, non-orthogonality is particularly critical. High
- non-orthogonality reduces the implicitness of the discretisation, which in turn
- decreases robustness and solver efficiency. Therefore, it should be kept as low
- as possible.
-
-![mesh](images/brakeLever-meshMetrics.png)
-
-### `checkMesh`  mesh metrics explanation
-
-```tip
-For a more thorough check, run: `checkMesh -allGeometry -allTopology`.
- You can also add the `-writeAllFields` flag to save the mesh quality fields
- (like skewness and non-orthogonality) for visualisation in ParaView.
-```
-
-```tip
-If `checkMesh` reports that the mesh is not OK, it must be improved.
- The severity of warnings is indicated by asterisks (*, **, ***), with *** being
- the most critical. You can adjust the warning thresholds for these metrics in a
- `system/meshQualityDict` file (add -meshQuality flag when runnig checkMesh).
- The default trehold values can be found at, for example,
- `OpenFOAM-v2312/src/OpenFOAM/meshes/primitiveMesh/
- primitiveMeshCheck/primitiveMeshCheck.C` file'
-```
-
-The mesh is written in `constant/polyMesh` directory in OpenFOAM format, using
- files `points`, `faces`, `owner`, `neighbour` and `boundary` file.
- After generating the mesh , one should always inspect
- `constant/polyMesh/boundary` file. The mesher often assigns the default `wall`
- type to all patches. For applying traction and displacement boundary conditions,
- these must be changed to the generic `patch` type.
-
-```plaintext
-4
-(
-fixed
-{
-    type patch;
-    nFaces 332;
-    startFace 86415;
-}
-freeRotation
-{
-    type patch;
-    nFaces 360;
-    startFace 86747;
-}
-freeTraction
-{
-    type patch;
-    nFaces 10340;
-    startFace 87107;
-}
-load
-{
-    type patch;
-    nFaces 624;
-    startFace 97447;
-}
-)
-```
+From the output of `checkMesh`, we can see that the mesh passed the test and
+ is OK for use.
 
 ## Step 3. Preparing Case Files
 
@@ -377,40 +336,55 @@ internalField   uniform (0 0 0);
 Next, we define the conditions for each boundary patch inside the
  `boundaryField` dictionary. The setup is as follows:
 
-- **`fixed`**: Zero displacement is prescribed on this patch.
-- **`freeRotation`**: This patch simulates a pin, allowing rotation but no
-surface normal movement. We use a boundary condition that enforces zero normal
-displacement and zero shear stress (tangential traction).
-- **`freeTraction`**: This is a free surface with no applied forces.
-- **`load`**: A pressure of 50 kPa is applied to this surface.
+- `symX `and `symZ`: These patches are the two cut planes. The
+  symmetry condition sets the normal displacement and the shear traction to
+  zero.
+- `motorPad`: This patch is the motor seat on top of the pad. Zero
+  displacement is prescribed on this patch.
+- `plateTop`: The weight of the battery and the electronics acts on this
+  patch. A pressure of 4.3 kPa is applied, which includes the load factor of 10.
 
 The final `0/D` file should look like this:
 
 ```c++
 boundaryField
 {
-    fixed
+    symX
+    {
+        type            solidSymmetry;
+        patchType       symmetry;
+        value           uniform (0 0 0);
+    }
+    symZ
+    {
+        type            solidSymmetry;
+        patchType       symmetry;
+        value           uniform (0 0 0);
+    }
+    motorPad
     {
         type            fixedDisplacement;
         value           uniform (0 0 0);
     }
-    freeRotation
-    {
-        type            fixedDisplacementZeroShear;
-        value           uniform (0 0 0);
-    }
-    freeTraction
+    plateTop
     {
         type            solidTraction;
-        traction        uniform ( 0 0 0 );
+        traction        uniform (0 0 0);
+        pressure        uniform 4300;
+        value           uniform (0 0 0);
+    }
+    plateBottom
+    {
+        type            solidTraction;
+        traction        uniform (0 0 0);
         pressure        uniform 0;
         value           uniform (0 0 0);
     }
-    load
+    free
     {
         type            solidTraction;
-        traction        uniform ( 0 0 0 );
-        pressure        uniform 50000;
+        traction        uniform (0 0 0);
+        pressure        uniform 0;
         value           uniform (0 0 0);
     }
 }
@@ -420,7 +394,7 @@ boundaryField
 
 Next, we need to adjust input dicts in the `constant` directory. Material
  properties are defined in `constant/mechanicalProperties`. We will specify
- the properties for aluminium:
+ the properties for ABS plus plastic:
 
 ```plaintext
 planeStress     no;
@@ -430,16 +404,19 @@ mechanical
     aluminum
     {
         type            linearElastic;
-        rho             rho [1 -3 0 0 0 0 0] 2700;
-        E               E [1 -1 -2 0 0 0 0] 70+9;
-        nu              nu [0 0 0 0 0 0 0] 0.33;
+        rho             rho [1 -3 0 0 0 0 0] 1040;
+        E               E [1 -1 -2 0 0 0 0] 2.5+9;
+        nu              nu [0 0 0 0 0 0 0] 0.35;
     }
 );
 ```
 
-In the `constant/solidProperties` file, we select the solid mechanics model and
- control the solver's behaviour. We will use the `linearGeometryTotalDisplacement`
- solver, which is a segregated solver for small strains and rotations.
+In the `constant/solidProperties` file, we select the solid mechanics model
+and the solution algorithm. We will use the `linearGeometryTotalDisplacement`
+model, which assumes small strains and rotations. Instead of the default
+segregated algorithm, we select the coupled `PETScSNES` algorithm. In addition, we switch on the
+ high-order discretisation, which reconstructs the displacement field with
+ quadratic polynomials instead of linear ones. 
 
 ```plaintext
 // linearGeometry: assumes small strains and rotations
@@ -447,114 +424,143 @@ solidModel     linearGeometryTotalDisplacement;
 
 "linearGeometryTotalDisplacementCoeffs"
 {
-    // Maximum number of momentum correctors
-    nCorrectors     20000;
+    // Solution algorithm: segregated (default) or PETScSNES (coupled Newton)
+    solutionAlgorithm    PETScSNES;
 
-    // Solution tolerance for displacement
-    solutionTolerance 1e-05;
+    // High-order (quadratic) reconstruction of the displacement field
+    highOrderCoeffs
+    {
+        highOrderJacobian false;
+        highOrderResidual true;
 
-    // Alternative solution tolerance for displacement
-    alternativeTolerance 1e-05;
+        displacement
+        {
+            polynomialOrder 2;
 
-    // Material law solution tolerance
-    materialTolerance 1e-05;
+            faceStencilExtraCells 55;
 
-    // Write frequency for the residuals
-    infoFrequency   100;
+            weightFunctionCoeffs
+            {
+                type radiallySymmetricExponential;
+                k 6;
+            }
+            calcConditionNumber false;
+        }
+    }
+
+    stabilisation
+    {
+        momentum
+        {
+            type        alpha;
+            scaleFactor 0.1;
+        }
+    }
 }
 ```
 
-```tip
-For a detailed explanation of the entries in the `solidProperties` dictionary,
- see the [hotSphere](https://www.solids4foam.com/tutorials/tutorial1.html)
-tutorial.
+The `highOrderCoeffs` dictionary controls the high-order discretisation:
 
-For a list of the solid models currently available
- in `solids4foam`, check this [page](https://www.solids4foam.com/documentation/solid-models/).
+- `highOrderResidual true` evaluates the momentum residual with the quadratic
+  reconstruction. `highOrderJacobian false` keeps the standard second-order
+  Jacobian as the preconditioner, which is cheaper to assemble.
+- `polynomialOrder 2` selects quadratic polynomials.
+- `faceStencilExtraCells 55` sets the extra number of neighbour cells added to the
+  stencil of each face for the reconstruction.
+- `weightFunctionCoeffs` sets the weights of the cells in the stencil. Cells
+  further from the face get smaller weights.
+
+The `stabilisation` dictionary adds a small amount of numerical diffusion to
+ the momentum equation, which helps improve conditioning of the system.
+
+```tip
+The `PETScSNES` algorithm and the high-order discretisation require a
+`solids4foam` build with `PETSc` support. If your build does not have it,
+set `implicitSegregated` under `solutionAlgorithm` to use segregated algorithm.
 ```
 
-The other files in the `constant` directory (`physicalProperties`, `dynamicMeshDict`)
- can remain unchanged. The `g` file can be modified if you wish to include
- gravitational effects.
+The gravitational acceleration is set in the `constant/g` file. We apply the
+ load factor of 10 to the gravitational acceleration, so that the frame is
+ loaded with ten times its own weight. This represents the deceleration of
+ the frame on landing:
+
+```bash
+dimensions      [0 1 -2 0 0 0 0];
+value           (0 -98.1 0);
+```
+
+The other files in the constant directory (`physicsProperties`,
+ `dynamicMeshDict`) can remain unchanged.
 
 ### Numerical Schemes and Run-Time Control
 
-The discretisation schemes in `system/fvSchemes` are mostly suitable, but it is
- important to ensure they are compatible with your OpenFOAM version. Different
- versions may use different names for gradient schemes (e.g., `pointCellsLeastSquares`).
- The `solids4Foam::convertCaseFormat` command, which we will add to the `Allrun`
- script later, automatically handles these updates.
+The discretisation schemes in `system/fvSchemes` make sure that `leastSquaresS4f` scheme is entered for `grad(D)`.
 
-In `system/fvSolution`, we can set solver settings and relaxation factors.
- Applying a small amount of under-relaxation to the displacement field `D` can
- improve stability in some cases without significantly affecting
- convergence speed.
+In `system/fvSolution`, the `D` solver must be petsc when the PETScSNES
+ algorithm is used. The options dictionary passes the settings to PETSc:
 
-```c++
+```bash
 solvers
 {
     D
     {
-        solver          PCG;
-        preconditioner  FDIC;
-        tolerance       1e-09;
-        relTol          0.05;
-    }
-}
+        solver          petsc;
 
-relaxationFactors
-{
-    equations
-    {
-        // D    0.999;
-    }
+        options
+        {
+            snes_type newtonls;
+            snes_monitor;
+            snes_converged_reason;
+            snes_mf;
+            snes_mf_operator;
 
-    fields
-    {
-         D       0.99;
+            ksp_type lgmres;
+            ksp_gmres_restart "100";
+            ksp_converged_reason;
+
+            pc_type bjacobi;
+            sub_pc_type lu;
+            snes_lag_preconditioner_persists true;
+            snes_lag_preconditioner "-2";
+        }
     }
 }
 ```
 
-```note
-In a segregated solver, the overall solution is reached through a series of
- outer correction loops. Within each of these loops, a linear solver is used to
- solve for the displacement field. It's inefficient to solve this inner system to
- a very tight tolerance, especially when the overall solution is still far
- from converged.
+The main entries are:
 
-For this reason, a relatively loose relative tolerance (`relTol`) is used for
- the linear solver. A value of `0.1` is common. While a higher value would work
- here, we use `0.05` as it provides a smoother convergence behaviour for this
- specific problem.
-```
+- `snes_type newtonls`: Newton method with a line search.
+- `snes_mf and snes_mf_operator`: the Jacobian-vector products are
+  calculated matrix-free from the residual, and the assembled second-order
+  matrix is used only as the preconditioner.
+- `ksp_type lgmres` and `pc_type bjacobi`: the linear system in each Newton
+  iteration is solved with the LGMRES method and a block Jacobi
+  preconditioner with an LU factorisation in each block.
+- `snes_lag_preconditioner "-2"`: the preconditioner is assembled once and
+  reused in all Newton iterations.
+- `snes_monitor` and `*_converged_reason`: print the residuals and the
+  convergence status to the log file.
 
-Finally, in `system/controlDict`, we need to clean up the `functions` entry by
- removing `forceDisp1` and `plateHoleAnalyticalSolution1`, which were copied from
- the tutorial case. We can also adjust the `pointDisp` function to monitor the
- displacement at a specific point on our brake lever. You will need to choose a
- coordinate that lies on the lever's geometry.
+In `system/controlDict`, we remove the libs entry and the forceDisp1 and
+plateHoleAnalyticalSolution1 functions, which were copied from the tutorial case. 
+We keep the pointDisp function to monitor the displacement at a
+point, and set the point to the corner of the bottom plate at the centre of the frame:
 
-```c++
+```bash
 functions
 {
     pointDisp
     {
         type          solidPointDisplacement;
-        point         (-0.01 0.165 0);
+        point         (0 0 0);
     }
 }
 ```
 
+The `endTime` and `deltaT` entries remain `1`, as we solve a static problem with
+ one load increment.
+
 ## Step 4. Running the Case
-
-We will run the case on multiple cores. The number of cores and decomposition
- method is set in `system/decomposeParDict`:
-
-```c++
-numberOfSubdomains 6;
-method scotch;
-```
 
 To run the case, we will modify existing `Allrun` script. The script should look
  like this:
@@ -571,10 +577,23 @@ source solids4FoamScripts.sh
 # Check case version is correct
 solids4Foam::convertCaseFormat .
 
-# Run case in parallel
-solids4Foam::runApplication decomposePar -cellDist
-solids4Foam::runParallel solids4Foam
-solids4Foam::runApplication reconstructPar
+# Generate the tetrahedral mesh with Gmsh (geometry in mm, mesh written in m)
+runApplication gmsh -3 droneFrame.geo -o droneFrame.msh
+
+# Convert the Gmsh mesh to OpenFOAM format
+solids4Foam::runApplication gmshToFoam droneFrame.msh
+
+# Set the patch type of the symmetry planes (gmshToFoam makes all patches 'patch')
+sed -e '/symX/,/}/ s/type            patch;/type            symmetry;/' \
+    -e '/symZ/,/}/ s/type            patch;/type            symmetry;/' \
+    constant/polyMesh/boundary > boundary.tmp \
+    && mv boundary.tmp constant/polyMesh/boundary
+
+# Check the mesh quality
+solids4Foam::runApplication checkMesh
+
+# Run the solver
+solids4Foam::runApplication solids4Foam
 ```
 
 Make the script executable with the following command:
@@ -597,51 +616,48 @@ tail -f log.solids4Foam
 ```
 
 ```plaintext
-Evolving solid solver
-Solving the momentum equation for D
-setCellDisplacements: reading cellDisplacements
-    Corr, res, relRes, matRes, iters
-    100, 0.0140041, 0.00915755, 0, 134
-    200, 0.00660016, 0.00428296, 0, 146
-    300, 0.00398494, 0.0029169, 0, 130
-    400, 0.00329534, 0.0020852, 0, 137
-    500, 0.00161131, 0.00166415, 0, 137
-    600, 0.00148513, 0.00134746, 0, 138
-    700, 0.00122678, 0.00107629, 0, 136
-    800, 0.00143081, 0.000964108, 0, 139
-    900, 0.000613834, 0.000810128, 0, 143
-    1000, 0.000769182, 0.000691791, 0, 137
-    1100, 0.000538599, 0.000636424, 0, 139
-    1200, 0.000537587, 0.000558763, 0, 138
-    1300, 0.000473058, 0.000502587, 0, 140
-    1400, 0.000406682, 0.00044205, 0, 142
+Time = 1
+
+Solving the momentum equation for D using PETSc SNES
+Selecting least-squares reconstruction scheme movingLeastSquares
+  0 SNES Function norm 7.314378885868e-02
+    Linear solve converged due to CONVERGED_RTOL iterations 177
+  1 SNES Function norm 2.412272218119e-02
+    Linear solve converged due to CONVERGED_RTOL iterations 342
+  2 SNES Function norm 1.614358407678e-07
+    Linear solve converged due to CONVERGED_RTOL iterations 365
+  3 SNES Function norm 4.640776649498e-11
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+Max epsilonEq = 0.00104051
+Max sigmaEq (von Mises stress) = 2.89029e+06
+ExecutionTime = 368.53 s  ClockTime = 372 s
+
+The momentum equation converged in all time-steps
+
+End
 ...
 ```
 
-The solver log file is printing residuals as follows:
+- The solver log file shows two levels of iterations:
 
-- `res`: This is residual of linear solver being used to solve system of equation.
+  - `SNES Function norm`: This is the residual of the momentum equation at
+    each Newton iteration. The problem is linear, so the Newton method converges
+    in a few iterations. Here the residual decreases by nine orders of magnitude
+    in three iterations.
+  - `Linear solve converged`: This line reports the number of LGMRES iterations
+    that the linear solver needed inside each Newton iteration. The linear
+    system is solved to a relative tolerance of 1e-5.
 
-- `relRes`: This is the relative residual, indicating the relative change in
-the solution between two successive iterations.
+The `pointDisp` function object writes the displacement of the monitored
+ point to the file `postProcessing/0/solidPointDisplacement_pointDisp.dat`:
 
-- `matRes`: This column, which is zero here, is only used for non-linear
-material models.
+```plaintext
+# Time Dx Dy Dz magD
+1 0 -0.000200024 2.10927e-06 0.000200035
+```
 
-- `iters`: This is the number of iterations performed by the linear solver.
-
-This case is dominated by bending, which presents a challenge for segregated
- solvers due to the strong coupling between displacement components. As a result,
- a higher number of outer correctors (`nCorr`) is required to reach
- convergence.
-
-While the solver is running, you can inspect how the domain was decomposed by
- visualizing the `cellDist` field in ParaView. The field is generated using
- `-cellDist` flag when running `decomposePar` command.
-
-![Case geometry and mesh](images/brakeLever-processors.png)
-
-### Computational domain decomposition, colours denote different processors
+The edge of the battery slot moves down by 0.2 mm. This is also the maximum
+ displacement in the domain.
 
 ## Step 5. Analysing the Results
 
@@ -651,16 +667,25 @@ Once the simulation is complete, open the results in ParaView:
 paraview case.foam
 ```
 
+The computational domain is one quarter of the frame. To view the full frame,
+ we mirror the results across the two symmetry planes with the Reflect
+ filter. Select Filters > Alphabetical > Reflect.
+
+With the second Reflect filter selected, apply the Warp By Vector filter.
+Select the D field as the Vector and set the Scale Factor to 25. A
+Scale Factor of 1 shows the true deformation, which is too small to see.
+Colour the result by the magnitude of D.
+
 When viewing the results in ParaView, we will warp the geometry by a
- scaled displacement field, which can be achieved using the *Warp By Vector*
- filter, where the `D` displacement field is selected as the *Vector,* and a
- *Scale Factor* of 1 shows the true deformation. In this case, using a
- *Scale Factor* of 100 allows the deformation to be seen. To compare the deformed
- shape with the original geometry, you can use the *Filters > Alphabetical > Extract
+scaled displacement field, which can be achieved using the *Warp By Vector*
+filter, where the `D` displacement field is selected as the *Vector,* and a
+*Scale Factor* of 1 shows the true deformation. In this case, using a
+*Scale Factor* of 50 allows the deformation to be seen. To compare the deformed
+shape with the original geometry, you can use the *Filters > Alphabetical > Extract
  Block* filter to create a separate object for the undeformed lever and then
  reduce its opacity. This allows you to see both the original and deformed states
  simultaneously.
 
-![Case geometry and mesh](images/brakeLever-results.png)
+![Case geometry and mesh](images/droneFrame-results.png)
 
-### Deformed geometry by resulting displacement (scaled by a factor of 100)
+### Deformed geometry colored by displacement (scaled by a factor of 25) and with von Mises stresses.
