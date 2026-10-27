@@ -5,6 +5,11 @@
 # page publishing its target, or else 'url' is the target on GitHub, and
 # 'src' the raw file for an image.
 
+documentation/fluid-solid-interfaces/README.md:
+  - from: '../solidModels/meshMotionTotalDispSolid/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/solidModels/meshMotionTotalDispSolid/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/solidModels/meshMotionTotalDispSolid/README.md'
+
 documentation/material-models/anisotropicBiotElastic.md:
   - from: '../../../../../tutorials/solids/poroelasticity/rodAndSeabed/README.md'
     page: '/tutorials/more-tutorials/solid-mechanics/poroelasticity/rodAndSeabed.html'
@@ -199,8 +204,17 @@ documentation/material-models/README.md:
     page: '/documentation/material-models/StVenantKirchhoffElastic.html'
   - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/anisotropicBiotElasticMechanicalConstitutiveLaw/README.md'
     page: '/documentation/material-models/anisotropicBiotElastic.html'
+  - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/diffusionElasticMechanicalConstitutiveLaw/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/diffusionElasticMechanicalConstitutiveLaw/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/diffusionElasticMechanicalConstitutiveLaw/README.md'
+  - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/diffusionHyperElasticMechanicalConstitutiveLaw/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/diffusionHyperElasticMechanicalConstitutiveLaw/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/diffusionHyperElasticMechanicalConstitutiveLaw/README.md'
   - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/electroMechanicalLawMechanicalConstitutiveLaw/README.md'
     page: '/documentation/material-models/electroMechanicalLaw.html'
+  - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/isotropicFungElasticMechanicalConstitutiveLaw/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/isotropicFungElasticMechanicalConstitutiveLaw/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/isotropicFungElasticMechanicalConstitutiveLaw/README.md'
   - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/linearElasticMechanicalConstitutiveLaw/README.md'
     page: '/documentation/material-models/linearElastic.html'
   - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/linearElasticMisesPlasticMechanicalConstitutiveLaw/README.md'
@@ -276,6 +290,8 @@ tutorials/more-tutorials/fluid-solid-interaction/3dTube.md:
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/fluidSolidInteraction/3dTube/verification'
 
 tutorials/more-tutorials/fluid-solid-interaction/beamInCrossFlow.md:
+  - from: '../../../src/solids4FoamModels/fluidSolidInterfaces/README.md'
+    page: '/documentation/fluid-solid-interfaces/'
   - from: 'verification/'
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification'
 
@@ -339,6 +355,8 @@ tutorials/more-tutorials/solid-mechanics/linearElasticity/sphericalCavity.md:
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/solids/linearElasticity/sphericalCavity/verification'
 
 tutorials/tutorial3.md:
+  - from: '../../../src/solids4FoamModels/fluidSolidInterfaces/README.md'
+    page: '/documentation/fluid-solid-interfaces/'
   - from: 'verification/'
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification'
 
