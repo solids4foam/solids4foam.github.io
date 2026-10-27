@@ -277,8 +277,7 @@ documentation/material-models/viscousHookeanElastic.md:
 
 documentation/under-the-hood/contributing.md:
   - from: 'CODE_OF_CONDUCT.md'
-    url: 'https://github.com/solids4foam/solids4foam/blob/development/CONTRIBUTING.md/CODE_OF_CONDUCT.md'
-    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/CONTRIBUTING.md/CODE_OF_CONDUCT.md'
+    page: '/documentation/under-the-hood/code-of-conduct.html'
 
 documentation/under-the-hood/README.md:
   - from: 'higherOrderHelpers/README.md'
