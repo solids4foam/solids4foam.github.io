@@ -59,7 +59,9 @@ gravitational acceleration. For this analysis, we make the following assumptions
 - We assume that the battery and electronics have a total mass of 150 g and rest
   on the top plate. With a load factor of 10, this gives a force of 14.7 N on
   the complete top plate, which has an area of 3424 mm². We apply this force as
-  a uniform pressure of 4.3 kPa on the top plate (green surface).
+  a uniform pressure of 4.3 kPa on the top plate (green surface). The
+  `plateTop` patch of the quarter model has one quarter of this area, but the
+  pressure is the same, since it is calculated from the full plate.
 - The frame is loaded with its own weight. The gravitational acceleration acts
   in the negative `y` direction and is multiplied by the load factor of 10.
 - The frame is made of ABS plus plastic with a Young's modulus of 2.5 GPa, a
@@ -69,7 +71,7 @@ gravitational acceleration. For this analysis, we make the following assumptions
 - All parts of the frame are modelled as one body (linear analysis). The
   bolts between the arms and the plates are not modelled.
 
-![Case geometry and mesh](images/droneFrame-bc.png)
+![Loading, fixed and symmetry surfaces of the quarter model](images/droneFrame-bc.png)
 
 ### Loading (green), fixed (red) and symmetry (blue) surfaces
 
@@ -156,14 +158,21 @@ Before meshing, we must populate the case directory with the necessary
 
 ```bash
 PLATE_HOLE=$SOLIDS4FOAM_DIR/tutorials/solids/linearElasticity/plateHole
-cp -r $PLATE_HOLE/{0,constant,system} .
+cp -rL $PLATE_HOLE/{0,constant,system} .
+cp constant/solidProperties.highOrder constant/solidProperties
+cp system/fvSchemes.highOrder system/fvSchemes
+cp system/fvSolution.highOrder system/fvSolution
 rm -f system/blockMeshDict system/*.* constant/*.* constant/timeVsTraction
 ```
 
 The `plateHole` case contains several variants of the `solidProperties`,
-`fvSchemes` and `fvSolution` dictionaries, with suffixes.
-The second command removes these variants and the `blockMeshDict` file, which
-are not needed here.
+`fvSchemes` and `fvSolution` dictionaries, distinguished by a suffix, and the
+files without a suffix are symbolic links to the `segregated` variants. The
+`-L` option of `cp` copies the files the links point to instead of the links
+themselves. We then overwrite these three files with the `highOrder` variants,
+which already contain most of the settings needed for this tutorial, and the
+last command removes the remaining variants and the `blockMeshDict` file,
+which are not needed here.
 
 Gmsh is an open-source mesh generator. It can read STEP geometry directly
 and generate tetrahedral meshes. We control it with a script file, which we
@@ -173,7 +182,7 @@ will call `droneFrame.geo`. Create this file in the case directory:
 touch droneFrame.geo
 ```
 
-and add following content:
+and add the following content:
 
 ```geo
 SetFactory("OpenCASCADE");
@@ -222,8 +231,8 @@ The script has four parts:
   circle has at least 12 cells. `Algorithm3D = 10` selects the HXT algorithm,
   which is fast and robust for large tetrahedral meshes.
 - **Output**. The geometry is in millimetres, so `Mesh.ScalingFactor` scales
-  the mesh to metres when it is written. The g`mshToFoam` utility reads the
-  msh format version 2, so we set `Mesh.MshFileVersion`to 2.2.
+  the mesh to metres when it is written. The `gmshToFoam` utility reads the
+  msh format version 2, so we set `Mesh.MshFileVersion` to 2.2.
 - **Boundary patches**. Each boundary patch is a Physical Surface, a named
   group of CAD faces. The faces are identified by their tag in the STEP file.
   The last group, free, contains all faces that are not in another group. A
@@ -236,6 +245,14 @@ interface with `gmsh droneFrame.stp`. Select *Tools > Options > Geometry* and
 tick *Surface labels* under *Visibility*. The tag of each face is then shown
 in the graphics window. Alternatively, hover the mouse over a face and its tag
 is shown in the status bar.
+```
+
+```note
+The face tags are assigned by the OpenCASCADE kernel when the STEP file is
+read, and they can differ between Gmsh and OpenCASCADE versions. If the
+patches do not look right after meshing, for example when checking them in
+ParaView below, check the tags in the Gmsh graphical interface as described in
+the tip above and update the lists in the script.
 ```
 
 Now, run the mesher:
@@ -448,7 +465,10 @@ and the solution algorithm. We will use the `linearGeometryTotalDisplacement`
 model, which assumes small strains and rotations. Instead of the default
 segregated algorithm, we select the coupled `PETScSNES` algorithm. In addition,
 we switch on the high-order discretisation, which reconstructs the displacement
-field with quadratic polynomials instead of linear ones.
+field with quadratic polynomials instead of linear ones. The `highOrder`
+variant copied from the `plateHole` case already selects the `PETScSNES`
+algorithm and the high-order discretisation, so only the `polynomialOrder` and
+`faceStencilExtraCells` entries need to be changed. The file should read:
 
 ```plaintext
 // linearGeometry: assumes small strains and rotations
@@ -498,7 +518,12 @@ The `highOrderCoeffs` dictionary controls the high-order discretisation:
   Jacobian as the preconditioner, which is cheaper to assemble.
 - `polynomialOrder 2` selects quadratic polynomials.
 - `faceStencilExtraCells 55` sets the extra number of neighbour cells added to the
-  stencil of each face for the reconstruction.
+  stencil of each face for the reconstruction. The `plateHole` case uses cubic
+  polynomials with 25 extra cells, but that case is two-dimensional. In 3D, a
+  polynomial has more coefficients (10 for a quadratic, 20 for a cubic), so
+  the least-squares fit needs a larger stencil, and the cost of a cubic
+  reconstruction grows quickly. Quadratic polynomials with 55 extra cells give
+  a well-conditioned fit on this tetrahedral mesh at an acceptable cost.
 - `weightFunctionCoeffs` sets the weights of the cells in the stencil. Cells
   further from the integration point get smaller weights.
 
@@ -542,24 +567,28 @@ The other files in the constant directory (`physicsProperties`,
 
 In `system/fvSchemes`, the high-order discretisation requires the
 `leastSquaresS4f` scheme for the gradient of the displacement, and the
-`Gauss linear` for the divergence terms:
+`Gauss linear` scheme for the divergence terms. The `highOrder` variant copied
+from the `plateHole` case already contains these settings, so no changes are
+needed:
 
 ```c++
 gradSchemes
 {
-    default                 leastSquaresS4f;
+    default                 none;
+    grad(D)                 leastSquaresS4f;
 }
 
 divSchemes
 {
-    default                 Gauss linear;
+    default                 none;
+    div(sigma)              Gauss linear;
+    div((impK*grad(D)))     Gauss linear;
 }
 ```
 
-The other entries in `system/fvSchemes` remain unchanged.
-
 In `system/fvSolution`, the `D` solver must be petsc when the PETScSNES
- algorithm is used. The options dictionary passes the settings to PETSc:
+ algorithm is used. The options dictionary passes the settings to PETSc. This
+ file is also copied from the `highOrder` variant and needs no changes:
 
 ```bash
 solvers
@@ -592,7 +621,7 @@ solvers
 The main entries are:
 
 - `snes_type newtonls`: Newton method with a line search.
-- `snes_mf and snes_mf_operator`: the Jacobian-vector products are
+- `snes_mf` and `snes_mf_operator`: the Jacobian-vector products are
   calculated matrix-free from the residual, and the assembled second-order
   matrix is used only as the preconditioner.
 - `ksp_type lgmres` and `pc_type bjacobi`: the linear system in each Newton
@@ -624,8 +653,13 @@ The `endTime` and `deltaT` entries remain `1`, as we solve a static problem with
 
 ## Step 4. Running the Case
 
-To run the case, we will modify existing `Allrun` script. The script should look
- like this:
+To run the case, we create an `Allrun` script in the case directory:
+
+```bash
+touch Allrun
+```
+
+Open the file and add the following content:
 
 ```bash
 #!/bin/bash
@@ -640,7 +674,7 @@ source solids4FoamScripts.sh
 solids4Foam::convertCaseFormat .
 
 # Generate the tetrahedral mesh with Gmsh (geometry in mm, mesh written in m)
-runApplication gmsh -3 droneFrame.geo -o droneFrame.msh
+solids4Foam::runApplication gmsh -3 droneFrame.geo -o droneFrame.msh
 
 # Convert the Gmsh mesh to OpenFOAM format
 solids4Foam::runApplication gmshToFoam droneFrame.msh
@@ -714,12 +748,15 @@ End
 The solver log file shows two levels of iterations:
 
 - `SNES Function norm`: This is the residual of the momentum equation at
-  each Newton iteration. The problem is linear, so the Newton method converges
-  in a few iterations. Here the residual decreases by nine orders of magnitude
-  in three iterations.
+  each Newton iteration. The problem is linear, so an exact Newton step would
+  solve it in one iteration. Here, the Jacobian-vector products are
+  approximated by finite differences (`snes_mf`) and the linear system is
+  solved inexactly, so a few iterations are needed: the residual decreases by
+  nine orders of magnitude in three iterations.
 - `Linear solve converged`: This line reports the number of LGMRES iterations
   that the linear solver needed inside each Newton iteration. The linear
-  system is solved to a relative tolerance of 1e-5.
+  system is solved to a relative tolerance of 1e-5, which is the PETSc default
+  (`ksp_rtol`) and is not set in `fvSolution`.
 
 The run takes about five minutes on one core.
 
@@ -756,13 +793,12 @@ Factor* of 25 allows the deformation to be seen. To compare the deformed shape
 with the original geometry, show the output of the *Reflect* filter as
 *Wireframe* and reduce its opacity.
 
-![Case geometry and mesh](images/droneFrame-results.png)
+![Deformed frame coloured by displacement and von Mises stress](images/droneFrame-results.png)
 
 ### Deformed geometry (scale factor 25) coloured by displacement and stress
 
-The motor seats are fixed, so the frame centre moves down relative to the
-motors. The maximum displacement of 0.2 mm occurs at the centre plates, and
-the arms bend between the centre and the motor seats. The highest von Mises
+The colour scale of the von Mises stress is limited to 2.5 MPa, so that the
+stress distribution along the arms is better visible. The highest von Mises
 stresses occur at the two ends of each arm: where the arm joins the centre
 body and where the arm joins the motor pad. The chords of the truss carry most
 of the bending load, while the diagonal members are lightly loaded. The
@@ -787,16 +823,14 @@ The next table compares the von Mises stress on the top surface of the arm
 at three positions along the arm, measured from the centre of the frame. The
 values are away from the stress concentrations at the ends of the arm:
 
-| Position along the arm | solids4foam | CalculiX |
-|------------------------|-------------|----------|
-| 45 mm                  | 0.52 MPa    | 0.56 MPa |
-| 65 mm                  | 0.68 MPa    | 0.68 MPa |
-| 75 mm                  | 1.23 MPa    | 1.30 MPa |
+| Position along the arm | solids4foam | CalculiX | Difference |
+|------------------------|-------------|----------|------------|
+| 45 mm                  | 0.52 MPa    | 0.56 MPa | 7.1 %      |
+| 65 mm                  | 0.68 MPa    | 0.68 MPa | 0.0 %      |
+| 75 mm                  | 1.23 MPa    | 1.30 MPa | 5.4 %      |
 
-The displacements agree within 2 % and the stresses along the arm within 7 %.
-The two codes sample the stress in different ways. solids4foam calculates the
-stress at the cell centres. CalculiX calculates the stress at the integration points
-and extrapolates it to the nodes on the surface. Accordingly,
-sampling method alone accounts for a part of the difference in the table.
-With a consistent sampling method, for example by interpolating both results
-to the same points, the difference is likely smaller.
+The displacements agree within 2 % and the stresses along the arm differ by up
+to 7 %.
+Part of the difference comes from the way the stress is sampled: solids4foam
+reports cell-centre values, while CalculiX extrapolates the integration-point
+stresses to the surface nodes.
