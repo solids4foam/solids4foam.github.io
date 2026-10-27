@@ -454,7 +454,7 @@ field with quadratic polynomials instead of linear ones.
 // linearGeometry: assumes small strains and rotations
 solidModel     linearGeometryTotalDisplacement;
 
-"linearGeometryTotalDisplacementCoeffs"
+linearGeometryTotalDisplacementCoeffs
 {
     // Solution algorithm: segregated (default) or PETScSNES (Newton)
     solutionAlgorithm    PETScSNES;
