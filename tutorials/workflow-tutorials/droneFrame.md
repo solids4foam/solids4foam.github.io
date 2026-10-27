@@ -502,8 +502,15 @@ The `highOrderCoeffs` dictionary controls the high-order discretisation:
 - `weightFunctionCoeffs` sets the weights of the cells in the stencil. Cells
   further from the integration point get smaller weights.
 
-The `stabilisation` dictionary adds a small amount of numerical diffusion to
- the momentum equation, which helps improve conditioning of the system.
+The `stabilisation` dictionary adds a small numerical diffusion term to the
+discretised momentum equation to damp grid-scale (checkerboard) oscillations of
+the displacement field and to improve the conditioning of the system. The
+`alpha` term is built from the jump of the reconstructed displacement across
+each face, scaled by `scaleFactor`. For a smooth solution, this jump goes to
+zero as the mesh is refined, so the stabilisation is a property of the
+discretisation only: it vanishes in the limit of mesh refinement and does not
+change the governing equation. It should not be mistaken for physical damping
+or an additional material property.
 
 ```note
 Use only the `alpha` stabilisation with the high-order discretisation. The
