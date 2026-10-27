@@ -833,4 +833,9 @@ The displacements agree within 2 % and the stresses along the arm differ by up
 to 7 %.
 Part of the difference comes from the way the stress is sampled: solids4foam
 reports cell-centre values, while CalculiX extrapolates the integration-point
-stresses to the surface nodes.
+stresses to the surface nodes. The rest is most likely discretisation error.
+Both results were obtained on a single mesh, and neither has been shown to be
+mesh-independent or checked to be in the asymptotic range of convergence.
+The two codes discretise the equations differently, so their errors on the same
+mesh are different, and a part of the difference in the tables is expected to
+disappear with mesh refinement.
