@@ -27,6 +27,11 @@
 
 set -euo pipefail
 
+# Sort bytewise, so that the generated files are identical whichever locale
+# the script runs under; otherwise a run on a developer's machine reorders
+# what CI generated, and the check fails.
+export LC_ALL=C
+
 repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 manifest="$repo/bin/docs-manifest.txt"
 submodule="imported/solids4foam"
