@@ -147,7 +147,10 @@ while read -r site_path source_path; do
     [ -n "${published[$source_path]:-}" ] || published["$source_path"]="$site_path"
 
     page_dir="${site_path%/*}"
-    source_dir="${source_path%/*}"
+    source_dir="."
+    case "$source_path" in
+        */*) source_dir="${source_path%/*}" ;;
+    esac
     managed_dirs["$page_dir"]=1
 
     # Link every image the page references. All references in solids4foam are
@@ -224,7 +227,12 @@ generate_links_data() {
     local header
     for i in "${!pages[@]}"; do
         site_path="${pages[$i]}"
-        source_dir="${page_sources[$i]%/*}"
+        # Empty for a file at the top of the submodule, e.g. CONTRIBUTING.md,
+        # which has no directory for %/* to strip
+        source_dir=""
+        case "${page_sources[$i]}" in
+            */*) source_dir="${page_sources[$i]%/*}" ;;
+        esac
         header=false
         while read -r link; do
             [ -n "$link" ] || continue
