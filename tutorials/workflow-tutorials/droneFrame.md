@@ -762,3 +762,34 @@ of the bending load, while the diagonal members are lightly loaded. The
 maximum von Mises stress is 3.0 MPa, which is well below the tensile strength
 of ABS plus plastic of about 30 MPa. A hard landing with a load factor of 10
 does not damage the frame.
+
+### Comparison with CalculiX
+
+To check the results, the same case was solved with the open-source finite
+element code [CalculiX](http://www.calculix.de) (version 2.16). The same
+Gmsh mesh was used, exported with quadratic tetrahedral elements (`C3D10`),
+with the same boundary conditions, loads and material properties. The table
+below compares the displacements at two points of the frame:
+
+| Location                            | solids4foam | CalculiX  | Difference |
+|-------------------------------------|-------------|-----------|------------|
+| Centre of the top plate (maximum)   | 0.2009 mm   | 0.1977 mm | 1.6 %      |
+| Centre of the bottom plate (0 0 0)  | 0.1805 mm   | 0.1778 mm | 1.5 %      |
+
+The next table compares the von Mises stress on the top surface of the arm
+at three positions along the arm, measured from the centre of the frame. The
+values are away from the stress concentrations at the ends of the arm:
+
+| Position along the arm | solids4foam | CalculiX |
+|------------------------|-------------|----------|
+| 45 mm                  | 0.52 MPa    | 0.56 MPa |
+| 65 mm                  | 0.68 MPa    | 0.68 MPa |
+| 75 mm                  | 1.23 MPa    | 1.30 MPa |
+
+The displacements agree within 2 % and the stresses along the arm within 7 %.
+The two codes sample the stress in different ways. solids4foam calculates the
+stress at the cell centres. CalculiX calculates the stress at the integration points
+and extrapolates it to the nodes on the surface. Accordingly,
+sampling method alone accounts for a part of the difference in the table.
+With a consistent sampling method, for example by interpolating both results
+to the same points, the difference is likely smaller.
