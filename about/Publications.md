@@ -30,8 +30,14 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+🟢 Z. Wang, P. Buma-at, N. P. Stephenson, F. Dunn, Q. Zhuang, E. Mitchell,
+and I. A. Rahman, (2026).
+[**Biomechanical analyses point to dense collagen fibre architecture in an
+Ediacaran frond**](https://doi.org/10.1098/rspb.2026.1630),
+_Proceedings of the Royal Society B_, 293(2080), 20261630.
+
 🔵 P. Cardiff, A. Mullen-Hales, P. Castrillo, Dylan Armfield, I. Batistić (2026).
-**Higher-Order Finite Volume Solid Mechanics with Newton-Krylov Solution Strategies**
+[**Higher-Order Finite Volume Solid Mechanics with Newton-Krylov Solution Strategies**](https://www.researchgate.net/publication/410744817_Higher-Order_Finite_Volume_Solid_Mechanics_with_Newton-Krylov_Solution_Strategies)
 _17th World Congress on Computational Mechanics (WCCM), 10th European Congress
 on Computational Methods in Applied Sciences and Engineering (ECCOMAS), Munich,
 Germany_
@@ -52,7 +58,11 @@ Bio-Inspired Fluid-Structure Interaction Simulations**
 _21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
 
 🔵 A. Taran, S. Bali, Ž. Tuković, V. Pakrashi, P. Cardiff, (2026).
-**A Finite-Volume Framework for Two-Way Fluid-beam Interaction in OpenFOAM**
+[**A Finite-Volume Framework for Two-Way Fluid-beam Interaction in OpenFOAM**](https://www.researchgate.net/publication/408580995_A_Finite-Volume_Framework_for_Two-Way_Fluid-beam_Interaction_in_OpenFOAM)
+_21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
+
+🔵 A. Mullen-Hales, P. Cardiff, P. Castrillo, (2026).
+[**Jacobian-Free Newton-Krylov Solution Strategies for Algebraically Monolithic Mixed Pressure-Displacement Solid Mechanics in OpenFOAM**](https://www.researchgate.net/publication/409240331_Jacobian-Free_Newton-Krylov_Solution_Strategies_for_Algebraically_Monolithic_Mixed_Pressure-Displacement_Solid_Mechanics_in_OpenFOAM)
 _21st OpenFOAM Workshop, University of Minho, Guimarães, Portugal._
 
 🔵 P. Cardiff, I. Batistić (2026).
