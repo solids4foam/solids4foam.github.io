@@ -527,6 +527,16 @@ The `highOrderCoeffs` dictionary controls the high-order discretisation:
 - `weightFunctionCoeffs` sets the weights of the cells in the stencil. Cells
   further from the integration point get smaller weights.
 
+```note
+Cubic polynomials (`polynomialOrder 3`) do not work on this mesh. The frame
+has regions with only a few cells through the thickness of the material, and
+there the least-squares fit of a cubic polynomial is poorly conditioned: the
+stencil does not contain enough distinct cell centres across the thickness to
+determine the higher-order coefficients. The linear solver then fails to
+converge. This can be resolved with larger stencils (`faceStencilExtraCells`)
+or with a finer mesh in the thin regions.
+```
+
 The `stabilisation` dictionary adds a small numerical diffusion term to the
 discretised momentum equation to damp grid-scale (checkerboard) oscillations of
 the displacement field and to improve the conditioning of the system. The
