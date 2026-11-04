@@ -30,6 +30,11 @@ Instructions for adding a new entry are at the bottom of the document
 
 Publications are listed in reverse chronological order.
 
+🟢 W. Yang, J. Hao, and B. Xie, (2026).
+[**Influence of transition-section length on flow-induced vibration and acoustic
+radiation in a contraction-bend piping configuration: A numerical study**](https://doi.org/10.1016/j.oceaneng.2026.128722),
+_Ocean Engineering_, 369, 128722.
+
 🟢 Z. Wang, P. Buma-at, N. P. Stephenson, F. Dunn, Q. Zhuang, E. Mitchell,
 and I. A. Rahman, (2026).
 [**Biomechanical analyses point to dense collagen fibre architecture in an
