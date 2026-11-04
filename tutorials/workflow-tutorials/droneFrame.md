@@ -641,7 +641,7 @@ The main entries are:
   and in parallel, whereas the `bjacobi` preconditioner with `sub_pc_type lu`
   used in the `plateHole` case is a full LU factorisation on one core but
   only a block Jacobi preconditioner in parallel, which does not converge for
-  this case.
+  this case (for parallel runs).
 - `snes_lag_preconditioner "-2"`: the preconditioner is assembled once and
   reused in all Newton iterations.
 - `snes_monitor` and `*_converged_reason`: print the residuals and the
