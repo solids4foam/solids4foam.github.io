@@ -43,6 +43,7 @@ documentation/solid-models/README.md                                            
 documentation/solid-models/thermalLinGeomSolid.md                                    src/solids4FoamModels/solidModels/thermalLinGeomSolid/README.md
 documentation/solid-models/thermalSolid.md                                           src/solids4FoamModels/solidModels/thermalSolid/README.md
 documentation/solid-models/vertexCentredLinGeomSolid.md                              src/solids4FoamModels/solidModels/vertexCentredLinGeomSolid/README.md
+documentation/under-the-hood/code-of-conduct.md                                      CODE_OF_CONDUCT.md
 documentation/under-the-hood/contributing.md                                         CONTRIBUTING.md
 documentation/under-the-hood/README.md                                               src/solids4FoamModels/README.md
 documentation/under-the-hood/stabilisation-models.md                                 src/solids4FoamModels/numerics/stabilisationModels/README.md

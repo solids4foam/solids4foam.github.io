@@ -1,0 +1,1 @@
+../../imported/solids4foam/CODE_OF_CONDUCT.md
