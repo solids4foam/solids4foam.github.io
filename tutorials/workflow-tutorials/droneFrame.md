@@ -527,6 +527,16 @@ The `highOrderCoeffs` dictionary controls the high-order discretisation:
 - `weightFunctionCoeffs` sets the weights of the cells in the stencil. Cells
   further from the integration point get smaller weights.
 
+```note
+Cubic polynomials (`polynomialOrder 3`) do not work on this mesh. The frame
+has regions with only a few cells through the thickness of the material, and
+there the least-squares fit of a cubic polynomial is poorly conditioned: the
+stencil does not contain enough distinct cell centres across the thickness to
+determine the higher-order coefficients. The linear solver then fails to
+converge. This can be resolved with larger stencils (`faceStencilExtraCells`)
+or with a finer mesh in the thin regions.
+```
+
 The `stabilisation` dictionary adds a small numerical diffusion term to the
 discretised momentum equation to damp grid-scale (checkerboard) oscillations of
 the displacement field and to improve the conditioning of the system. The
@@ -588,7 +598,8 @@ divSchemes
 
 In `system/fvSolution`, the `D` solver must be petsc when the PETScSNES
  algorithm is used. The options dictionary passes the settings to PETSc. This
- file is also copied from the `highOrder` variant and needs no changes:
+ file is also copied from the `highOrder` variant, and the only change is the
+ preconditioner, which we set to the BoomerAMG algebraic multigrid from hypre:
 
 ```bash
 solvers
@@ -609,8 +620,8 @@ solvers
             ksp_gmres_restart "100";
             ksp_converged_reason;
 
-            pc_type bjacobi;
-            sub_pc_type lu;
+            pc_type hypre;
+            pc_hypre_type boomeramg;
             snes_lag_preconditioner_persists true;
             snes_lag_preconditioner "-2";
         }
@@ -624,9 +635,13 @@ The main entries are:
 - `snes_mf` and `snes_mf_operator`: the Jacobian-vector products are
   calculated matrix-free from the residual, and the assembled second-order
   matrix is used only as the preconditioner.
-- `ksp_type lgmres` and `pc_type bjacobi`: the linear system in each Newton
-  iteration is solved with the LGMRES method and a block Jacobi
-  preconditioner with an LU factorisation in each block.
+- `ksp_type lgmres` and `pc_type hypre`: the linear system in each Newton
+  iteration is solved with the LGMRES method and the BoomerAMG algebraic
+  multigrid preconditioner from hypre. BoomerAMG behaves the same in serial
+  and in parallel, whereas the `bjacobi` preconditioner with `sub_pc_type lu`
+  used in the `plateHole` case is a full LU factorisation on one core but
+  only a block Jacobi preconditioner in parallel, which does not converge for
+  this case (for parallel runs).
 - `snes_lag_preconditioner "-2"`: the preconditioner is assembled once and
   reused in all Newton iterations.
 - `snes_monitor` and `*_converged_reason`: print the residuals and the
@@ -728,16 +743,16 @@ Time = 1
 Solving the momentum equation for D using PETSc SNES
 Selecting least-squares reconstruction scheme movingLeastSquares
   0 SNES Function norm 7.314378885868e-02
-    Linear solve converged due to CONVERGED_RTOL iterations 182
-  1 SNES Function norm 1.388202771282e-02
-    Linear solve converged due to CONVERGED_RTOL iterations 385
-  2 SNES Function norm 1.261537438164e-07
-    Linear solve converged due to CONVERGED_RTOL iterations 386
-  3 SNES Function norm 4.247405433852e-11
+    Linear solve converged due to CONVERGED_RTOL iterations 202
+  1 SNES Function norm 4.433010669380e-03
+    Linear solve converged due to CONVERGED_RTOL iterations 392
+  2 SNES Function norm 8.258509474148e-08
+    Linear solve converged due to CONVERGED_RTOL iterations 396
+  3 SNES Function norm 4.205262987245e-11
   Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
 Max epsilonEq = 0.0010944
 Max sigmaEq (von Mises stress) = 3.04001e+06
-ExecutionTime = 312.59 s  ClockTime = 317 s
+ExecutionTime = 485.68 s  ClockTime = 499 s
 
 The momentum equation converged in all time-steps
 
@@ -758,7 +773,7 @@ The solver log file shows two levels of iterations:
   system is solved to a relative tolerance of 1e-5, which is the PETSc default
   (`ksp_rtol`) and is not set in `fvSolution`.
 
-The run takes about five minutes on one core.
+The run takes about eight minutes on one core.
 
 The `pointDisp` function object writes the displacement of the monitored
  point to the file `postProcessing/0/solidPointDisplacement_pointDisp.dat`:
