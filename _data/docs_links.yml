@@ -5,6 +5,10 @@
 # page publishing its target, or else 'url' is the target on GitHub, and
 # 'src' the raw file for an image.
 
+about/contributing/README.md:
+  - from: 'CODE_OF_CONDUCT.md'
+    page: '/about/contributing/code-of-conduct.html'
+
 documentation/fluid-solid-interfaces/README.md:
   - from: '../solidModels/meshMotionTotalDispSolid/README.md'
     url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/solidModels/meshMotionTotalDispSolid/README.md'
@@ -274,10 +278,6 @@ documentation/material-models/viscousHookeanElastic.md:
     page: '/documentation/material-models/'
   - from: '../../README.md'
     page: '/documentation/material-models/mechanical-law.html'
-
-documentation/under-the-hood/contributing.md:
-  - from: 'CODE_OF_CONDUCT.md'
-    page: '/documentation/under-the-hood/code-of-conduct.html'
 
 documentation/under-the-hood/README.md:
   - from: 'higherOrderHelpers/README.md'

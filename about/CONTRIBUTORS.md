@@ -1,1 +1,3 @@
-../imported/solids4foam/CONTRIBUTORS.md
+---
+redirect_to: /about/project-team/#contributors
+---
