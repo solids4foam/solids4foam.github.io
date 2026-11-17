@@ -1,1 +1,3 @@
-../../imported/solids4foam/src/solids4FoamModels/solidModels/unsNonLinGeomTotalLagSolid/README.md
+---
+redirect_to: /documentation/solid-models/
+---

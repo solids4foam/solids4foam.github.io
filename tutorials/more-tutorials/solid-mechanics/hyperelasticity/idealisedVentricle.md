@@ -1,1 +1,1 @@
-../../../../imported/solids4foam/tutorials/solids/hyperelasticity/idealisedVentricle/README.md
+../../../../imported/solids4foam/tutorials/solids/hyperelasticity/LandEtAl2015/problem2/README.md
