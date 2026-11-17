@@ -26,5 +26,5 @@ The list below is CONTRIBUTORS.md from the solids4foam repository, which
 bin/sync-docs.sh publishes as _snippets/contributors.md. Its heading is
 demoted so that it sits under this section.
 {% endcomment %}
-{% assign contributors = site.snippets | where: "path", "_snippets/contributors.md" | first %}
+{% assign contributors = site.snippets | first %}
 {{ contributors.content | markdownify | replace: "<h1 ", "<h3 " | replace: "</h1>", "</h3>" }}
