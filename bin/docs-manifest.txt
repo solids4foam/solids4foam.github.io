@@ -96,6 +96,7 @@ tutorials/more-tutorials/solid-mechanics/multiMaterial/layeredPipe.md           
 tutorials/more-tutorials/solid-mechanics/poroelasticity/rodAndSeabed.md              tutorials/solids/poroelasticity/rodAndSeabed/README.md
 tutorials/more-tutorials/solid-mechanics/poroelasticity/stripFooting.md              tutorials/solids/poroelasticity/stripFooting/README.md
 tutorials/more-tutorials/solid-mechanics/poroelasticity/suctionCaission.md           tutorials/solids/poroelasticity/suctionCaission/README.md
+tutorials/more-tutorials/solid-mechanics/thermoelasticity/heatedPlatePlaneStress.md  tutorials/solids/thermoelasticity/heatedPlatePlaneStress/README.md
 tutorials/more-tutorials/solid-mechanics/thermoelasticity/hotCylinder.md             tutorials/solids/thermoelasticity/hotCylinder/hotCylinder/README.md
 tutorials/more-tutorials/solid-mechanics/thermoelasticity/hotSphere.md               tutorials/solids/thermoelasticity/hotSphere/README.md
 tutorials/more-tutorials/solid-mechanics/thermoelasticity/slabCooling.md             tutorials/solids/thermoelasticity/slabCooling/README.md

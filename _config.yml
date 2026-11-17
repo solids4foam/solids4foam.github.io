@@ -141,6 +141,7 @@ relative_links:
     - tutorials/more-tutorials/solid-mechanics/poroelasticity/rodAndSeabed.md
     - tutorials/more-tutorials/solid-mechanics/poroelasticity/stripFooting.md
     - tutorials/more-tutorials/solid-mechanics/poroelasticity/suctionCaission.md
+    - tutorials/more-tutorials/solid-mechanics/thermoelasticity/heatedPlatePlaneStress.md
     - tutorials/more-tutorials/solid-mechanics/thermoelasticity/hotCylinder.md
     - tutorials/more-tutorials/solid-mechanics/thermoelasticity/hotSphere.md
     - tutorials/more-tutorials/solid-mechanics/thermoelasticity/slabCooling.md
