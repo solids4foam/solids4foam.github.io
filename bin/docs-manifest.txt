@@ -56,6 +56,7 @@ tutorials/more-tutorials/fluid-solid-interaction/cerebralAneurysm.md            
 tutorials/more-tutorials/fluid-solid-interaction/fillingElasticContainer.md          tutorials/fluidSolidInteraction/fillingElasticContainer/README.md
 tutorials/more-tutorials/fluid-solid-interaction/flexibleDamBreak.md                 tutorials/fluidSolidInteraction/flexibleDamBreak/README.md
 tutorials/more-tutorials/fluid-solid-interaction/perpendicularFlap.md                tutorials/fluidSolidInteraction/perpendicularFlap/README.md
+tutorials/more-tutorials/fluid-solid-interaction/pulmonaryArteries.md                tutorials/fluidSolidInteraction/pulmonaryArteries/README.md
 tutorials/more-tutorials/fluid-solid-interaction/TurekHron2006.md                    tutorials/fluidSolidInteraction/TurekHron2006/README.md
 tutorials/more-tutorials/solid-mechanics/beamsPlatesShells/squarePlate.md            tutorials/solids/beamsPlatesShells/squarePlate/README.md
 tutorials/more-tutorials/solid-mechanics/elastoplasticity/cooksMembrane.md           tutorials/solids/elastoplasticity/cooksMembrane/README.md
