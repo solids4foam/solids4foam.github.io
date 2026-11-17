@@ -105,6 +105,7 @@ relative_links:
     - tutorials/more-tutorials/fluid-solid-interaction/fillingElasticContainer.md
     - tutorials/more-tutorials/fluid-solid-interaction/flexibleDamBreak.md
     - tutorials/more-tutorials/fluid-solid-interaction/perpendicularFlap.md
+    - tutorials/more-tutorials/fluid-solid-interaction/pulmonaryArteries.md
     - tutorials/more-tutorials/fluid-solid-interaction/TurekHron2006.md
     - tutorials/more-tutorials/solid-mechanics/beamsPlatesShells/squarePlate.md
     - tutorials/more-tutorials/solid-mechanics/elastoplasticity/cooksMembrane.md
