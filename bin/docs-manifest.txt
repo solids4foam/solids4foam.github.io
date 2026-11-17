@@ -6,7 +6,13 @@
 # bin/sync-docs.sh creates each symlink, and alongside it an images/
 # directory linking every image the page references. Run it after adding a
 # line here; do not hand-write the symlinks.
+#
+# A path under _snippets/ is not published as a page: the site.snippets
+# collection makes its content available to other pages instead.
 
+about/contributing/code-of-conduct.md                                                CODE_OF_CONDUCT.md
+about/contributing/README.md                                                         CONTRIBUTING.md
+_snippets/contributors.md                                                            CONTRIBUTORS.md
 documentation/applications/decomposeParMonolithic.md                                 applications/utilities/decomposeParMonolithic/README.md
 documentation/applications/README.md                                                 applications/README.md
 documentation/applications/scripts.md                                                applications/scripts/README.md
@@ -43,8 +49,6 @@ documentation/solid-models/README.md                                            
 documentation/solid-models/thermalLinGeomSolid.md                                    src/solids4FoamModels/solidModels/thermalLinGeomSolid/README.md
 documentation/solid-models/thermalSolid.md                                           src/solids4FoamModels/solidModels/thermalSolid/README.md
 documentation/solid-models/vertexCentredLinGeomSolid.md                              src/solids4FoamModels/solidModels/vertexCentredLinGeomSolid/README.md
-documentation/under-the-hood/code-of-conduct.md                                      CODE_OF_CONDUCT.md
-documentation/under-the-hood/contributing.md                                         CONTRIBUTING.md
 documentation/under-the-hood/README.md                                               src/solids4FoamModels/README.md
 documentation/under-the-hood/stabilisation-models.md                                 src/solids4FoamModels/numerics/stabilisationModels/README.md
 tutorials/more-tutorials/fluid-mechanics/cylinderInChannel.md                        tutorials/fluids/cylinderInChannel/README.md

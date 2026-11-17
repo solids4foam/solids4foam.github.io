@@ -176,6 +176,3 @@ if (myName == “Philip”)
 
 …
 ```
-
-Contributions are welcome; please see the
-[contributing guide](under-the-hood/contributing.md).
