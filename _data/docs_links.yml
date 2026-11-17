@@ -5,6 +5,11 @@
 # page publishing its target, or else 'url' is the target on GitHub, and
 # 'src' the raw file for an image.
 
+documentation/applications/README.md:
+  - from: 'solvers/circulationFoam/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/applications/solvers/circulationFoam/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/applications/solvers/circulationFoam/README.md'
+
 documentation/fluid-solid-interfaces/README.md:
   - from: '../solidModels/meshMotionTotalDispSolid/README.md'
     url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/solidModels/meshMotionTotalDispSolid/README.md'
