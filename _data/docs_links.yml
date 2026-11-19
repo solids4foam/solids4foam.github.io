@@ -6,6 +6,9 @@
 # 'src' the raw file for an image.
 
 about/contributing/README.md:
+  - from: '.github/review/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/.github/review/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/.github/review/README.md'
   - from: 'CODE_OF_CONDUCT.md'
     page: '/about/contributing/code-of-conduct.html'
 
