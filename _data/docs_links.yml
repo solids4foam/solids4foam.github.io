@@ -301,6 +301,9 @@ tutorials/more-tutorials/fluid-solid-interaction/beamInCrossFlow.md:
     page: '/documentation/fluid-solid-interfaces/'
   - from: 'verification/'
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification'
+  - from: 'verification/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification/README.md'
 
 tutorials/more-tutorials/fluid-solid-interaction/cavityFlexibleBottom.md:
   - from: 'verification/'
@@ -366,6 +369,9 @@ tutorials/tutorial3.md:
     page: '/documentation/fluid-solid-interfaces/'
   - from: 'verification/'
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification'
+  - from: 'verification/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/fluidSolidInteraction/beamInCrossFlow/verification/README.md'
 
 tutorials/tutorial4.md:
   - from: 'verification/'
