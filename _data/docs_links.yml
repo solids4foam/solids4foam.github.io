@@ -29,6 +29,12 @@ documentation/material-models/anisotropicBiotElastic.md:
     page: '/documentation/material-models/'
 
 documentation/material-models/electroMechanicalLaw.md:
+  - from: '../../../../../tutorials/solids/hyperelasticity/ArosticaEtAl2025/benchmark1/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/solids/hyperelasticity/ArosticaEtAl2025/benchmark1/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/solids/hyperelasticity/ArosticaEtAl2025/benchmark1/README.md'
+  - from: '../../../../../tutorials/solids/hyperelasticity/ArosticaEtAl2025/benchmark2/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/solids/hyperelasticity/ArosticaEtAl2025/benchmark2/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/solids/hyperelasticity/ArosticaEtAl2025/benchmark2/README.md'
   - from: '../../../../../tutorials/solids/hyperelasticity/LandEtAl2015/problem3'
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/solids/hyperelasticity/LandEtAl2015/problem3'
   - from: '../../../materialModels/README.md'
@@ -37,6 +43,9 @@ documentation/material-models/electroMechanicalLaw.md:
     page: '/documentation/material-models/mechanical-law.html#scalar-inputs-from-another-case-directory'
   - from: '../GuccioneElasticMechanicalConstitutiveLaw/README.md'
     page: '/documentation/material-models/GuccioneElastic.html'
+  - from: '../viscousHolzapfelOgdenMechanicalConstitutiveLaw/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/viscousHolzapfelOgdenMechanicalConstitutiveLaw/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/viscousHolzapfelOgdenMechanicalConstitutiveLaw/README.md'
 
 documentation/material-models/GuccioneElastic.md:
   - from: '../../../../../tutorials/solids/hyperelasticity/LandEtAl2015/problem1'
@@ -239,6 +248,9 @@ documentation/material-models/README.md:
     page: '/documentation/material-models/poroMechanicalLaw.html'
   - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/thermoMechanicalLawMechanicalConstitutiveLaw/README.md'
     page: '/documentation/material-models/thermoMechanicalLaw.html'
+  - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/viscousHolzapfelOgdenMechanicalConstitutiveLaw/README.md'
+    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/viscousHolzapfelOgdenMechanicalConstitutiveLaw/README.md'
+    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/viscousHolzapfelOgdenMechanicalConstitutiveLaw/README.md'
   - from: '../mechanicalConstitutiveLaw/mechanicalConstitutiveLaws/viscousHookeanElasticMechanicalConstitutiveLaw/README.md'
     page: '/documentation/material-models/viscousHookeanElastic.html'
 
