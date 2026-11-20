@@ -39,14 +39,12 @@ documentation/material-models/electroMechanicalLaw.md:
     page: '/documentation/material-models/GuccioneElastic.html'
 
 documentation/material-models/GuccioneElastic.md:
+  - from: '../../../../../tutorials/solids/hyperelasticity/LandEtAl2015/problem1'
+    url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/solids/hyperelasticity/LandEtAl2015/problem1'
+  - from: '../../../../../tutorials/solids/hyperelasticity/LandEtAl2015/problem2'
+    page: '/tutorials/more-tutorials/solid-mechanics/hyperelasticity/idealisedVentricle.html'
   - from: '../../../../../tutorials/solids/hyperelasticity/LandEtAl2015/problem3'
     url: 'https://github.com/solids4foam/solids4foam/tree/development/tutorials/solids/hyperelasticity/LandEtAl2015/problem3'
-  - from: '../../../../../tutorials/solids/hyperelasticity/heartTissueBeam'
-    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/solids/hyperelasticity/heartTissueBeam'
-    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/solids/hyperelasticity/heartTissueBeam'
-  - from: '../../../../../tutorials/solids/hyperelasticity/idealisedVentricle'
-    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/solids/hyperelasticity/idealisedVentricle'
-    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/solids/hyperelasticity/idealisedVentricle'
   - from: '../../../solidModels/coupledPressureDisplacementSolid/README.md'
     page: '/documentation/solid-models/coupledPressureDisplacementSolid.html'
   - from: '../../../solidModels/nonLinGeomTotalLagTotalDispSolid/README.md'
@@ -247,9 +245,8 @@ documentation/material-models/README.md:
 documentation/material-models/StVenantKirchhoffElastic.md:
   - from: '../../../../../tutorials/fluidSolidInteraction/3dTube/README.md'
     page: '/tutorials/more-tutorials/fluid-solid-interaction/3dTube.html'
-  - from: '../../../../../tutorials/fluidSolidInteraction/HronTurek/README.md'
-    url: 'https://github.com/solids4foam/solids4foam/blob/development/tutorials/fluidSolidInteraction/HronTurek/README.md'
-    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/tutorials/fluidSolidInteraction/HronTurek/README.md'
+  - from: '../../../../../tutorials/fluidSolidInteraction/TurekHron2006/README.md'
+    page: '/tutorials/more-tutorials/fluid-solid-interaction/TurekHron2006.html'
   - from: '../../../../../tutorials/fluidSolidInteraction/beamInCrossFlow/README.md'
     page: '/tutorials/more-tutorials/fluid-solid-interaction/beamInCrossFlow.html'
   - from: '../../../../../tutorials/fluidSolidInteraction/cavityFlexibleBottom/README.md'
@@ -286,11 +283,6 @@ documentation/material-models/viscousHookeanElastic.md:
     page: '/documentation/material-models/'
   - from: '../../README.md'
     page: '/documentation/material-models/mechanical-law.html'
-
-documentation/under-the-hood/README.md:
-  - from: 'higherOrderHelpers/README.md'
-    url: 'https://github.com/solids4foam/solids4foam/blob/development/src/solids4FoamModels/higherOrderHelpers/README.md'
-    src: 'https://raw.githubusercontent.com/solids4foam/solids4foam/development/src/solids4FoamModels/higherOrderHelpers/README.md'
 
 tutorials/more-tutorials/fluid-solid-interaction/3dTube.md:
   - from: 'verification/'
